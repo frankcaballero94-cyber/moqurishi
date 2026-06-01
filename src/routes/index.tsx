@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Phone, Mail, MapPin, ShieldCheck, HeartPulse, Users, Clock, Award, ArrowRight, Check, Star } from "lucide-react";
-import moPortrait from "@/assets/mo-qurishi.png";
+import moPortrait from "@/assets/mo-portrait.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -97,23 +97,48 @@ function Hero() {
           </div>
         </div>
 
-        <div className="relative">
-          <div className="absolute -inset-4 bg-gradient-gold opacity-20 blur-3xl rounded-full" />
-          <div className="relative aspect-[4/5] rounded-sm overflow-hidden border border-primary/30 shadow-elegant">
+        <div className="relative max-w-sm mx-auto w-full">
+          <div className="absolute -inset-8 bg-gradient-gold opacity-15 blur-3xl rounded-full" />
+          {/* Gold corner ornaments */}
+          <CornerOrnaments />
+          <div className="relative aspect-[4/5] rounded-sm overflow-hidden border border-primary/40 shadow-elegant">
             <img src={moPortrait} alt="Mo Qurishi, licensed health insurance advisor" className="w-full h-full object-cover object-top" />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/0 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6">
-              <div className="text-xs uppercase tracking-[0.3em] text-primary mb-1">Health Advisor</div>
-              <div className="font-display text-3xl">Mo Qurishi</div>
+              <div className="h-px w-12 bg-gradient-gold mb-3" />
+              <div className="text-[10px] uppercase tracking-[0.3em] text-primary mb-1">Health Advisor</div>
+              <div className="font-display text-2xl">Mo Qurishi</div>
             </div>
           </div>
-          <div className="absolute -bottom-6 -left-6 bg-card border border-primary/30 px-5 py-4 rounded-sm shadow-gold">
-            <div className="text-2xl font-display text-gradient-gold">5.0</div>
-            <div className="text-xs text-muted-foreground">★★★★★ Client Rating</div>
+          <div className="absolute -bottom-5 -right-5 bg-card border border-primary/40 px-4 py-3 rounded-sm shadow-gold">
+            <div className="text-xl font-display text-gradient-gold leading-none">5.0</div>
+            <div className="text-[10px] uppercase tracking-wider text-muted-foreground mt-1">★★★★★ Rated</div>
           </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function CornerOrnaments() {
+  const base = "absolute w-6 h-6 border-primary pointer-events-none z-10";
+  return (
+    <>
+      <span className={`${base} -top-2 -left-2 border-t border-l`} />
+      <span className={`${base} -top-2 -right-2 border-t border-r`} />
+      <span className={`${base} -bottom-2 -left-2 border-b border-l`} />
+      <span className={`${base} -bottom-2 -right-2 border-b border-r`} />
+    </>
+  );
+}
+
+function Divider() {
+  return (
+    <div className="flex items-center justify-center gap-3 my-4">
+      <span className="h-px w-12 bg-gradient-to-r from-transparent to-primary" />
+      <span className="text-primary text-xs">◆</span>
+      <span className="h-px w-12 bg-gradient-to-l from-transparent to-primary" />
+    </div>
   );
 }
 
@@ -206,8 +231,30 @@ function About() {
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
         <div className="relative">
           <div className="absolute -inset-6 bg-gradient-gold opacity-10 blur-2xl rounded-full" />
-          <div className="relative border border-primary/30 rounded-sm overflow-hidden aspect-square shadow-elegant">
-            <img src={moPortrait} alt="Mo Qurishi portrait" className="w-full h-full object-cover" />
+          <CornerOrnaments />
+          <div className="relative border border-primary/30 rounded-sm aspect-square shadow-elegant bg-gradient-to-br from-card to-background p-10 flex flex-col justify-between overflow-hidden">
+            {/* subtle diagonal gold lines */}
+            <div className="absolute inset-0 opacity-[0.08]" style={{ backgroundImage: "repeating-linear-gradient(135deg, var(--gold) 0 1px, transparent 1px 24px)" }} />
+            <div className="relative">
+              <div className="text-[10px] uppercase tracking-[0.4em] text-primary mb-3">Credentials</div>
+              <div className="font-display text-3xl leading-tight">Independent <br/>Licensed Advisor</div>
+              <div className="h-px w-16 bg-gradient-gold my-5" />
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> NPN credentialed</li>
+                <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> ACA Marketplace certified</li>
+                <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> Medicare AHIP certified</li>
+                <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> Multi-carrier appointed</li>
+              </ul>
+            </div>
+            <div className="relative flex items-end justify-between">
+              <div>
+                <div className="font-display text-2xl italic text-gradient-gold">Mo Qurishi</div>
+                <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mt-1">Health Advisor · Est. 2020</div>
+              </div>
+              <div className="w-14 h-14 rounded-full border border-primary/50 flex items-center justify-center">
+                <span className="font-display text-xl text-gradient-gold">MQ</span>
+              </div>
+            </div>
           </div>
         </div>
         <div className="space-y-6">
