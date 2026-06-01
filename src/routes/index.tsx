@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Phone, Mail, MapPin, ShieldCheck, HeartPulse, Users, Clock, Award, ArrowRight, Check, Star } from "lucide-react";
-import moPortrait from "@/assets/mo-qurishi.png";
+import moPortrait from "@/assets/mo-portrait.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -97,23 +97,48 @@ function Hero() {
           </div>
         </div>
 
-        <div className="relative">
-          <div className="absolute -inset-4 bg-gradient-gold opacity-20 blur-3xl rounded-full" />
-          <div className="relative aspect-[4/5] rounded-sm overflow-hidden border border-primary/30 shadow-elegant">
+        <div className="relative max-w-sm mx-auto w-full">
+          <div className="absolute -inset-8 bg-gradient-gold opacity-15 blur-3xl rounded-full" />
+          {/* Gold corner ornaments */}
+          <CornerOrnaments />
+          <div className="relative aspect-[4/5] rounded-sm overflow-hidden border border-primary/40 shadow-elegant">
             <img src={moPortrait} alt="Mo Qurishi, licensed health insurance advisor" className="w-full h-full object-cover object-top" />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/0 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6">
-              <div className="text-xs uppercase tracking-[0.3em] text-primary mb-1">Health Advisor</div>
-              <div className="font-display text-3xl">Mo Qurishi</div>
+              <div className="h-px w-12 bg-gradient-gold mb-3" />
+              <div className="text-[10px] uppercase tracking-[0.3em] text-primary mb-1">Health Advisor</div>
+              <div className="font-display text-2xl">Mo Qurishi</div>
             </div>
           </div>
-          <div className="absolute -bottom-6 -left-6 bg-card border border-primary/30 px-5 py-4 rounded-sm shadow-gold">
-            <div className="text-2xl font-display text-gradient-gold">5.0</div>
-            <div className="text-xs text-muted-foreground">★★★★★ Client Rating</div>
+          <div className="absolute -bottom-5 -left-5 bg-card border border-primary/40 px-4 py-3 rounded-sm shadow-gold">
+            <div className="text-xl font-display text-gradient-gold leading-none">5.0</div>
+            <div className="text-[10px] uppercase tracking-wider text-muted-foreground mt-1">★★★★★ Rated</div>
           </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function CornerOrnaments() {
+  const base = "absolute w-6 h-6 border-primary pointer-events-none z-10";
+  return (
+    <>
+      <span className={`${base} -top-2 -left-2 border-t border-l`} />
+      <span className={`${base} -top-2 -right-2 border-t border-r`} />
+      <span className={`${base} -bottom-2 -left-2 border-b border-l`} />
+      <span className={`${base} -bottom-2 -right-2 border-b border-r`} />
+    </>
+  );
+}
+
+function Divider() {
+  return (
+    <div className="flex items-center justify-center gap-3 my-4">
+      <span className="h-px w-12 bg-gradient-to-r from-transparent to-primary" />
+      <span className="text-primary text-xs">◆</span>
+      <span className="h-px w-12 bg-gradient-to-l from-transparent to-primary" />
+    </div>
   );
 }
 
