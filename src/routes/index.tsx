@@ -313,7 +313,7 @@ function Services() {
       </div>
 
       <Dialog open={openIdx !== null} onOpenChange={(o) => !o && setOpenIdx(null)}>
-        <DialogContent className="max-w-2xl bg-card border-primary/30">
+        <DialogContent className="max-w-2xl card-glass rounded-2xl">
           {active && (
             <>
               <DialogHeader>
