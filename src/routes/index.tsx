@@ -48,7 +48,7 @@ function Nav() {
     <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-sm bg-gradient-gold flex items-center justify-center">
+          <div className="w-8 h-8 rounded-lg bg-gradient-gold flex items-center justify-center">
             <span className="font-display font-bold text-primary-foreground">Q</span>
           </div>
           <span className="font-display text-lg tracking-wide">Qurishi <span className="text-gradient-gold">Advising</span></span>
@@ -101,7 +101,7 @@ function Hero() {
         <div className="relative w-full">
           <div className="absolute -inset-8 bg-gradient-gold opacity-10 blur-3xl rounded-full" />
           <CornerOrnaments />
-          <div className="relative rounded-sm border border-primary/30 bg-gradient-to-br from-card to-background p-10 md:p-12 shadow-elegant overflow-hidden">
+          <div className="relative rounded-2xl card-glass p-10 md:p-12 overflow-hidden">
             <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "repeating-linear-gradient(135deg, var(--gold) 0 1px, transparent 1px 22px)" }} />
             <div className="relative space-y-8">
               <div>
@@ -197,7 +197,7 @@ function WhyUs() {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
           {items.map(({ icon: Icon, title, body }) => (
-            <div key={title} className="bg-background p-10 hover:bg-card transition group">
+            <div key={title} className="card-glass rounded-2xl p-10 hover:border-primary/45 transition group">
               <Icon className="w-8 h-8 text-primary mb-6 group-hover:scale-110 transition" />
               <h3 className="font-display text-2xl mb-3">{title}</h3>
               <p className="text-muted-foreground leading-relaxed">{body}</p>
@@ -364,7 +364,7 @@ function About() {
         <div className="relative">
           <div className="absolute -inset-6 bg-gradient-gold opacity-10 blur-2xl rounded-full" />
           <CornerOrnaments />
-          <div className="relative border border-primary/30 rounded-sm aspect-square shadow-elegant bg-gradient-to-br from-card to-background p-10 flex flex-col justify-between overflow-hidden">
+          <div className="relative rounded-2xl aspect-square card-glass p-10 flex flex-col justify-between overflow-hidden">
             {/* subtle diagonal gold lines */}
             <div className="absolute inset-0 opacity-[0.08]" style={{ backgroundImage: "repeating-linear-gradient(135deg, var(--gold) 0 1px, transparent 1px 24px)" }} />
             <div className="relative">
@@ -418,7 +418,7 @@ function StatesSection() {
         <p className="text-muted-foreground mb-12 max-w-xl mx-auto">From the Atlantic to the Rockies — licensed, credentialed, and ready to help.</p>
         <div className="flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
           {STATES.map((s) => (
-            <span key={s} className="px-4 py-2 border border-primary/30 rounded-sm text-sm font-medium tracking-wider text-foreground hover:bg-primary hover:text-primary-foreground transition">
+            <span key={s} className="px-4 py-2 rounded-lg text-sm font-medium tracking-wider text-foreground badge-glass cursor-default">
               {s}
             </span>
           ))}
@@ -443,7 +443,7 @@ function Testimonials() {
         </div>
         <div className="grid md:grid-cols-3 gap-6">
           {items.map((t) => (
-            <div key={t.name} className="p-8 border border-border rounded-sm bg-card/50 hover:border-primary/50 transition">
+            <div key={t.name} className="p-8 rounded-2xl card-glass hover:border-primary/45 transition">
               <div className="flex gap-1 mb-4">{[...Array(5)].map((_,i)=><Star key={i} className="w-4 h-4 fill-primary text-primary"/>)}</div>
               <p className="font-display text-xl leading-relaxed mb-6 text-foreground">"{t.quote}"</p>
               <div className="text-sm">
@@ -462,7 +462,7 @@ function Contact() {
   return (
     <section id="contact" className="py-32 px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="relative rounded-sm border border-primary/30 overflow-hidden bg-card shadow-elegant">
+        <div className="relative rounded-2xl overflow-hidden card-glass">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-gold opacity-5" />
           <div className="relative grid lg:grid-cols-2 gap-12 p-10 md:p-16">
             <div>
@@ -471,7 +471,7 @@ function Contact() {
               <p className="text-muted-foreground mb-10 leading-relaxed">Free, no-pressure consultation. Reach out by phone, email, or send a quick note — I personally respond to every inquiry.</p>
               <div className="space-y-5">
                 <a href={`tel:${PHONE}`} className="flex items-center gap-4 group">
-                  <div className="w-12 h-12 rounded-sm border border-primary/40 bg-primary/5 flex items-center justify-center group-hover:bg-gradient-gold transition">
+                  <div className="w-12 h-12 rounded-xl icon-glass flex items-center justify-center group-hover:bg-gradient-gold transition">
                     <Phone className="w-5 h-5 text-primary group-hover:text-primary-foreground" />
                   </div>
                   <div>
@@ -480,7 +480,7 @@ function Contact() {
                   </div>
                 </a>
                 <a href={`mailto:${EMAIL}`} className="flex items-center gap-4 group">
-                  <div className="w-12 h-12 rounded-sm border border-primary/40 bg-primary/5 flex items-center justify-center group-hover:bg-gradient-gold transition">
+                  <div className="w-12 h-12 rounded-xl icon-glass flex items-center justify-center group-hover:bg-gradient-gold transition">
                     <Mail className="w-5 h-5 text-primary group-hover:text-primary-foreground" />
                   </div>
                   <div>
@@ -501,7 +501,7 @@ function Contact() {
               <Field label="State" name="state" />
               <div>
                 <label className="text-xs uppercase tracking-wider text-muted-foreground">How can I help?</label>
-                <textarea rows={4} className="mt-2 w-full bg-input border border-border rounded-sm px-4 py-3 focus:border-primary focus:outline-none transition" />
+                <textarea rows={4} className="mt-2 w-full rounded-lg px-4 py-3 input-glass" />
               </div>
               <button type="submit" className="w-full inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl btn-glass-gold font-medium">
                 Request Free Quote <ArrowRight className="w-4 h-4" />
@@ -518,7 +518,7 @@ function Field({ label, name, type = "text" }: { label: string; name: string; ty
   return (
     <div>
       <label htmlFor={name} className="text-xs uppercase tracking-wider text-muted-foreground">{label}</label>
-      <input id={name} name={name} type={type} className="mt-2 w-full bg-input border border-border rounded-sm px-4 py-3 focus:border-primary focus:outline-none transition" />
+      <input id={name} name={name} type={type} className="mt-2 w-full rounded-lg px-4 py-3 input-glass" />
     </div>
   );
 }
@@ -528,7 +528,7 @@ function Footer() {
     <footer className="border-t border-border py-12 px-6 bg-card/30">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-6 items-center">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-sm bg-gradient-gold flex items-center justify-center">
+          <div className="w-8 h-8 rounded-lg bg-gradient-gold flex items-center justify-center">
             <span className="font-display font-bold text-primary-foreground">Q</span>
           </div>
           <div>
