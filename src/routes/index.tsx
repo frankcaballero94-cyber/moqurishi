@@ -60,7 +60,7 @@ function Nav() {
           <a href="#states" className="hover:text-foreground transition">Coverage</a>
           <a href="#contact" className="hover:text-foreground transition">Contact</a>
         </nav>
-        <a href="#contact" className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-gradient-gold text-primary-foreground text-sm font-medium shadow-gold hover:opacity-90 transition">
+        <a href="#contact" className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl btn-glass-gold text-sm font-medium">
           Free Quote <ArrowRight className="w-4 h-4" />
         </a>
       </div>
@@ -84,10 +84,10 @@ function Hero() {
             I'm Mo Qurishi — a licensed health insurance advisor helping individuals, families, and small businesses cut through the noise and find coverage that actually fits.
           </p>
           <div className="flex flex-wrap gap-4">
-            <a href="#contact" className="inline-flex items-center gap-2 px-7 py-4 rounded-sm bg-gradient-gold text-primary-foreground font-medium shadow-gold hover:opacity-90 transition">
+            <a href="#contact" className="inline-flex items-center gap-2 px-7 py-4 rounded-xl btn-glass-gold font-medium">
               Get a Free Quote <ArrowRight className="w-4 h-4" />
             </a>
-            <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 px-7 py-4 rounded-sm border border-primary/40 text-foreground hover:bg-primary/5 transition">
+            <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 px-7 py-4 rounded-xl border border-primary/40 text-foreground hover:bg-primary/5 transition">
               <Phone className="w-4 h-4 text-primary" /> {PHONE}
             </a>
           </div>
@@ -344,7 +344,7 @@ function Services() {
                 <a
                   href="#contact"
                   onClick={() => setOpenIdx(null)}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-gold text-primary-foreground font-medium shadow-gold hover:opacity-90 transition"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl btn-glass-gold font-medium"
                 >
                   Get a Free Quote <ArrowRight className="w-4 h-4" />
                 </a>
@@ -503,7 +503,7 @@ function Contact() {
                 <label className="text-xs uppercase tracking-wider text-muted-foreground">How can I help?</label>
                 <textarea rows={4} className="mt-2 w-full bg-input border border-border rounded-sm px-4 py-3 focus:border-primary focus:outline-none transition" />
               </div>
-              <button type="submit" className="w-full inline-flex items-center justify-center gap-2 px-7 py-4 rounded-sm bg-gradient-gold text-primary-foreground font-medium shadow-gold hover:opacity-90 transition">
+              <button type="submit" className="w-full inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl btn-glass-gold font-medium">
                 Request Free Quote <ArrowRight className="w-4 h-4" />
               </button>
             </form>
