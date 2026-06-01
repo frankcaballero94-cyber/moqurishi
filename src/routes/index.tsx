@@ -231,8 +231,30 @@ function About() {
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
         <div className="relative">
           <div className="absolute -inset-6 bg-gradient-gold opacity-10 blur-2xl rounded-full" />
-          <div className="relative border border-primary/30 rounded-sm overflow-hidden aspect-square shadow-elegant">
-            <img src={moPortrait} alt="Mo Qurishi portrait" className="w-full h-full object-cover" />
+          <CornerOrnaments />
+          <div className="relative border border-primary/30 rounded-sm aspect-square shadow-elegant bg-gradient-to-br from-card to-background p-10 flex flex-col justify-between overflow-hidden">
+            {/* subtle diagonal gold lines */}
+            <div className="absolute inset-0 opacity-[0.08]" style={{ backgroundImage: "repeating-linear-gradient(135deg, var(--gold) 0 1px, transparent 1px 24px)" }} />
+            <div className="relative">
+              <div className="text-[10px] uppercase tracking-[0.4em] text-primary mb-3">Credentials</div>
+              <div className="font-display text-3xl leading-tight">Independent <br/>Licensed Advisor</div>
+              <div className="h-px w-16 bg-gradient-gold my-5" />
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> NPN credentialed</li>
+                <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> ACA Marketplace certified</li>
+                <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> Medicare AHIP certified</li>
+                <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> Multi-carrier appointed</li>
+              </ul>
+            </div>
+            <div className="relative flex items-end justify-between">
+              <div>
+                <div className="font-display text-2xl italic text-gradient-gold">Mo Qurishi</div>
+                <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mt-1">Health Advisor · Est. 2020</div>
+              </div>
+              <div className="w-14 h-14 rounded-full border border-primary/50 flex items-center justify-center">
+                <span className="font-display text-xl text-gradient-gold">MQ</span>
+              </div>
+            </div>
           </div>
         </div>
         <div className="space-y-6">
