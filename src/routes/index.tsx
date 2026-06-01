@@ -211,11 +211,74 @@ function WhyUs() {
 
 function Services() {
   const services = [
-    { num: "01", title: "Individual & Family Health Plans", body: "ACA marketplace, private PPO, and short-term options tailored to your budget and care needs." },
-    { num: "02", title: "Small Business Group Coverage", body: "Build a benefits package that attracts talent without breaking your books." },
-    { num: "03", title: "Medicare Guidance", body: "Original Medicare, Advantage, and supplement plans — explained in plain English." },
-    { num: "04", title: "Dental, Vision & Supplemental", body: "Round out your protection with accident, critical illness, and supplemental coverage." },
+    {
+      num: "01",
+      title: "Individual & Family Health Plans",
+      body: "ACA marketplace, private PPO, and short-term options tailored to your budget and care needs.",
+      details: {
+        overview: "Comprehensive coverage for individuals and families — whether you're between jobs, self-employed, or simply want a better plan than what your employer offers.",
+        includes: [
+          "ACA Marketplace plans with subsidy eligibility review",
+          "Private PPO and HMO plans from top-rated carriers",
+          "Short-term medical for coverage gaps",
+          "HSA-compatible high-deductible plans",
+          "Pediatric and maternity-inclusive options",
+        ],
+        bestFor: "Self-employed professionals, families, early retirees, and anyone shopping outside of employer coverage.",
+      },
+    },
+    {
+      num: "02",
+      title: "Small Business Group Coverage",
+      body: "Build a benefits package that attracts talent without breaking your books.",
+      details: {
+        overview: "Group health benefits designed for small teams — from 2 employees to 50. Competitive plans that help you retain talent without enterprise-level costs.",
+        includes: [
+          "Group medical, dental, and vision plans",
+          "Level-funded and self-funded alternatives",
+          "QSEHRA and ICHRA reimbursement setup",
+          "Section 125 / Cafeteria plan administration",
+          "Annual renewal strategy and carrier negotiation",
+        ],
+        bestFor: "Small business owners, startups, professional practices, and nonprofits looking to offer real benefits.",
+      },
+    },
+    {
+      num: "03",
+      title: "Medicare Guidance",
+      body: "Original Medicare, Advantage, and supplement plans — explained in plain English.",
+      details: {
+        overview: "Turning 65 or already enrolled? I'll walk you through every part of Medicare so you understand exactly what you're paying for and what's covered.",
+        includes: [
+          "Medicare Part A, B, C, D explained clearly",
+          "Medicare Advantage (Part C) plan comparison",
+          "Medigap / Supplement plan selection",
+          "Prescription drug (Part D) plan matching",
+          "Annual Election Period reviews (Oct 15 – Dec 7)",
+        ],
+        bestFor: "Adults approaching 65, current Medicare beneficiaries, and adult children helping aging parents navigate enrollment.",
+      },
+    },
+    {
+      num: "04",
+      title: "Dental, Vision & Supplemental",
+      body: "Round out your protection with accident, critical illness, and supplemental coverage.",
+      details: {
+        overview: "Fill the gaps your primary health plan leaves behind. Affordable add-ons that protect your savings from unexpected medical events.",
+        includes: [
+          "Standalone dental plans (PPO and DHMO)",
+          "Vision coverage with major retail networks",
+          "Accident and critical illness policies",
+          "Hospital indemnity and cancer coverage",
+          "Short-term and long-term disability income",
+        ],
+        bestFor: "Anyone with high-deductible health coverage, families with active children, or individuals managing chronic health risks.",
+      },
+    },
   ];
+  const [openIdx, setOpenIdx] = useState<number | null>(null);
+  const active = openIdx !== null ? services[openIdx] : null;
+
   return (
     <section id="services" className="py-32 px-6 bg-card/30">
       <div className="max-w-7xl mx-auto">
@@ -229,18 +292,67 @@ function Services() {
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-6">
-          {services.map((s) => (
-            <div key={s.num} className="group relative p-10 rounded-sm border border-border hover:border-primary/50 bg-background transition">
+          {services.map((s, i) => (
+            <button
+              key={s.num}
+              onClick={() => setOpenIdx(i)}
+              className="group relative p-10 border border-border hover:border-primary/50 bg-background transition text-left cursor-pointer"
+            >
               <div className="flex items-start justify-between mb-6">
                 <span className="font-display text-5xl text-gradient-gold">{s.num}</span>
                 <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition" />
               </div>
               <h3 className="font-display text-2xl mb-3">{s.title}</h3>
-              <p className="text-muted-foreground">{s.body}</p>
-            </div>
+              <p className="text-muted-foreground mb-4">{s.body}</p>
+              <span className="text-xs uppercase tracking-[0.25em] text-primary inline-flex items-center gap-2">
+                View Details <ArrowRight className="w-3 h-3" />
+              </span>
+            </button>
           ))}
         </div>
       </div>
+
+      <Dialog open={openIdx !== null} onOpenChange={(o) => !o && setOpenIdx(null)}>
+        <DialogContent className="max-w-2xl bg-card border-primary/30">
+          {active && (
+            <>
+              <DialogHeader>
+                <div className="flex items-baseline gap-4 mb-2">
+                  <span className="font-display text-4xl text-gradient-gold">{active.num}</span>
+                  <span className="text-[10px] uppercase tracking-[0.3em] text-primary">Service</span>
+                </div>
+                <DialogTitle className="font-display text-3xl text-left">{active.title}</DialogTitle>
+                <DialogDescription className="text-muted-foreground text-base leading-relaxed text-left pt-2">
+                  {active.details.overview}
+                </DialogDescription>
+              </DialogHeader>
+              <div className="space-y-6 pt-2">
+                <div>
+                  <div className="text-[10px] uppercase tracking-[0.3em] text-primary mb-3">What's Included</div>
+                  <ul className="space-y-2.5">
+                    {active.details.includes.map((item) => (
+                      <li key={item} className="flex items-start gap-3 text-sm text-foreground/90">
+                        <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" /> {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="border-t border-border pt-5">
+                  <div className="text-[10px] uppercase tracking-[0.3em] text-primary mb-2">Best For</div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{active.details.bestFor}</p>
+                </div>
+                <a
+                  href="#contact"
+                  onClick={() => setOpenIdx(null)}
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-gold text-primary-foreground font-medium shadow-gold hover:opacity-90 transition"
+                >
+                  Get a Free Quote <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }
