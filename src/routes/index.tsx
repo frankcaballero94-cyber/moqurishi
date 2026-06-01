@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Phone, Mail, MapPin, ShieldCheck, HeartPulse, Users, Clock, Award, ArrowRight, Check, Star } from "lucide-react";
-import moPortrait from "@/assets/mo-qurishi.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
