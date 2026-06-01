@@ -97,10 +97,40 @@ function Hero() {
         </div>
 
         <div className="relative w-full">
-          <div className="absolute -inset-8 bg-gradient-gold opacity-15 blur-3xl rounded-full" />
+          <div className="absolute -inset-8 bg-gradient-gold opacity-10 blur-3xl rounded-full" />
           <CornerOrnaments />
-          <div className="relative rounded-sm overflow-hidden border border-primary/40 shadow-elegant">
-            <img src={moPortrait} alt="Mo Qurishi — Health Advisor business card" className="block w-full h-auto" />
+          <div className="relative rounded-sm border border-primary/30 bg-gradient-to-br from-card to-background p-10 md:p-12 shadow-elegant overflow-hidden">
+            <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "repeating-linear-gradient(135deg, var(--gold) 0 1px, transparent 1px 22px)" }} />
+            <div className="relative space-y-8">
+              <div>
+                <div className="text-[10px] uppercase tracking-[0.4em] text-primary mb-3">Office of</div>
+                <div className="font-display text-4xl md:text-5xl leading-tight">Mo Qurishi</div>
+                <div className="text-sm uppercase tracking-[0.25em] text-muted-foreground mt-2">Licensed Health Advisor</div>
+                <div className="h-px w-20 bg-gradient-gold my-6" />
+              </div>
+              <div className="grid grid-cols-2 gap-6">
+                <div>
+                  <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-2">Direct Line</div>
+                  <a href={`tel:${PHONE}`} className="font-sans text-lg tracking-wide text-foreground hover:text-primary transition">{PHONE}</a>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-2">Established</div>
+                  <div className="font-display text-lg">2020</div>
+                </div>
+              </div>
+              <ul className="space-y-3 text-sm text-muted-foreground border-t border-border pt-6">
+                <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> NPN credentialed advisor</li>
+                <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> ACA Marketplace certified</li>
+                <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> Medicare AHIP certified</li>
+                <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> Independent &amp; multi-carrier appointed</li>
+              </ul>
+              <div className="flex items-end justify-between pt-2">
+                <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Licensed in 35+ States</div>
+                <div className="w-12 h-12 rounded-full border border-primary/50 flex items-center justify-center">
+                  <span className="font-display text-base text-gradient-gold">MQ</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
