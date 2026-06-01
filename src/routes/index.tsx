@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Phone, Mail, MapPin, ShieldCheck, HeartPulse, Users, Clock, Award, ArrowRight, Check, Star } from "lucide-react";
-import moPortrait from "@/assets/mo-portrait.png";
+import moPortrait from "@/assets/mo-qurishi.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -97,22 +97,11 @@ function Hero() {
           </div>
         </div>
 
-        <div className="relative max-w-sm mx-auto w-full">
+        <div className="relative w-full">
           <div className="absolute -inset-8 bg-gradient-gold opacity-15 blur-3xl rounded-full" />
-          {/* Gold corner ornaments */}
           <CornerOrnaments />
-          <div className="relative aspect-[4/5] rounded-sm overflow-hidden border border-primary/40 shadow-elegant">
-            <img src={moPortrait} alt="Mo Qurishi, licensed health insurance advisor" className="w-full h-full object-cover object-top" />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/0 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-6">
-              <div className="h-px w-12 bg-gradient-gold mb-3" />
-              <div className="text-[10px] uppercase tracking-[0.3em] text-primary mb-1">Health Advisor</div>
-              <div className="font-display text-2xl">Mo Qurishi</div>
-            </div>
-          </div>
-          <div className="absolute -bottom-5 -right-5 bg-card border border-primary/40 px-4 py-3 rounded-sm shadow-gold">
-            <div className="text-xl font-display text-gradient-gold leading-none">5.0</div>
-            <div className="text-[10px] uppercase tracking-wider text-muted-foreground mt-1">★★★★★ Rated</div>
+          <div className="relative rounded-sm overflow-hidden border border-primary/40 shadow-elegant">
+            <img src={moPortrait} alt="Mo Qurishi — Health Advisor business card" className="block w-full h-auto" />
           </div>
         </div>
       </div>
