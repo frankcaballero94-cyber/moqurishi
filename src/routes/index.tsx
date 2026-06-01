@@ -333,7 +333,7 @@ function Contact() {
                   </div>
                   <div>
                     <div className="text-xs uppercase tracking-wider text-muted-foreground">Phone</div>
-                    <div className="font-display text-xl">{PHONE}</div>
+                    <div className="font-sans text-xl tracking-wide">{PHONE}</div>
                   </div>
                 </a>
                 <a href={`mailto:${EMAIL}`} className="flex items-center gap-4 group">
