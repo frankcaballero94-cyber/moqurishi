@@ -110,7 +110,7 @@ function Hero() {
               <div className="font-display text-2xl">Mo Qurishi</div>
             </div>
           </div>
-          <div className="absolute -bottom-5 -left-5 bg-card border border-primary/40 px-4 py-3 rounded-sm shadow-gold">
+          <div className="absolute -bottom-5 -right-5 bg-card border border-primary/40 px-4 py-3 rounded-sm shadow-gold">
             <div className="text-xl font-display text-gradient-gold leading-none">5.0</div>
             <div className="text-[10px] uppercase tracking-wider text-muted-foreground mt-1">★★★★★ Rated</div>
           </div>
