@@ -110,6 +110,57 @@
   box-shadow: 0 12px 36px -10px oklch(0.78 0.13 82 / 0.5), inset 0 1px 0 oklch(1 0 0 / 0.2);
 }
 
+.card-glass {
+  background: linear-gradient(135deg, oklch(0.15 0.008 270 / 0.55), oklch(0.10 0.005 270 / 0.45));
+  border: 1px solid oklch(0.78 0.13 82 / 0.25);
+  backdrop-filter: blur(16px) saturate(130%);
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
+  box-shadow: 0 20px 50px -20px oklch(0 0 0 / 0.5), inset 0 1px 0 oklch(1 0 0 / 0.08);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.card-glass:hover {
+  border-color: oklch(0.78 0.13 82 / 0.45);
+  box-shadow: 0 24px 60px -20px oklch(0 0 0 / 0.6), inset 0 1px 0 oklch(1 0 0 / 0.1);
+}
+
+.input-glass {
+  background: oklch(0.12 0.006 270 / 0.4);
+  border: 1px solid oklch(0.78 0.13 82 / 0.2);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  color: var(--color-foreground);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.input-glass:focus {
+  border-color: oklch(0.78 0.13 82 / 0.5);
+  box-shadow: 0 0 0 3px oklch(0.78 0.13 82 / 0.15);
+  outline: none;
+}
+
+.badge-glass {
+  background: oklch(0.15 0.008 270 / 0.45);
+  border: 1px solid oklch(0.78 0.13 82 / 0.25);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  transition: all 0.2s ease;
+}
+.badge-glass:hover {
+  background: linear-gradient(135deg, oklch(0.88 0.09 88 / 0.22), oklch(0.65 0.14 70 / 0.18));
+  border-color: oklch(0.88 0.10 85 / 0.55);
+}
+
+.icon-glass {
+  background: oklch(0.15 0.008 270 / 0.45);
+  border: 1px solid oklch(0.78 0.13 82 / 0.25);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  transition: all 0.2s ease;
+}
+.icon-glass:hover {
+  background: linear-gradient(135deg, oklch(0.88 0.09 88 / 0.22), oklch(0.65 0.14 70 / 0.18));
+  border-color: oklch(0.88 0.10 85 / 0.55);
+}
+
 .diagonal-frame {
   position: relative;
 }
