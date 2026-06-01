@@ -296,7 +296,7 @@ function Services() {
             <button
               key={s.num}
               onClick={() => setOpenIdx(i)}
-              className="group relative p-10 border border-border hover:border-primary/50 bg-background transition text-left cursor-pointer"
+              className="group relative p-10 rounded-2xl border border-border hover:border-primary/50 bg-background transition text-left cursor-pointer"
             >
               <div className="flex items-start justify-between mb-6">
                 <span className="font-display text-5xl text-gradient-gold">{s.num}</span>
