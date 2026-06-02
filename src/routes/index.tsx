@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Phone, Mail, MapPin, ShieldCheck, HeartPulse, Users, Clock, Award, ArrowRight, Check, Star, X, Calendar, Plus, Minus, Briefcase, Building2, Plane, UserCheck, Baby, Sparkles, Calculator, TrendingDown, BookOpen, Search, FileText, Video, Headphones, Quote, ChevronRight } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { USMap } from "@/components/USMap";
+import { PremiumTicker, AdvisorCompareSlider, AppointmentCalendar, CostDonut, QuickActionFAB, LicenseVerifier, TypewriterText } from "@/components/CoolFeatures";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -34,8 +35,10 @@ function Index() {
       <Hero />
       <Marquee />
       <Stats />
+      <PremiumTicker />
       <WhyUs />
       <Services />
+      <AdvisorCompareSlider />
       <PlanTypes />
       <Process />
       <About />
@@ -43,11 +46,14 @@ function Index() {
       <Carriers />
       <TrustStrip />
       <StatesSection />
+      <LicenseVerifier />
       <SavingsCalculator />
+      <CostDonut />
       <PlanComparison />
       <Testimonials />
       <EnrollmentTimeline />
       <DeadlinesCallout />
+      <AppointmentCalendar />
       <ResourceLibrary />
       <LeadMagnet />
       <Glossary />
@@ -55,6 +61,7 @@ function Index() {
       <Languages />
       <Contact />
       <Footer />
+      <QuickActionFAB />
     </div>
   );
 }
@@ -94,7 +101,9 @@ function Hero() {
           </div>
           <h1 className="font-display text-6xl md:text-7xl lg:text-8xl leading-[0.95] font-medium">
             Your Health <br />
-            <span className="text-gradient-gold italic">Deserves an Advocate.</span>
+            <span className="text-gradient-gold italic">
+              <TypewriterText words={["Deserves an Advocate.", "Deserves Clarity.", "Deserves Real Answers.", "Deserves Mo."]} />
+            </span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
             I'm Mo Qurishi — a licensed health insurance advisor helping individuals, families, and small businesses cut through the noise and find coverage that actually fits.
