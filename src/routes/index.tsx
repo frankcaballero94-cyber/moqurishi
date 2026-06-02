@@ -43,9 +43,14 @@ function Index() {
       <Carriers />
       <TrustStrip />
       <StatesSection />
+      <SavingsCalculator />
+      <PlanComparison />
       <Testimonials />
+      <EnrollmentTimeline />
       <DeadlinesCallout />
+      <ResourceLibrary />
       <LeadMagnet />
+      <Glossary />
       <FAQ />
       <Languages />
       <Contact />
