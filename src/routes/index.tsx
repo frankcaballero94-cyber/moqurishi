@@ -35,14 +35,18 @@ function Index() {
       <Stats />
       <WhyUs />
       <Services />
+      <PlanTypes />
       <Process />
       <About />
       <WhoWeHelp />
       <Carriers />
+      <TrustStrip />
       <StatesSection />
       <Testimonials />
       <DeadlinesCallout />
+      <LeadMagnet />
       <FAQ />
+      <Languages />
       <Contact />
       <Footer />
     </div>
