@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Phone, Mail, MapPin, ShieldCheck, HeartPulse, Users, Clock, Award, ArrowRight, Check, Star, X, Calendar, Plus, Minus, Briefcase, Building2, Plane, UserCheck, Baby, Sparkles } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
@@ -53,26 +53,26 @@ function Index() {
   );
 }
 
-function Nav() {
+export function Nav() {
   return (
     <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-gradient-gold flex items-center justify-center">
             <span className="font-display font-bold text-primary-foreground">Q</span>
           </div>
           <span className="font-display text-lg tracking-wide">Qurishi <span className="text-gradient-gold">Advising</span></span>
-        </a>
+        </Link>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-          <a href="#why" className="hover:text-foreground transition">Why Us</a>
-          <a href="#services" className="hover:text-foreground transition">Services</a>
-          <a href="#about" className="hover:text-foreground transition">About</a>
-          <a href="#states" className="hover:text-foreground transition">Coverage</a>
-          <a href="#contact" className="hover:text-foreground transition">Contact</a>
+          <Link to="/why" className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>Why Us</Link>
+          <Link to="/services" className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>Services</Link>
+          <Link to="/about" className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>About</Link>
+          <Link to="/coverage" className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>Coverage</Link>
+          <Link to="/contact" className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>Contact</Link>
         </nav>
-        <a href="#contact" className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl btn-glass-gold text-sm font-medium">
+        <Link to="/contact" className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl btn-glass-gold text-sm font-medium">
           Free Quote <ArrowRight className="w-4 h-4" />
-        </a>
+        </Link>
       </div>
     </header>
   );
@@ -172,7 +172,7 @@ function Divider() {
   );
 }
 
-function Marquee() {
+export function Marquee() {
   const items = ["Licensed in 35+ States", "Free Consultations", "Individuals & Families", "Small Business", "Medicare Guidance", "ACA Marketplace", "Real Human Advisor"];
   return (
     <div className="border-y border-border bg-card/40 py-5 overflow-hidden">
@@ -189,7 +189,7 @@ function Marquee() {
   );
 }
 
-function WhyUs() {
+export function WhyUs() {
   const items = [
     { icon: ShieldCheck, title: "Accuracy That Delivers", body: "Every recommendation is backed by thorough research and real expertise. Clear guidance — never guesswork." },
     { icon: Clock, title: "Your Pace, Your Choice", body: "Conversations, not sales pitches. Ask questions, take your time, decide when you're ready." },
@@ -219,7 +219,7 @@ function WhyUs() {
   );
 }
 
-function Services() {
+export function Services() {
   const services = [
     {
       num: "01",
@@ -367,7 +367,7 @@ function Services() {
   );
 }
 
-function About() {
+export function About() {
   return (
     <section id="about" className="py-32 px-6">
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
@@ -419,7 +419,7 @@ function About() {
   );
 }
 
-function StatesSection() {
+export function StatesSection() {
   return (
     <section id="states" className="py-32 px-6 bg-card/30">
       <div className="max-w-6xl mx-auto text-center">
@@ -438,7 +438,7 @@ function StatesSection() {
   );
 }
 
-function Testimonials() {
+export function Testimonials() {
   const items = [
     { quote: "Mo made the whole process feel calm. He answered every question — even the dumb ones — without ever pushing a sale.", name: "Sarah K.", role: "Family of 4, TX" },
     { quote: "Switched our small team to a better plan and saved real money. He's the only advisor I'd recommend.", name: "James R.", role: "Business Owner, FL" },
@@ -468,7 +468,7 @@ function Testimonials() {
   );
 }
 
-function Contact() {
+export function Contact() {
   return (
     <section id="contact" className="py-32 px-6">
       <div className="max-w-6xl mx-auto">
@@ -533,7 +533,7 @@ function Field({ label, name, type = "text" }: { label: string; name: string; ty
   );
 }
 
-function Stats() {
+export function Stats() {
   const stats = [
     { num: "35+", label: "States Licensed" },
     { num: "2,000+", label: "Families Covered" },
@@ -554,7 +554,7 @@ function Stats() {
   );
 }
 
-function Process() {
+export function Process() {
   const steps = [
     { num: "01", title: "Discovery Call", body: "A short, no-pressure conversation to understand your situation, budget, and care needs." },
     { num: "02", title: "Plan Matching", body: "I shop the market across multiple carriers and surface only the plans that genuinely fit." },
@@ -582,7 +582,7 @@ function Process() {
   );
 }
 
-function WhoWeHelp() {
+export function WhoWeHelp() {
   const personas = [
     { icon: Briefcase, title: "Self-Employed", body: "Freelancers and consultants who need real coverage without an HR department." },
     { icon: Users, title: "Families", body: "Plans that cover pediatric care, maternity, and the unexpected." },
@@ -617,7 +617,7 @@ function WhoWeHelp() {
   );
 }
 
-function Carriers() {
+export function Carriers() {
   const carriers = ["UnitedHealthcare", "Cigna", "Aetna", "Blue Cross Blue Shield", "Humana", "Ambetter", "Oscar", "Molina", "Anthem", "Kaiser", "Wellcare", "Allstate"];
   return (
     <section className="py-24 px-6">
@@ -636,7 +636,7 @@ function Carriers() {
   );
 }
 
-function DeadlinesCallout() {
+export function DeadlinesCallout() {
   return (
     <section className="py-20 px-6">
       <div className="max-w-6xl mx-auto card-glass rounded-2xl p-10 md:p-14 relative overflow-hidden">
@@ -664,7 +664,7 @@ function DeadlinesCallout() {
   );
 }
 
-function FAQ() {
+export function FAQ() {
   const faqs = [
     { q: "How much does it cost to work with you?", a: "Absolutely nothing. My services are 100% free to you — I'm compensated directly by the insurance carriers when you enroll, at no added cost to your premium." },
     { q: "Am I locked into a plan once I enroll?", a: "No. You can change plans during Open Enrollment, or any time you have a qualifying life event (marriage, new baby, job loss, moving, etc.) through a Special Enrollment Period." },
@@ -704,7 +704,7 @@ function FAQ() {
   );
 }
 
-function Footer() {
+export function Footer() {
   return (
     <footer className="border-t border-border py-12 px-6 bg-card/30">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-6 items-center">
@@ -723,7 +723,7 @@ function Footer() {
   );
 }
 
-function PlanTypes() {
+export function PlanTypes() {
   const plans = [
     { name: "ACA Marketplace", price: "Subsidy-eligible", bullets: ["Pre-existing conditions covered", "Income-based subsidies", "Essential health benefits", "Open Enrollment & SEP"], best: "Most individuals & families" },
     { name: "Medicare", price: "Part A · B · C · D", bullets: ["Original Medicare guidance", "Advantage plan matching", "Medigap supplements", "Part D prescription plans"], best: "Adults 65+", featured: true },
@@ -762,7 +762,7 @@ function PlanTypes() {
   );
 }
 
-function TrustStrip() {
+export function TrustStrip() {
   const badges = [
     { label: "NPN Credentialed", sub: "National Producer Number" },
     { label: "ACA Certified", sub: "Marketplace Trained" },
@@ -790,7 +790,7 @@ function TrustStrip() {
   );
 }
 
-function LeadMagnet() {
+export function LeadMagnet() {
   return (
     <section className="py-24 px-6">
       <div className="max-w-5xl mx-auto card-glass rounded-2xl p-10 md:p-14 relative overflow-hidden">
@@ -822,7 +822,7 @@ function LeadMagnet() {
   );
 }
 
-function Languages() {
+export function Languages() {
   const langs = ["English", "Arabic", "Spanish (via interpreter)"];
   return (
     <section className="py-20 px-6">
