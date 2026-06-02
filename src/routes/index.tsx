@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Phone, Mail, MapPin, ShieldCheck, HeartPulse, Users, Clock, Award, ArrowRight, Check, Star, X, Calendar, Plus, Minus, Briefcase, Building2, Plane, UserCheck, Baby, Sparkles, Calculator, TrendingDown, BookOpen, Search, FileText, Video, Headphones, Quote, ChevronRight } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { USMap } from "@/components/USMap";
-import { PremiumTicker, AdvisorCompareSlider, AppointmentCalendar, CostDonut, QuickActionFAB, LicenseVerifier, TypewriterText } from "@/components/CoolFeatures";
+import { PremiumTicker, AdvisorCompareSlider, AppointmentCalendar, CostDonut, QuickActionFAB, LicenseVerifier, TypewriterText, Tilt3D, TrustBadgeBar, MobileShowcase } from "@/components/CoolFeatures";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -44,7 +44,9 @@ function Index() {
       <About />
       <WhoWeHelp />
       <Carriers />
+      <TrustBadgeBar />
       <TrustStrip />
+      <MobileShowcase />
       <StatesSection />
       <LicenseVerifier />
       <SavingsCalculator />
@@ -318,21 +320,22 @@ export function Services() {
         </div>
         <div className="grid md:grid-cols-2 gap-6">
           {services.map((s, i) => (
-            <button
-              key={s.num}
-              onClick={() => setOpenIdx(i)}
-              className="group relative p-10 rounded-2xl card-glass transition text-left cursor-pointer"
-            >
-              <div className="flex items-start justify-between mb-6">
-                <span className="font-display text-5xl text-gradient-gold">{s.num}</span>
-                <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition" />
-              </div>
-              <h3 className="font-display text-2xl mb-3">{s.title}</h3>
-              <p className="text-muted-foreground mb-4">{s.body}</p>
-              <span className="text-xs uppercase tracking-[0.25em] text-primary inline-flex items-center gap-2">
-                View Details <ArrowRight className="w-3 h-3" />
-              </span>
-            </button>
+            <Tilt3D key={s.num} className="h-full">
+              <button
+                onClick={() => setOpenIdx(i)}
+                className="group relative p-10 rounded-2xl card-glass transition text-left cursor-pointer w-full h-full"
+              >
+                <div className="flex items-start justify-between mb-6" style={{ transform: "translateZ(40px)" }}>
+                  <span className="font-display text-5xl text-gradient-gold">{s.num}</span>
+                  <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition" />
+                </div>
+                <h3 className="font-display text-2xl mb-3" style={{ transform: "translateZ(30px)" }}>{s.title}</h3>
+                <p className="text-muted-foreground mb-4">{s.body}</p>
+                <span className="text-xs uppercase tracking-[0.25em] text-primary inline-flex items-center gap-2">
+                  View Details <ArrowRight className="w-3 h-3" />
+                </span>
+              </button>
+            </Tilt3D>
           ))}
         </div>
       </div>

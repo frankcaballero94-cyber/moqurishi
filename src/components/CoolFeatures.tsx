@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Phone, Mail, Calendar, MessageCircle, ShieldCheck, X, ArrowRight, Check, ChevronLeft, ChevronRight, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, Calendar, MessageCircle, ShieldCheck, X, ArrowRight, Check, ChevronLeft, ChevronRight, MapPin, Clock, Award, Lock, BadgeCheck, Star, Users, Smartphone, Download } from "lucide-react";
 
 const LICENSED_STATES = [
   "Alabama","Arkansas","Colorado","Delaware","Florida","Georgia","Iowa","Illinois","Indiana","Kansas","Kentucky","Louisiana","Maryland","Michigan","Missouri","Mississippi","Montana","North Carolina","Nebraska","Nevada","Ohio","Oklahoma","South Carolina","South Dakota","Tennessee","Texas","Utah","Virginia","Wisconsin","West Virginia","Wyoming",
@@ -392,5 +392,180 @@ export function TypewriterText({ words, className = "" }: { words: string[]; cla
       {words[idx].substring(0, sub)}
       <span className="inline-block w-[3px] h-[0.9em] bg-primary ml-1 align-middle animate-pulse" />
     </span>
+  );
+}
+
+/* ============= Tilt3D wrapper (3D mouse-follow tilt) ============= */
+export function Tilt3D({ children, className = "", max = 12 }: { children: React.ReactNode; className?: string; max?: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [t, setT] = useState({ rx: 0, ry: 0, gx: 50, gy: 50 });
+  const onMove = (e: React.MouseEvent) => {
+    const el = ref.current; if (!el) return;
+    const r = el.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width;
+    const y = (e.clientY - r.top) / r.height;
+    setT({ ry: (x - 0.5) * max * 2, rx: -(y - 0.5) * max * 2, gx: x * 100, gy: y * 100 });
+  };
+  const reset = () => setT({ rx: 0, ry: 0, gx: 50, gy: 50 });
+  return (
+    <div ref={ref} onMouseMove={onMove} onMouseLeave={reset} className={className} style={{ perspective: 1200 }}>
+      <div
+        className="relative h-full w-full transition-transform duration-200 ease-out will-change-transform"
+        style={{ transform: `rotateX(${t.rx}deg) rotateY(${t.ry}deg)`, transformStyle: "preserve-3d" }}
+      >
+        {children}
+        <div
+          className="pointer-events-none absolute inset-0 rounded-2xl opacity-60 mix-blend-overlay transition-opacity"
+          style={{ background: `radial-gradient(400px circle at ${t.gx}% ${t.gy}%, hsl(var(--primary)/0.25), transparent 50%)` }}
+        />
+      </div>
+    </div>
+  );
+}
+
+/* ============= 7. Trust Badge Bar ============= */
+export function TrustBadgeBar() {
+  const badges = [
+    { icon: ShieldCheck, label: "NPN Verified", sub: "Licensed Producer" },
+    { icon: BadgeCheck, label: "ACA Certified", sub: "Marketplace Registered" },
+    { icon: Award, label: "AHIP Medicare", sub: "Annually Certified" },
+    { icon: Lock, label: "HIPAA Compliant", sub: "Your Data Protected" },
+    { icon: Star, label: "5.0 Client Rating", sub: "From 200+ Reviews" },
+    { icon: Users, label: "2,400+ Families", sub: "Served Since 2020" },
+  ];
+  return (
+    <section className="py-20 px-6 border-y border-border bg-card/20">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <div className="text-xs uppercase tracking-[0.3em] text-primary mb-3">Credentials & Trust</div>
+          <h2 className="font-display text-4xl md:text-5xl">Verified. Certified. <span className="italic text-gradient-gold">Trusted.</span></h2>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-border rounded-2xl overflow-hidden">
+          {badges.map(({ icon: Icon, label, sub }, i) => (
+            <div
+              key={label}
+              className="group relative bg-card/60 p-6 flex flex-col items-center text-center hover:bg-card transition"
+              style={{ animation: `fade-in 0.6s ease-out ${i * 0.08}s both` }}
+            >
+              <div className="relative mb-3">
+                <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full group-hover:bg-primary/40 transition" />
+                <div className="relative w-12 h-12 rounded-full border border-primary/40 flex items-center justify-center group-hover:scale-110 group-hover:border-primary transition">
+                  <Icon className="w-5 h-5 text-primary" />
+                </div>
+              </div>
+              <div className="font-display text-sm tracking-wide">{label}</div>
+              <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-1">{sub}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ============= 11. Mobile App Mockup Showcase ============= */
+export function MobileShowcase() {
+  const features = [
+    { icon: MessageCircle, title: "Text me directly", body: "Quick questions answered in minutes, not days. No phone tree, no hold music." },
+    { icon: Calendar, title: "Book on your schedule", body: "Tap to find a time that works. Evenings and weekends available." },
+    { icon: ShieldCheck, title: "Plan docs in your pocket", body: "Insurance cards, summaries, claims info — all stored securely and ready when you need them." },
+    { icon: Download, title: "One-tap quote requests", body: "Submit your details once and get plan comparisons sent right to your phone." },
+  ];
+  return (
+    <section className="py-32 px-6 overflow-hidden">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+        <div className="relative flex justify-center order-2 lg:order-1">
+          <div className="absolute -inset-20 bg-gradient-gold opacity-10 blur-3xl rounded-full" />
+          <div
+            className="relative w-[280px] h-[570px] rounded-[44px] border-[10px] border-foreground/90 bg-background shadow-2xl overflow-hidden"
+            style={{ boxShadow: "0 30px 80px -20px hsl(var(--primary) / 0.4), 0 0 0 1px hsl(var(--primary) / 0.2)" }}
+          >
+            <div className="absolute top-0 inset-x-0 h-7 bg-foreground/90 z-10 flex items-end justify-center pb-1">
+              <div className="w-20 h-4 bg-background rounded-full" />
+            </div>
+            <div className="absolute inset-0 pt-10 px-4 pb-4 flex flex-col gap-3 bg-gradient-to-b from-card/60 to-background overflow-hidden">
+              <div className="flex items-center gap-2 px-2 pt-2">
+                <div className="w-9 h-9 rounded-full bg-gradient-gold flex items-center justify-center font-display text-sm text-primary-foreground">MQ</div>
+                <div className="flex-1">
+                  <div className="text-xs font-medium">Mo Qurishi</div>
+                  <div className="text-[9px] text-muted-foreground uppercase tracking-wider">Your Advisor · Online</div>
+                </div>
+                <div className="w-2 h-2 rounded-full bg-emerald-500" />
+              </div>
+              <div className="space-y-2 flex-1 overflow-hidden">
+                <div className="bg-card rounded-2xl rounded-tl-sm p-3 max-w-[85%] text-[11px] animate-fade-in">
+                  Hi! Got a few minutes to chat about your family plan? 👋
+                </div>
+                <div className="bg-primary/20 border border-primary/30 rounded-2xl rounded-tr-sm p-3 max-w-[85%] ml-auto text-[11px] animate-fade-in" style={{ animationDelay: "0.3s" }}>
+                  Yes! When can we talk?
+                </div>
+                <div className="bg-card rounded-2xl rounded-tl-sm p-3 max-w-[85%] text-[11px] animate-fade-in" style={{ animationDelay: "0.6s" }}>
+                  How about today at 4pm? I'll send a calendar link 📅
+                </div>
+                <div className="bg-card/80 border border-primary/30 rounded-xl p-3 mt-3 animate-fade-in" style={{ animationDelay: "0.9s" }}>
+                  <div className="flex items-center gap-2 mb-1">
+                    <Calendar className="w-3 h-3 text-primary" />
+                    <div className="text-[10px] uppercase tracking-wider text-primary">Booked</div>
+                  </div>
+                  <div className="text-[11px] font-medium">Today · 4:00 PM</div>
+                  <div className="text-[9px] text-muted-foreground">15 min · Phone consult</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 bg-card rounded-full px-3 py-2 border border-border">
+                <div className="flex-1 text-[10px] text-muted-foreground">Type a message…</div>
+                <div className="w-6 h-6 rounded-full bg-gradient-gold flex items-center justify-center">
+                  <ArrowRight className="w-3 h-3 text-primary-foreground" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="absolute -right-4 top-12 w-32 h-20 card-glass rounded-xl p-3 animate-fade-in" style={{ animationDelay: "1.2s" }}>
+            <div className="flex items-center gap-2 mb-1">
+              <BadgeCheck className="w-3 h-3 text-primary" />
+              <div className="text-[9px] uppercase tracking-wider text-primary">Quote Ready</div>
+            </div>
+            <div className="font-display text-lg">$284<span className="text-[10px] text-muted-foreground">/mo</span></div>
+            <div className="text-[9px] text-muted-foreground">Silver PPO · Family</div>
+          </div>
+          <div className="absolute -left-2 bottom-20 w-36 card-glass rounded-xl p-3 animate-fade-in" style={{ animationDelay: "1.5s" }}>
+            <div className="flex items-center gap-1 mb-1">
+              {[1,2,3,4,5].map(i => <Star key={i} className="w-2.5 h-2.5 fill-primary text-primary" />)}
+            </div>
+            <div className="text-[10px] italic text-muted-foreground">"Saved us $4,200/yr"</div>
+            <div className="text-[9px] text-primary mt-1">— Sarah K.</div>
+          </div>
+        </div>
+
+        <div className="order-1 lg:order-2">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-xs uppercase tracking-[0.2em] text-primary mb-6">
+            <Smartphone className="w-3 h-3" /> Mobile-First Service
+          </div>
+          <h2 className="font-display text-5xl md:text-6xl mb-6 leading-[1.05]">
+            Your advisor, <span className="italic text-gradient-gold">in your pocket.</span>
+          </h2>
+          <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
+            No app to download. No portal logins. Just text or call — and get the same white-glove service you'd expect from a 30-minute office visit, in 30 seconds.
+          </p>
+          <div className="space-y-5">
+            {features.map(({ icon: Icon, title, body }) => (
+              <div key={title} className="flex gap-4 group">
+                <div className="shrink-0 w-10 h-10 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center group-hover:bg-primary/20 transition">
+                  <Icon className="w-4 h-4 text-primary" />
+                </div>
+                <div>
+                  <div className="font-display text-lg mb-1">{title}</div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 flex flex-wrap gap-4">
+            <a href="#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl btn-glass-gold font-medium text-sm">
+              Text Mo Now <MessageCircle className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
