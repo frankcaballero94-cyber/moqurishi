@@ -39,21 +39,21 @@ export function USMap({ licensed }: { licensed: string[] }) {
                   onMouseLeave={() => setHovered(null)}
                   style={{
                     default: {
-                      fill: isLicensed ? "hsl(var(--primary) / 0.85)" : "hsl(var(--card))",
-                      stroke: "hsl(var(--background))",
+                      fill: isLicensed ? "color-mix(in oklab, var(--primary) 85%, transparent)" : "var(--card)",
+                      stroke: "var(--background)",
                       strokeWidth: 0.75,
                       outline: "none",
                       transition: "all 200ms",
                     },
                     hover: {
-                      fill: isLicensed ? "hsl(var(--primary))" : "hsl(var(--muted))",
-                      stroke: "hsl(var(--primary))",
+                      fill: isLicensed ? "var(--primary)" : "var(--muted)",
+                      stroke: "var(--primary)",
                       strokeWidth: 1.2,
                       outline: "none",
                       cursor: "pointer",
                     },
                     pressed: {
-                      fill: "hsl(var(--primary))",
+                      fill: "var(--primary)",
                       outline: "none",
                     },
                   }}
