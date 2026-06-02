@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Phone, Mail, MapPin, ShieldCheck, HeartPulse, Users, Clock, Award, ArrowRight, Check, Star, X, Calendar, Plus, Minus, Briefcase, Building2, Plane, UserCheck, Baby, Sparkles, Calculator, TrendingDown, BookOpen, Search, FileText, Video, Headphones, Quote, ChevronRight } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { USMap } from "@/components/USMap";
+import { PremiumTicker, AdvisorCompareSlider, AppointmentCalendar, CostDonut, QuickActionFAB, LicenseVerifier, TypewriterText } from "@/components/CoolFeatures";
 
 export const Route = createFileRoute("/")({
   head: () => ({
