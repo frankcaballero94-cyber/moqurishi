@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Phone, Mail, MapPin, ShieldCheck, HeartPulse, Users, Clock, Award, ArrowRight, Check, Star, X, Calendar, Plus, Minus, Briefcase, Building2, Plane, UserCheck, Baby, Sparkles } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { USMap } from "@/components/USMap";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -422,16 +423,67 @@ export function About() {
 export function StatesSection() {
   return (
     <section id="states" className="py-32 px-6 bg-card/30">
-      <div className="max-w-6xl mx-auto text-center">
-        <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Licensed Coverage</div>
-        <h2 className="font-display text-5xl md:text-6xl mb-4">Serving clients in <span className="text-gradient-gold">{STATES.length}</span> states.</h2>
-        <p className="text-muted-foreground mb-12 max-w-xl mx-auto">From the Atlantic to the Rockies — licensed, credentialed, and ready to help.</p>
-        <div className="flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
-          {STATES.map((s) => (
-            <span key={s} className="px-4 py-2 rounded-lg text-sm font-medium tracking-wider text-foreground badge-glass cursor-default">
-              {s}
-            </span>
-          ))}
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Licensed Coverage</div>
+          <h2 className="font-display text-5xl md:text-6xl mb-4">Wherever you live, <span className="text-gradient-gold italic">we've got you.</span></h2>
+          <p className="text-muted-foreground max-w-xl mx-auto">If your state glows gold on the map, we can write your policy.</p>
+        </div>
+
+        <div className="grid lg:grid-cols-[2fr_1fr] gap-8 items-start">
+          {/* Interactive Map */}
+          <div className="card-glass rounded-3xl p-6 md:p-8 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 pointer-events-none" />
+            <USMap licensed={STATES} />
+          </div>
+
+          {/* Stat cards */}
+          <div className="space-y-4">
+            <div className="card-glass rounded-2xl p-6 flex gap-4 items-start">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
+                <ShieldCheck className="w-5 h-5 text-primary" />
+              </div>
+              <div>
+                <div className="font-display text-4xl text-gradient-gold leading-none">{STATES.length}+</div>
+                <div className="text-xs uppercase tracking-[0.2em] text-primary mt-2">States Licensed</div>
+                <div className="text-sm text-muted-foreground mt-2">Independent broker — multi-carrier appointments.</div>
+              </div>
+            </div>
+
+            <div className="card-glass rounded-2xl p-6 flex gap-4 items-start">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
+                <Users className="w-5 h-5 text-primary" />
+              </div>
+              <div>
+                <div className="font-display text-4xl text-gradient-gold leading-none">Thousands+</div>
+                <div className="text-xs uppercase tracking-[0.2em] text-primary mt-2">Families Served</div>
+                <div className="text-sm text-muted-foreground mt-2">Self-employed, 1099, families, small business.</div>
+              </div>
+            </div>
+
+            <div className="card-glass rounded-2xl p-6 flex gap-4 items-start">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
+                <Award className="w-5 h-5 text-primary" />
+              </div>
+              <div>
+                <div className="font-display text-3xl text-foreground leading-none tracking-wider">21032307</div>
+                <div className="text-xs uppercase tracking-[0.2em] text-primary mt-2">NPN</div>
+                <div className="text-sm text-muted-foreground mt-2">National Producer Number — verify at nipr.com.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* State pill grid */}
+        <div className="mt-12">
+          <div className="text-xs uppercase tracking-[0.3em] text-muted-foreground text-center mb-6">All licensed states</div>
+          <div className="flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
+            {STATES.map((s) => (
+              <span key={s} className="px-4 py-2 rounded-lg text-sm font-medium tracking-wider text-foreground badge-glass cursor-default">
+                {s}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>
