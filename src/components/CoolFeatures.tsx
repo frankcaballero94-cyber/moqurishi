@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Phone, Mail, Calendar, MessageCircle, ShieldCheck, X, ArrowRight, Check, ChevronLeft, ChevronRight, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, Calendar, MessageCircle, ShieldCheck, X, ArrowRight, Check, ChevronLeft, ChevronRight, MapPin, Clock, Award, Lock, BadgeCheck, Star, Users, Smartphone, Download } from "lucide-react";
 
 const LICENSED_STATES = [
   "Alabama","Arkansas","Colorado","Delaware","Florida","Georgia","Iowa","Illinois","Indiana","Kansas","Kentucky","Louisiana","Maryland","Michigan","Missouri","Mississippi","Montana","North Carolina","Nebraska","Nevada","Ohio","Oklahoma","South Carolina","South Dakota","Tennessee","Texas","Utah","Virginia","Wisconsin","West Virginia","Wyoming",
