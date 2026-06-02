@@ -35,14 +35,18 @@ function Index() {
       <Stats />
       <WhyUs />
       <Services />
+      <PlanTypes />
       <Process />
       <About />
       <WhoWeHelp />
       <Carriers />
+      <TrustStrip />
       <StatesSection />
       <Testimonials />
       <DeadlinesCallout />
+      <LeadMagnet />
       <FAQ />
+      <Languages />
       <Contact />
       <Footer />
     </div>
@@ -716,5 +720,132 @@ function Footer() {
         <div className="text-sm text-muted-foreground">© {new Date().getFullYear()} Qurishi Healthcare Advising. All rights reserved.</div>
       </div>
     </footer>
+  );
+}
+
+function PlanTypes() {
+  const plans = [
+    { name: "ACA Marketplace", price: "Subsidy-eligible", bullets: ["Pre-existing conditions covered", "Income-based subsidies", "Essential health benefits", "Open Enrollment & SEP"], best: "Most individuals & families" },
+    { name: "Medicare", price: "Part A · B · C · D", bullets: ["Original Medicare guidance", "Advantage plan matching", "Medigap supplements", "Part D prescription plans"], best: "Adults 65+", featured: true },
+    { name: "Short-Term", price: "Flexible terms", bullets: ["Coverage in days", "Gap protection", "Lower monthly cost", "Up to 12 months"], best: "Between jobs or waiting periods" },
+    { name: "Dental & Vision", price: "Add-on coverage", bullets: ["Standalone or bundled", "Major retail networks", "Preventive care included", "Family plans available"], best: "Rounding out your protection" },
+  ];
+  return (
+    <section className="py-32 px-6">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Plan Types</div>
+          <h2 className="font-display text-5xl md:text-6xl">Compare your <span className="italic text-gradient-gold">options.</span></h2>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {plans.map((p) => (
+            <div key={p.name} className={`card-glass rounded-2xl p-8 flex flex-col ${p.featured ? "ring-1 ring-primary/40" : ""}`}>
+              {p.featured && <div className="text-[10px] uppercase tracking-[0.3em] text-primary mb-3">Most Asked About</div>}
+              <h3 className="font-display text-2xl mb-1">{p.name}</h3>
+              <div className="text-sm text-muted-foreground mb-6">{p.price}</div>
+              <ul className="space-y-2.5 mb-6 flex-1">
+                {p.bullets.map((b) => (
+                  <li key={b} className="flex items-start gap-2.5 text-sm text-foreground/90">
+                    <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" /> {b}
+                  </li>
+                ))}
+              </ul>
+              <div className="border-t border-border/50 pt-4">
+                <div className="text-[10px] uppercase tracking-[0.3em] text-primary mb-1">Best For</div>
+                <div className="text-sm text-muted-foreground">{p.best}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function TrustStrip() {
+  const badges = [
+    { label: "NPN Credentialed", sub: "National Producer Number" },
+    { label: "ACA Certified", sub: "Marketplace Trained" },
+    { label: "AHIP Certified", sub: "Medicare Approved" },
+    { label: "HIPAA Compliant", sub: "Your data is secure" },
+    { label: "Independent", sub: "Multi-carrier appointed" },
+  ];
+  return (
+    <section className="py-16 px-6 border-y border-border bg-card/40">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center text-[10px] uppercase tracking-[0.4em] text-muted-foreground mb-8">Credentials & Compliance</div>
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+          {badges.map((b) => (
+            <div key={b.label} className="flex flex-col items-center text-center gap-2">
+              <div className="w-12 h-12 rounded-full icon-glass flex items-center justify-center">
+                <ShieldCheck className="w-5 h-5 text-primary" />
+              </div>
+              <div className="font-display text-sm">{b.label}</div>
+              <div className="text-[10px] uppercase tracking-wider text-muted-foreground">{b.sub}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function LeadMagnet() {
+  return (
+    <section className="py-24 px-6">
+      <div className="max-w-5xl mx-auto card-glass rounded-2xl p-10 md:p-14 relative overflow-hidden">
+        <div className="absolute -bottom-24 -left-20 w-80 h-80 bg-gradient-gold opacity-10 blur-3xl rounded-full" />
+        <div className="relative grid md:grid-cols-[1fr_auto] gap-8 items-center">
+          <div>
+            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-primary mb-4">
+              <Sparkles className="w-3 h-3" /> Free Guide
+            </div>
+            <h3 className="font-display text-3xl md:text-4xl mb-3 leading-tight">
+              The plain-English guide to <span className="italic text-gradient-gold">choosing a health plan.</span>
+            </h3>
+            <p className="text-muted-foreground leading-relaxed max-w-xl">
+              A 12-page PDF covering deductibles, premiums, networks, and subsidies — without the jargon. Delivered to your inbox in seconds.
+            </p>
+          </div>
+          <form
+            onSubmit={(e) => { e.preventDefault(); window.location.href = `mailto:${EMAIL}?subject=Send%20me%20the%20guide`; }}
+            className="flex flex-col gap-3 w-full md:w-80"
+          >
+            <input type="email" required placeholder="your@email.com" className="w-full rounded-xl px-5 py-4 input-glass" />
+            <button type="submit" className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl btn-glass-gold font-medium">
+              Send Me the Guide <ArrowRight className="w-4 h-4" />
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Languages() {
+  const langs = ["English", "Arabic", "Spanish (via interpreter)"];
+  return (
+    <section className="py-20 px-6">
+      <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
+        <div className="card-glass rounded-2xl p-8">
+          <div className="text-xs uppercase tracking-[0.3em] text-primary mb-3">Languages Spoken</div>
+          <h3 className="font-display text-2xl mb-4">Clear conversations, <span className="italic text-gradient-gold">your language.</span></h3>
+          <div className="flex flex-wrap gap-2">
+            {langs.map((l) => (
+              <span key={l} className="px-4 py-2 rounded-lg badge-glass text-sm">{l}</span>
+            ))}
+          </div>
+        </div>
+        <div className="card-glass rounded-2xl p-8">
+          <div className="text-xs uppercase tracking-[0.3em] text-primary mb-3">Accessibility</div>
+          <h3 className="font-display text-2xl mb-4">However works <span className="italic text-gradient-gold">best for you.</span></h3>
+          <ul className="space-y-2.5 text-sm text-muted-foreground">
+            <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary" /> Phone, video, or email consultations</li>
+            <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary" /> Large-print plan summaries on request</li>
+            <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary" /> Evenings & weekends by appointment</li>
+          </ul>
+        </div>
+      </div>
+    </section>
   );
 }
