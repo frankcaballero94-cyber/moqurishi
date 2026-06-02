@@ -44,7 +44,9 @@ function Index() {
       <About />
       <WhoWeHelp />
       <Carriers />
+      <TrustBadgeBar />
       <TrustStrip />
+      <MobileShowcase />
       <StatesSection />
       <LicenseVerifier />
       <SavingsCalculator />
