@@ -906,3 +906,337 @@ export function Languages() {
     </section>
   );
 }
+
+// =================== Savings Calculator ===================
+export function SavingsCalculator() {
+  const [age, setAge] = useState(35);
+  const [household, setHousehold] = useState(2);
+  const [income, setIncome] = useState(60000);
+
+  const fpl = 15060 + (household - 1) * 5380;
+  const ratio = income / fpl;
+  let pctOfIncome = 0.085;
+  if (ratio <= 1.5) pctOfIncome = 0;
+  else if (ratio <= 2) pctOfIncome = 0.02;
+  else if (ratio <= 2.5) pctOfIncome = 0.04;
+  else if (ratio <= 3) pctOfIncome = 0.06;
+  else if (ratio <= 4) pctOfIncome = 0.085;
+
+  const benchmark = Math.round((280 + (age - 21) * 6) * (household > 1 ? 1.8 : 1));
+  const expected = Math.round((income * pctOfIncome) / 12);
+  const subsidy = Math.max(0, benchmark - expected);
+  const yourCost = Math.max(0, benchmark - subsidy);
+
+  return (
+    <section className="px-6 py-24 bg-card/20">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 badge-glass px-4 py-1.5 rounded-full text-xs uppercase tracking-[0.2em] text-primary mb-4">
+            <Calculator className="w-3.5 h-3.5" /> Subsidy Estimator
+          </div>
+          <h2 className="font-display text-4xl md:text-5xl mb-3">See what you could save</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">Move the sliders. Estimates use 2025 ACA premium tax credit guidelines — final amounts depend on your verified application.</p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-8">
+          <div className="card-glass rounded-2xl p-8 space-y-8">
+            <Slider label="Your age" value={age} min={18} max={64} suffix=" yrs" onChange={setAge} />
+            <Slider label="Household size" value={household} min={1} max={8} suffix={household === 1 ? " person" : " people"} onChange={setHousehold} />
+            <Slider label="Annual household income" value={income} min={15000} max={200000} step={1000} prefix="$" onChange={setIncome} />
+          </div>
+
+          <div className="card-glass rounded-2xl p-8 flex flex-col justify-between">
+            <div>
+              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">Estimated monthly</div>
+              <div className="flex items-baseline gap-3 mb-6">
+                <div className="font-display text-6xl text-gradient-gold">${yourCost}</div>
+                <div className="text-muted-foreground">/month</div>
+              </div>
+
+              <div className="space-y-3 text-sm">
+                <Row label="Benchmark silver plan" value={`$${benchmark}/mo`} />
+                <Row label="Premium tax credit" value={`−$${subsidy}/mo`} accent />
+                <div className="h-px bg-border" />
+                <Row label="Your estimated cost" value={`$${yourCost}/mo`} bold />
+                <Row label="Annual savings" value={`$${(subsidy * 12).toLocaleString()}`} accent />
+              </div>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-border">
+              <p className="text-xs text-muted-foreground mb-4">Want the real number? I'll run an exact quote against live carrier rates — no fee, no commitment.</p>
+              <Link to="/contact" className="btn-glass-gold inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium uppercase tracking-wider">
+                Get exact quote <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Slider({ label, value, min, max, step = 1, prefix = "", suffix = "", onChange }: { label: string; value: number; min: number; max: number; step?: number; prefix?: string; suffix?: string; onChange: (n: number) => void }) {
+  return (
+    <div>
+      <div className="flex justify-between items-baseline mb-3">
+        <label className="text-sm uppercase tracking-wider text-muted-foreground">{label}</label>
+        <span className="font-display text-2xl text-foreground">{prefix}{value.toLocaleString()}{suffix}</span>
+      </div>
+      <input
+        type="range"
+        min={min}
+        max={max}
+        step={step}
+        value={value}
+        onChange={(e) => onChange(Number(e.target.value))}
+        className="w-full h-1.5 rounded-full appearance-none cursor-pointer bg-secondary accent-[oklch(0.78_0.13_82)]"
+        style={{ background: `linear-gradient(to right, oklch(0.78 0.13 82) 0%, oklch(0.78 0.13 82) ${((value - min) / (max - min)) * 100}%, oklch(0.2 0.008 270) ${((value - min) / (max - min)) * 100}%, oklch(0.2 0.008 270) 100%)` }}
+      />
+    </div>
+  );
+}
+
+function Row({ label, value, accent, bold }: { label: string; value: string; accent?: boolean; bold?: boolean }) {
+  return (
+    <div className="flex justify-between items-center">
+      <span className="text-muted-foreground">{label}</span>
+      <span className={`${accent ? "text-primary" : "text-foreground"} ${bold ? "font-semibold text-lg" : ""}`}>{value}</span>
+    </div>
+  );
+}
+
+// =================== Plan Comparison ===================
+const PLAN_TIERS = [
+  { name: "Bronze", price: 280, deductible: 7500, oop: 9450, coverage: 60, color: "from-amber-700/40 to-amber-900/40", features: ["Lowest monthly premium", "Highest out-of-pocket", "HSA-eligible options", "Best if you rarely visit doctors"] },
+  { name: "Silver", price: 420, deductible: 4500, oop: 7200, coverage: 70, color: "from-slate-500/40 to-slate-700/40", featured: true, features: ["Subsidy-eligible (CSR)", "Balanced cost & coverage", "Most popular for families", "Lower copays with subsidies"] },
+  { name: "Gold", price: 580, deductible: 1500, oop: 5500, coverage: 80, color: "from-yellow-600/40 to-yellow-800/40", features: ["Low deductible", "Predictable copays", "Best for regular care", "Higher premium, lower bills"] },
+  { name: "Platinum", price: 740, deductible: 0, oop: 3500, coverage: 90, color: "from-slate-300/30 to-slate-500/40", features: ["Lowest out-of-pocket", "No or tiny deductible", "Best for chronic conditions", "Highest monthly premium"] },
+];
+
+export function PlanComparison() {
+  const [selected, setSelected] = useState("Silver");
+  const plan = PLAN_TIERS.find((p) => p.name === selected)!;
+
+  return (
+    <section className="px-6 py-24">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 badge-glass px-4 py-1.5 rounded-full text-xs uppercase tracking-[0.2em] text-primary mb-4">
+            <TrendingDown className="w-3.5 h-3.5" /> Metal Tiers
+          </div>
+          <h2 className="font-display text-4xl md:text-5xl mb-3">Compare ACA plan levels</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">Bronze, Silver, Gold, Platinum — the metal isn't the value, the math is. Tap a tier to see how it stacks up.</p>
+        </div>
+
+        <div className="grid md:grid-cols-4 gap-4 mb-8">
+          {PLAN_TIERS.map((p) => (
+            <button
+              key={p.name}
+              onClick={() => setSelected(p.name)}
+              className={`card-glass rounded-2xl p-6 text-left transition-all ${selected === p.name ? "ring-2 ring-primary scale-[1.02]" : "opacity-70 hover:opacity-100"}`}
+            >
+              <div className={`h-1.5 w-12 rounded-full mb-4 bg-gradient-to-r ${p.color}`} />
+              <div className="font-display text-2xl mb-1">{p.name}</div>
+              <div className="text-xs uppercase tracking-wider text-muted-foreground mb-3">{p.coverage}% coverage</div>
+              <div className="text-3xl font-display text-gradient-gold">${p.price}<span className="text-sm text-muted-foreground">/mo</span></div>
+            </button>
+          ))}
+        </div>
+
+        <div className="card-glass rounded-2xl p-8 md:p-10">
+          <div className="grid md:grid-cols-[1fr_2fr] gap-8">
+            <div>
+              <div className="text-xs uppercase tracking-[0.2em] text-primary mb-2">{plan.name} tier</div>
+              <h3 className="font-display text-3xl mb-4">What you actually pay</h3>
+              <div className="space-y-4">
+                <Metric label="Monthly premium" value={`$${plan.price}`} />
+                <Metric label="Annual deductible" value={`$${plan.deductible.toLocaleString()}`} />
+                <Metric label="Max out-of-pocket" value={`$${plan.oop.toLocaleString()}`} />
+                <div>
+                  <div className="text-xs uppercase tracking-wider text-muted-foreground mb-2">Plan pays</div>
+                  <div className="h-3 rounded-full bg-secondary overflow-hidden">
+                    <div className="h-full bg-gradient-gold transition-all duration-500" style={{ width: `${plan.coverage}%` }} />
+                  </div>
+                  <div className="flex justify-between text-xs mt-2"><span className="text-primary">{plan.coverage}% plan</span><span className="text-muted-foreground">{100 - plan.coverage}% you</span></div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Best fit when</div>
+              <ul className="grid sm:grid-cols-2 gap-3">
+                {plan.features.map((f) => (
+                  <li key={f} className="flex items-start gap-3 p-4 rounded-xl bg-card/40 border border-border">
+                    <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <span className="text-sm">{f}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Metric({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="flex justify-between items-baseline pb-3 border-b border-border">
+      <span className="text-sm text-muted-foreground uppercase tracking-wider">{label}</span>
+      <span className="font-display text-2xl text-foreground">{value}</span>
+    </div>
+  );
+}
+
+// =================== Enrollment Timeline ===================
+const TIMELINE = [
+  { date: "Nov 1", title: "Open Enrollment opens", desc: "ACA Marketplace enrollment begins for next-year coverage.", status: "key" },
+  { date: "Dec 15", title: "Deadline for Jan 1 coverage", desc: "Enroll by this date for coverage starting January 1.", status: "key" },
+  { date: "Jan 15", title: "Open Enrollment closes", desc: "Last day to enroll for the year in most states.", status: "key" },
+  { date: "Year-round", title: "Special Enrollment Periods", desc: "Marriage, birth, job loss, moving — qualifying events open a 60-day window.", status: "normal" },
+  { date: "Oct 15 – Dec 7", title: "Medicare AEP", desc: "Annual Enrollment Period — switch, add, or drop Medicare coverage.", status: "normal" },
+  { date: "Jan 1 – Mar 31", title: "Medicare General Enrollment", desc: "Sign up if you missed your Initial Enrollment Period.", status: "normal" },
+];
+
+export function EnrollmentTimeline() {
+  return (
+    <section className="px-6 py-24 bg-card/20">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 badge-glass px-4 py-1.5 rounded-full text-xs uppercase tracking-[0.2em] text-primary mb-4">
+            <Calendar className="w-3.5 h-3.5" /> Key Dates
+          </div>
+          <h2 className="font-display text-4xl md:text-5xl mb-3">The enrollment calendar</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">Miss the window, miss the year. Here are the deadlines worth setting reminders for.</p>
+        </div>
+
+        <div className="relative">
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/40 to-transparent" />
+          <div className="space-y-8">
+            {TIMELINE.map((item, i) => (
+              <div key={item.title} className={`relative flex items-start gap-6 md:gap-0 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
+                <div className="md:w-1/2 md:px-8">
+                  <div className={`card-glass rounded-2xl p-6 ${item.status === "key" ? "border-primary/40" : ""}`}>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-xs uppercase tracking-[0.2em] text-primary font-medium">{item.date}</span>
+                      {item.status === "key" && <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-primary/20 text-primary border border-primary/40">Critical</span>}
+                    </div>
+                    <h3 className="font-display text-xl mb-2">{item.title}</h3>
+                    <p className="text-sm text-muted-foreground">{item.desc}</p>
+                  </div>
+                </div>
+                <div className="absolute left-4 md:left-1/2 -translate-x-1/2 top-6 w-3 h-3 rounded-full bg-primary ring-4 ring-background" />
+                <div className="md:w-1/2" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// =================== Resource Library ===================
+const RESOURCES = [
+  { icon: FileText, title: "ACA Plan Buyer's Guide", desc: "12-page PDF walking through metal tiers, subsidies, and how to read a Summary of Benefits.", type: "PDF", time: "8 min read" },
+  { icon: Video, title: "Medicare 101 Video", desc: "20-minute walkthrough of Parts A, B, C, and D — what each one covers and what it costs.", type: "Video", time: "20 min" },
+  { icon: BookOpen, title: "Self-Employed Health Checklist", desc: "Tax deductions, HSA strategies, and plan options for 1099 workers and freelancers.", type: "Guide", time: "6 min read" },
+  { icon: Headphones, title: "Free Phone Consultation", desc: "30 minutes, one-on-one. Bring your questions, your current plan, your budget — no script.", type: "Call", time: "30 min" },
+];
+
+export function ResourceLibrary() {
+  return (
+    <section className="px-6 py-24">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex items-end justify-between mb-12 flex-wrap gap-4">
+          <div>
+            <div className="inline-flex items-center gap-2 badge-glass px-4 py-1.5 rounded-full text-xs uppercase tracking-[0.2em] text-primary mb-4">
+              <BookOpen className="w-3.5 h-3.5" /> Learn First
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl">Resources, on the house</h2>
+          </div>
+          <p className="text-muted-foreground max-w-md">No email gates on the basics. Read, watch, or book a call — all free.</p>
+        </div>
+
+        <div className="grid sm:grid-cols-2 gap-5">
+          {RESOURCES.map((r) => (
+            <a key={r.title} href="#" className="card-glass rounded-2xl p-6 group flex gap-5 items-start">
+              <div className="icon-glass rounded-xl p-3.5 shrink-0">
+                <r.icon className="w-6 h-6 text-primary" />
+              </div>
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-primary/15 text-primary border border-primary/30">{r.type}</span>
+                  <span className="text-xs text-muted-foreground">{r.time}</span>
+                </div>
+                <h3 className="font-display text-xl mb-2 group-hover:text-primary transition-colors">{r.title}</h3>
+                <p className="text-sm text-muted-foreground mb-3">{r.desc}</p>
+                <div className="text-xs uppercase tracking-wider text-primary inline-flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                  Open <ChevronRight className="w-3 h-3" />
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// =================== Glossary ===================
+const TERMS = [
+  { term: "Premium", def: "The monthly amount you pay to keep your insurance active, regardless of whether you use care." },
+  { term: "Deductible", def: "What you pay out of pocket each year before the plan starts sharing costs for most services." },
+  { term: "Copay", def: "A flat fee you pay at the time of service (e.g., $30 for a primary care visit)." },
+  { term: "Coinsurance", def: "Your percentage share of costs after meeting the deductible (e.g., you pay 20%, plan pays 80%)." },
+  { term: "Out-of-pocket max", def: "The cap on what you'll pay in a year. After this, the plan pays 100% of covered services." },
+  { term: "Network", def: "The doctors, hospitals, and pharmacies your plan has contracted with for lower rates." },
+  { term: "Premium tax credit", def: "An ACA subsidy that lowers your monthly premium, based on income and household size." },
+  { term: "CSR (Cost-Sharing Reduction)", def: "Extra silver-plan savings on deductibles and copays for households under 250% of the federal poverty level." },
+  { term: "HSA", def: "Health Savings Account — pre-tax money for medical expenses, available with HSA-eligible high-deductible plans." },
+  { term: "SEP", def: "Special Enrollment Period — a 60-day window to enroll outside Open Enrollment after a qualifying life event." },
+];
+
+export function Glossary() {
+  const [query, setQuery] = useState("");
+  const filtered = TERMS.filter((t) => t.term.toLowerCase().includes(query.toLowerCase()) || t.def.toLowerCase().includes(query.toLowerCase()));
+
+  return (
+    <section className="px-6 py-24 bg-card/20">
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center gap-2 badge-glass px-4 py-1.5 rounded-full text-xs uppercase tracking-[0.2em] text-primary mb-4">
+            <BookOpen className="w-3.5 h-3.5" /> Plain English
+          </div>
+          <h2 className="font-display text-4xl md:text-5xl mb-3">Insurance terms, decoded</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">The jargon they use — and what it actually means for your wallet.</p>
+        </div>
+
+        <div className="relative mb-8 max-w-xl mx-auto">
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+          <input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search terms — try 'deductible' or 'subsidy'"
+            className="input-glass w-full pl-11 pr-4 py-3 rounded-full text-sm"
+          />
+        </div>
+
+        <div className="grid sm:grid-cols-2 gap-4">
+          {filtered.map((t) => (
+            <div key={t.term} className="card-glass rounded-xl p-5">
+              <div className="flex items-start gap-3 mb-2">
+                <Quote className="w-4 h-4 text-primary shrink-0 mt-1" />
+                <h3 className="font-display text-lg text-primary">{t.term}</h3>
+              </div>
+              <p className="text-sm text-muted-foreground leading-relaxed">{t.def}</p>
+            </div>
+          ))}
+          {filtered.length === 0 && (
+            <div className="col-span-2 text-center py-12 text-muted-foreground">No matches — try a different term.</div>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}
