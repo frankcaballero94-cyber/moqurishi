@@ -101,7 +101,9 @@ function Hero() {
           </div>
           <h1 className="font-display text-6xl md:text-7xl lg:text-8xl leading-[0.95] font-medium">
             Your Health <br />
-            <span className="text-gradient-gold italic">Deserves an Advocate.</span>
+            <span className="text-gradient-gold italic">
+              <TypewriterText words={["Deserves an Advocate.", "Deserves Clarity.", "Deserves Real Answers.", "Deserves Mo."]} />
+            </span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
             I'm Mo Qurishi — a licensed health insurance advisor helping individuals, families, and small businesses cut through the noise and find coverage that actually fits.
