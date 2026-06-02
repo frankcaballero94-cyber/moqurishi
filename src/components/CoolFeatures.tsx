@@ -103,7 +103,10 @@ export function AdvisorCompareSlider() {
             <div className="mt-6 font-display text-4xl text-destructive">+$3,400 <span className="text-sm text-muted-foreground font-sans">avg. overspend</span></div>
           </div>
           {/* With */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-background p-10 flex flex-col justify-center" style={{ clipPath: `inset(0 0 0 ${pos}%)` }}>
+          <div
+            className="absolute inset-0 bg-gradient-to-br from-primary/10 to-background pr-10 py-10 flex flex-col justify-center"
+            style={{ clipPath: `inset(0 0 0 ${pos}%)`, paddingLeft: `calc(${pos}% + 2.5rem)` }}
+          >
             <div className="text-xs uppercase tracking-[0.25em] text-primary mb-3">With Mo</div>
             <h3 className="font-display text-3xl mb-6">Clear & optimized</h3>
             <ul className="space-y-3 text-muted-foreground">
