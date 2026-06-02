@@ -35,8 +35,10 @@ function Index() {
       <Hero />
       <Marquee />
       <Stats />
+      <PremiumTicker />
       <WhyUs />
       <Services />
+      <AdvisorCompareSlider />
       <PlanTypes />
       <Process />
       <About />
@@ -44,11 +46,14 @@ function Index() {
       <Carriers />
       <TrustStrip />
       <StatesSection />
+      <LicenseVerifier />
       <SavingsCalculator />
+      <CostDonut />
       <PlanComparison />
       <Testimonials />
       <EnrollmentTimeline />
       <DeadlinesCallout />
+      <AppointmentCalendar />
       <ResourceLibrary />
       <LeadMagnet />
       <Glossary />
@@ -56,6 +61,7 @@ function Index() {
       <Languages />
       <Contact />
       <Footer />
+      <QuickActionFAB />
     </div>
   );
 }
