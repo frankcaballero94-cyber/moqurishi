@@ -32,11 +32,17 @@ function Index() {
       <Nav />
       <Hero />
       <Marquee />
+      <Stats />
       <WhyUs />
       <Services />
+      <Process />
       <About />
+      <WhoWeHelp />
+      <Carriers />
       <StatesSection />
       <Testimonials />
+      <DeadlinesCallout />
+      <FAQ />
       <Contact />
       <Footer />
     </div>
