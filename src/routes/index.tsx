@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Phone, Mail, MapPin, ShieldCheck, HeartPulse, Users, Clock, Award, ArrowRight, Check, Star, X } from "lucide-react";
+import { Phone, Mail, MapPin, ShieldCheck, HeartPulse, Users, Clock, Award, ArrowRight, Check, Star, X, Calendar, Plus, Minus, Briefcase, Building2, Plane, UserCheck, Baby, Sparkles } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
 export const Route = createFileRoute("/")({
@@ -32,11 +32,17 @@ function Index() {
       <Nav />
       <Hero />
       <Marquee />
+      <Stats />
       <WhyUs />
       <Services />
+      <Process />
       <About />
+      <WhoWeHelp />
+      <Carriers />
       <StatesSection />
       <Testimonials />
+      <DeadlinesCallout />
+      <FAQ />
       <Contact />
       <Footer />
     </div>
@@ -520,6 +526,177 @@ function Field({ label, name, type = "text" }: { label: string; name: string; ty
       <label htmlFor={name} className="text-xs uppercase tracking-wider text-muted-foreground">{label}</label>
       <input id={name} name={name} type={type} className="mt-2 w-full rounded-lg px-4 py-3 input-glass" />
     </div>
+  );
+}
+
+function Stats() {
+  const stats = [
+    { num: "35+", label: "States Licensed" },
+    { num: "2,000+", label: "Families Covered" },
+    { num: "12+", label: "Years Experience" },
+    { num: "4.9★", label: "Client Rating" },
+  ];
+  return (
+    <section className="py-20 px-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+        {stats.map((s) => (
+          <div key={s.label} className="card-glass rounded-2xl p-8 text-center">
+            <div className="font-display text-5xl md:text-6xl text-gradient-gold">{s.num}</div>
+            <div className="text-xs uppercase tracking-[0.25em] text-muted-foreground mt-3">{s.label}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Process() {
+  const steps = [
+    { num: "01", title: "Discovery Call", body: "A short, no-pressure conversation to understand your situation, budget, and care needs." },
+    { num: "02", title: "Plan Matching", body: "I shop the market across multiple carriers and surface only the plans that genuinely fit." },
+    { num: "03", title: "Enrollment", body: "I handle the paperwork and walk you through every detail before you sign." },
+    { num: "04", title: "Year-Round Support", body: "Renewals, claims questions, life changes — I'm one call away, all year." },
+  ];
+  return (
+    <section className="py-32 px-6">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">How It Works</div>
+          <h2 className="font-display text-5xl md:text-6xl">A simple, <span className="italic text-gradient-gold">human process.</span></h2>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {steps.map((s) => (
+            <div key={s.num} className="card-glass rounded-2xl p-8 relative">
+              <span className="font-display text-5xl text-gradient-gold">{s.num}</span>
+              <h3 className="font-display text-2xl mt-4 mb-3">{s.title}</h3>
+              <p className="text-muted-foreground leading-relaxed text-sm">{s.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function WhoWeHelp() {
+  const personas = [
+    { icon: Briefcase, title: "Self-Employed", body: "Freelancers and consultants who need real coverage without an HR department." },
+    { icon: Users, title: "Families", body: "Plans that cover pediatric care, maternity, and the unexpected." },
+    { icon: Building2, title: "Small Business", body: "Group benefits that attract talent without breaking the budget." },
+    { icon: Plane, title: "Early Retirees", body: "Bridge coverage from your last day of work until Medicare kicks in." },
+    { icon: UserCheck, title: "Between Jobs", body: "Affordable short-term and ACA options for life's transitions." },
+    { icon: Baby, title: "New Parents", body: "Add a child to your plan or find better family coverage in a Special Enrollment Period." },
+  ];
+  return (
+    <section className="py-32 px-6 bg-card/30">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-[1fr_2fr] gap-16 mb-16">
+          <div>
+            <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Who I Help</div>
+            <h2 className="font-display text-5xl md:text-6xl">For every <span className="italic text-gradient-gold">stage of life.</span></h2>
+          </div>
+          <p className="text-lg text-muted-foreground self-end leading-relaxed">
+            No matter where you are right now, there's a path to coverage that makes sense — and I'll help you find it.
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {personas.map(({ icon: Icon, title, body }) => (
+            <div key={title} className="card-glass rounded-2xl p-8">
+              <Icon className="w-7 h-7 text-primary mb-5" />
+              <h3 className="font-display text-xl mb-2">{title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Carriers() {
+  const carriers = ["UnitedHealthcare", "Cigna", "Aetna", "Blue Cross Blue Shield", "Humana", "Ambetter", "Oscar", "Molina", "Anthem", "Kaiser", "Wellcare", "Allstate"];
+  return (
+    <section className="py-24 px-6">
+      <div className="max-w-7xl mx-auto text-center">
+        <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Carrier Partners</div>
+        <h2 className="font-display text-4xl md:text-5xl mb-12">Appointed with the <span className="italic text-gradient-gold">nation's top carriers.</span></h2>
+        <div className="flex flex-wrap justify-center gap-3 max-w-5xl mx-auto">
+          {carriers.map((c) => (
+            <span key={c} className="px-5 py-3 rounded-xl badge-glass font-display text-base tracking-wide">
+              {c}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function DeadlinesCallout() {
+  return (
+    <section className="py-20 px-6">
+      <div className="max-w-6xl mx-auto card-glass rounded-2xl p-10 md:p-14 relative overflow-hidden">
+        <div className="absolute -top-20 -right-20 w-72 h-72 bg-gradient-gold opacity-10 blur-3xl rounded-full" />
+        <div className="relative grid md:grid-cols-[auto_1fr_auto] gap-8 items-center">
+          <div className="w-16 h-16 rounded-2xl icon-glass flex items-center justify-center shrink-0">
+            <Calendar className="w-7 h-7 text-primary" />
+          </div>
+          <div>
+            <div className="text-xs uppercase tracking-[0.3em] text-primary mb-2">Key Dates</div>
+            <h3 className="font-display text-3xl md:text-4xl mb-3">Don't miss your <span className="italic text-gradient-gold">enrollment window.</span></h3>
+            <div className="grid sm:grid-cols-2 gap-x-8 gap-y-2 text-sm text-muted-foreground">
+              <div><span className="text-foreground font-medium">ACA Open Enrollment:</span> Nov 1 – Jan 15</div>
+              <div><span className="text-foreground font-medium">Medicare AEP:</span> Oct 15 – Dec 7</div>
+              <div><span className="text-foreground font-medium">Medicare OEP:</span> Jan 1 – Mar 31</div>
+              <div><span className="text-foreground font-medium">SEP:</span> Triggered by life events year-round</div>
+            </div>
+          </div>
+          <a href="#contact" className="inline-flex items-center gap-2 px-6 py-4 rounded-xl btn-glass-gold font-medium shrink-0">
+            Check Eligibility <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FAQ() {
+  const faqs = [
+    { q: "How much does it cost to work with you?", a: "Absolutely nothing. My services are 100% free to you — I'm compensated directly by the insurance carriers when you enroll, at no added cost to your premium." },
+    { q: "Am I locked into a plan once I enroll?", a: "No. You can change plans during Open Enrollment, or any time you have a qualifying life event (marriage, new baby, job loss, moving, etc.) through a Special Enrollment Period." },
+    { q: "What if I have a pre-existing condition?", a: "ACA-compliant plans cannot deny you coverage or charge you more for pre-existing conditions. I'll help you find a plan that includes the specialists and medications you need." },
+    { q: "Do I qualify for a subsidy?", a: "Most people do. Subsidies are based on household income and family size — I'll calculate your eligibility on our first call and show you the real out-of-pocket cost." },
+    { q: "Can you help me switch from my employer's plan?", a: "Yes. Many people find better-value coverage outside of employer plans, especially with subsidies. I'll do a side-by-side comparison so you can decide with full information." },
+    { q: "How long does enrollment take?", a: "A typical consultation runs 20–40 minutes. Enrollment itself usually takes another 15–20 minutes once you've picked a plan." },
+  ];
+  const [open, setOpen] = useState<number | null>(0);
+  return (
+    <section className="py-32 px-6 bg-card/30">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-16">
+          <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Common Questions</div>
+          <h2 className="font-display text-5xl md:text-6xl">Honest <span className="italic text-gradient-gold">answers.</span></h2>
+        </div>
+        <div className="space-y-3">
+          {faqs.map((f, i) => (
+            <div key={i} className="card-glass rounded-2xl overflow-hidden">
+              <button
+                onClick={() => setOpen(open === i ? null : i)}
+                className="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer"
+              >
+                <span className="font-display text-lg md:text-xl">{f.q}</span>
+                {open === i ? <Minus className="w-5 h-5 text-primary shrink-0" /> : <Plus className="w-5 h-5 text-primary shrink-0" />}
+              </button>
+              {open === i && (
+                <div className="px-6 pb-6 text-muted-foreground leading-relaxed border-t border-border/50 pt-4">
+                  {f.a}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
