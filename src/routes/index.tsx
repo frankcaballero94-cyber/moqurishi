@@ -57,22 +57,22 @@ export function Nav() {
   return (
     <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-gradient-gold flex items-center justify-center">
             <span className="font-display font-bold text-primary-foreground">Q</span>
           </div>
           <span className="font-display text-lg tracking-wide">Qurishi <span className="text-gradient-gold">Advising</span></span>
-        </a>
+        </Link>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-          <a href="#why" className="hover:text-foreground transition">Why Us</a>
-          <a href="#services" className="hover:text-foreground transition">Services</a>
-          <a href="#about" className="hover:text-foreground transition">About</a>
-          <a href="#states" className="hover:text-foreground transition">Coverage</a>
-          <a href="#contact" className="hover:text-foreground transition">Contact</a>
+          <Link to="/why" className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>Why Us</Link>
+          <Link to="/services" className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>Services</Link>
+          <Link to="/about" className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>About</Link>
+          <Link to="/coverage" className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>Coverage</Link>
+          <Link to="/contact" className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>Contact</Link>
         </nav>
-        <a href="#contact" className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl btn-glass-gold text-sm font-medium">
+        <Link to="/contact" className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl btn-glass-gold text-sm font-medium">
           Free Quote <ArrowRight className="w-4 h-4" />
-        </a>
+        </Link>
       </div>
     </header>
   );
