@@ -120,7 +120,14 @@ export function Nav() {
           <img
             src={qurishiHealthcareLogo.url}
             alt="Qurishi Healthcare"
-            className="h-10 w-auto drop-shadow-[0_2px_8px_rgba(201,168,76,0.25)]"
+            className="h-12 w-auto"
+            style={{
+              filter: "brightness(1.35) contrast(1.05) drop-shadow(0 2px 10px rgba(201,168,76,0.25))",
+              WebkitMaskImage:
+                "radial-gradient(ellipse at center, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 92%)",
+              maskImage:
+                "radial-gradient(ellipse at center, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 92%)",
+            }}
           />
         </Link>
         <nav className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
