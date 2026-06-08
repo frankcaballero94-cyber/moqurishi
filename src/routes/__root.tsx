@@ -87,11 +87,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Lovable App" },
       { name: "twitter:description", content: "A modern, visually appealing website showcasing business information with custom design elements." },
-      { property: "og:image", content: "https://moqurishi.lovable.app/og-card-v2.png" },
+      { property: "og:image", content: "https://moqurishi.lovable.app/og-card-v3.png" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "800" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: "https://moqurishi.lovable.app/og-card-v2.png" },
+      { name: "twitter:image", content: "https://moqurishi.lovable.app/og-card-v3.png" },
     ],
     links: [
       {
