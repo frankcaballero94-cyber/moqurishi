@@ -96,30 +96,30 @@ export function Nav() {
 
 function Hero() {
   return (
-    <section id="top" className="relative pt-32 pb-24 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-        <div className="space-y-8">
+    <section id="top" className="relative pt-24 pb-16 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
+        <div className="space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-xs uppercase tracking-[0.2em] text-primary">
             <Star className="w-3 h-3 fill-primary" /> Licensed in 35+ States
           </div>
-          <h1 className="font-display text-6xl md:text-7xl lg:text-8xl leading-[0.95] font-medium">
+          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-medium">
             Your Health <br />
             <span className="text-gradient-gold italic">
               <TypewriterText words={["Deserves an Advocate.", "Deserves Clarity.", "Deserves Real Answers.", "Deserves Mo."]} />
             </span>
           </h1>
-          <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
+          <p className="text-base text-muted-foreground max-w-xl leading-relaxed">
             I'm Mo Qurishi — a licensed health insurance advisor helping individuals, families, and small businesses cut through the noise and find coverage that actually fits.
           </p>
-          <div className="flex flex-wrap gap-4">
-            <a href="#contact" className="inline-flex items-center gap-2 px-7 py-4 rounded-xl btn-glass-gold font-medium">
+          <div className="flex flex-wrap gap-3">
+            <a href="#contact" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl btn-glass-gold font-medium text-sm">
               Get a Free Quote <ArrowRight className="w-4 h-4" />
             </a>
-            <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 px-7 py-4 rounded-xl border border-primary/40 text-foreground hover:bg-primary/5 transition">
+            <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-primary/40 text-foreground hover:bg-primary/5 transition text-sm">
               <Phone className="w-4 h-4 text-primary" /> {PHONE}
             </a>
           </div>
-          <div className="flex items-center gap-6 pt-4 text-sm text-muted-foreground">
+          <div className="flex items-center gap-6 pt-2 text-sm text-muted-foreground">
             <div className="flex items-center gap-2"><Check className="w-4 h-4 text-primary"/>No pressure</div>
             <div className="flex items-center gap-2"><Check className="w-4 h-4 text-primary"/>Free consults</div>
             <div className="flex items-center gap-2"><Check className="w-4 h-4 text-primary"/>Real advisor</div>
@@ -127,16 +127,16 @@ function Hero() {
         </div>
 
         <div className="relative w-full">
-          <div className="absolute -inset-8 bg-gradient-gold opacity-20 blur-3xl rounded-full" />
+          <div className="absolute -inset-6 bg-gradient-gold opacity-15 blur-3xl rounded-full" />
           <CornerOrnaments />
-          <div className="relative rounded-2xl card-glass p-8 md:p-10 overflow-hidden">
+          <div className="relative rounded-2xl card-glass p-6 md:p-8 overflow-hidden">
             <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "repeating-linear-gradient(135deg, var(--gold) 0 1px, transparent 1px 22px)" }} />
-            <div className="relative space-y-6">
-              <div className="rounded-xl bg-gradient-to-br from-[oklch(0.99_0.008_85)] to-[oklch(0.95_0.014_85)] border border-primary/15 p-6 shadow-inner">
+            <div className="relative space-y-5">
+              <div className="rounded-xl bg-gradient-to-br from-[oklch(0.99_0.008_85)] to-[oklch(0.95_0.014_85)] border border-primary/15 p-5 shadow-inner">
                 <img src={qurishiLogo} alt="Qurishi Healthcare — Expert Guidance. Better Coverage. Peace of Mind." className="w-full h-auto rounded-lg" />
               </div>
               <div className="h-px w-full bg-gradient-gold opacity-60" />
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 gap-5">
                 <div>
                   <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-2">Direct Line</div>
                   <a href={`tel:${PHONE}`} className="font-sans text-base tracking-wide text-foreground hover:text-primary transition">{PHONE}</a>
@@ -146,7 +146,7 @@ function Hero() {
                   <div className="font-display text-lg">2020</div>
                 </div>
               </div>
-              <ul className="space-y-2.5 text-sm text-muted-foreground border-t border-border pt-5">
+              <ul className="space-y-2 text-sm text-muted-foreground border-t border-border pt-4">
                 <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> NPN credentialed advisor</li>
                 <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> ACA Marketplace certified</li>
                 <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> Medicare AHIP certified</li>
@@ -210,18 +210,18 @@ export function WhyUs() {
     { icon: Award, title: "Independent & Honest", body: "Not tied to one carrier. I shop the market so you only see plans that genuinely fit your life." },
   ];
   return (
-    <section id="why" className="py-32 px-6">
+    <section id="why" className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-20">
+        <div className="text-center max-w-2xl mx-auto mb-14">
           <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Why Choose Mo</div>
-          <h2 className="font-display text-5xl md:text-6xl">A different kind of <span className="italic text-gradient-gold">advisor.</span></h2>
+          <h2 className="font-display text-4xl md:text-5xl">A different kind of <span className="italic text-gradient-gold">advisor.</span></h2>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
           {items.map(({ icon: Icon, title, body }) => (
-            <div key={title} className="card-glass rounded-2xl p-10 hover:border-primary/45 transition group">
-              <Icon className="w-8 h-8 text-primary mb-6 group-hover:scale-110 transition" />
-              <h3 className="font-display text-2xl mb-3">{title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{body}</p>
+            <div key={title} className="card-glass rounded-2xl p-6 hover:border-primary/45 transition group">
+              <Icon className="w-7 h-7 text-primary mb-4 group-hover:scale-110 transition" />
+              <h3 className="font-display text-xl mb-2">{title}</h3>
+              <p className="text-muted-foreground leading-relaxed text-sm">{body}</p>
             </div>
           ))}
         </div>
@@ -301,30 +301,30 @@ export function Services() {
   const active = openIdx !== null ? services[openIdx] : null;
 
   return (
-    <section id="services" className="py-32 px-6 bg-card/30">
+    <section id="services" className="py-20 px-6 bg-card/30">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-[1fr_2fr] gap-16 mb-16">
+        <div className="grid lg:grid-cols-[1fr_2fr] gap-12 mb-12">
           <div>
             <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">What I Do</div>
-            <h2 className="font-display text-5xl md:text-6xl">Coverage built around <span className="italic text-gradient-gold">your life.</span></h2>
+            <h2 className="font-display text-4xl md:text-5xl">Coverage built around <span className="italic text-gradient-gold">your life.</span></h2>
           </div>
-          <p className="text-lg text-muted-foreground self-end leading-relaxed">
+          <p className="text-base text-muted-foreground self-end leading-relaxed">
             Whether you're self-employed, between jobs, raising a family, or running a business — there's a right plan, and we'll find it together.
           </p>
         </div>
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-5">
           {services.map((s, i) => (
             <Tilt3D key={s.num} className="h-full">
               <button
                 onClick={() => setOpenIdx(i)}
-                className="group relative p-10 rounded-2xl card-glass transition text-left cursor-pointer w-full h-full"
+                className="group relative p-6 rounded-2xl card-glass transition text-left cursor-pointer w-full h-full"
               >
-                <div className="flex items-start justify-between mb-6" style={{ transform: "translateZ(40px)" }}>
-                  <span className="font-display text-5xl text-gradient-gold">{s.num}</span>
+                <div className="flex items-start justify-between mb-4" style={{ transform: "translateZ(40px)" }}>
+                  <span className="font-display text-4xl text-gradient-gold">{s.num}</span>
                   <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition" />
                 </div>
-                <h3 className="font-display text-2xl mb-3" style={{ transform: "translateZ(30px)" }}>{s.title}</h3>
-                <p className="text-muted-foreground mb-4">{s.body}</p>
+                <h3 className="font-display text-xl mb-2" style={{ transform: "translateZ(30px)" }}>{s.title}</h3>
+                <p className="text-muted-foreground text-sm mb-3">{s.body}</p>
                 <span className="text-xs uppercase tracking-[0.25em] text-primary inline-flex items-center gap-2">
                   View Details <ArrowRight className="w-3 h-3" />
                 </span>
@@ -381,19 +381,19 @@ export function Services() {
 
 export function About() {
   return (
-    <section id="about" className="py-32 px-6">
-      <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <section id="about" className="py-20 px-6">
+      <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
         <div className="relative">
-          <div className="absolute -inset-6 bg-gradient-gold opacity-10 blur-2xl rounded-full" />
+          <div className="absolute -inset-4 bg-gradient-gold opacity-10 blur-2xl rounded-full" />
           <CornerOrnaments />
-          <div className="relative rounded-2xl aspect-square card-glass p-10 flex flex-col justify-between overflow-hidden">
+          <div className="relative rounded-2xl aspect-square card-glass p-6 flex flex-col justify-between overflow-hidden">
             {/* subtle diagonal gold lines */}
             <div className="absolute inset-0 opacity-[0.08]" style={{ backgroundImage: "repeating-linear-gradient(135deg, var(--gold) 0 1px, transparent 1px 24px)" }} />
             <div className="relative">
               <div className="text-[10px] uppercase tracking-[0.4em] text-primary mb-3">Credentials</div>
-              <div className="font-display text-3xl leading-tight">Independent <br/>Licensed Advisor</div>
-              <div className="h-px w-16 bg-gradient-gold my-5" />
-              <ul className="space-y-3 text-sm text-muted-foreground">
+              <div className="font-display text-2xl leading-tight">Independent <br/>Licensed Advisor</div>
+              <div className="h-px w-16 bg-gradient-gold my-4" />
+              <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> NPN credentialed</li>
                 <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> ACA Marketplace certified</li>
                 <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> Medicare AHIP certified</li>
@@ -402,28 +402,28 @@ export function About() {
             </div>
             <div className="relative flex items-end justify-between">
               <div>
-                <div className="font-display text-2xl italic text-gradient-gold">Mo Qurishi</div>
+                <div className="font-display text-xl italic text-gradient-gold">Mo Qurishi</div>
                 <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mt-1">Health Advisor · Est. 2020</div>
               </div>
-              <div className="w-14 h-14 rounded-full border border-primary/50 flex items-center justify-center">
-                <span className="font-display text-xl text-gradient-gold">MQ</span>
+              <div className="w-12 h-12 rounded-full border border-primary/50 flex items-center justify-center">
+                <span className="font-display text-lg text-gradient-gold">MQ</span>
               </div>
             </div>
           </div>
         </div>
-        <div className="space-y-6">
+        <div className="space-y-5">
           <div className="text-xs uppercase tracking-[0.3em] text-primary">About Mo</div>
-          <h2 className="font-display text-5xl md:text-6xl leading-[1]">A trusted voice in a <span className="italic text-gradient-gold">complicated industry.</span></h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <h2 className="font-display text-4xl md:text-5xl leading-[1]">A trusted voice in a <span className="italic text-gradient-gold">complicated industry.</span></h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
             For years, Mo Qurishi has helped Americans navigate the health insurance maze with calm, clarity, and zero pressure. As an independent advisor, he isn't tied to any single carrier — which means his only loyalty is to the people he serves.
           </p>
-          <p className="text-muted-foreground leading-relaxed">
+          <p className="text-sm text-muted-foreground leading-relaxed">
             From first-time enrollees to families switching plans, small business owners to retirees approaching Medicare — every client gets the same white-glove treatment: a real conversation, real research, and real recommendations.
           </p>
-          <div className="grid grid-cols-3 gap-6 pt-6 border-t border-border">
-            <div><div className="font-display text-4xl text-gradient-gold">35+</div><div className="text-xs uppercase tracking-wider text-muted-foreground mt-1">States Licensed</div></div>
-            <div><div className="font-display text-4xl text-gradient-gold">5.0</div><div className="text-xs uppercase tracking-wider text-muted-foreground mt-1">Client Rating</div></div>
-            <div><div className="font-display text-4xl text-gradient-gold">1:1</div><div className="text-xs uppercase tracking-wider text-muted-foreground mt-1">Personal Service</div></div>
+          <div className="grid grid-cols-3 gap-4 pt-5 border-t border-border">
+            <div><div className="font-display text-3xl text-gradient-gold">35+</div><div className="text-xs uppercase tracking-wider text-muted-foreground mt-1">States Licensed</div></div>
+            <div><div className="font-display text-3xl text-gradient-gold">5.0</div><div className="text-xs uppercase tracking-wider text-muted-foreground mt-1">Client Rating</div></div>
+            <div><div className="font-display text-3xl text-gradient-gold">1:1</div><div className="text-xs uppercase tracking-wider text-muted-foreground mt-1">Personal Service</div></div>
           </div>
         </div>
       </div>
@@ -433,64 +433,64 @@ export function About() {
 
 export function StatesSection() {
   return (
-    <section id="states" className="py-32 px-6 bg-card/30">
+    <section id="states" className="py-20 px-6 bg-card/30">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Licensed Coverage</div>
-          <h2 className="font-display text-5xl md:text-6xl mb-4">Wherever you live, <span className="text-gradient-gold italic">we've got you.</span></h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">If your state glows gold on the map, we can write your policy.</p>
+          <h2 className="font-display text-4xl md:text-5xl mb-4">Wherever you live, <span className="text-gradient-gold italic">we've got you.</span></h2>
+          <p className="text-muted-foreground max-w-xl mx-auto text-sm">If your state glows gold on the map, we can write your policy.</p>
         </div>
 
-        <div className="grid lg:grid-cols-[2fr_1fr] gap-8 items-start">
+        <div className="grid lg:grid-cols-[2fr_1fr] gap-6 items-start">
           {/* Interactive Map */}
-          <div className="card-glass rounded-3xl p-6 md:p-8 relative overflow-hidden">
+          <div className="card-glass rounded-3xl p-5 md:p-6 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 pointer-events-none" />
             <USMap licensed={STATES} />
           </div>
 
           {/* Stat cards */}
           <div className="space-y-4">
-            <div className="card-glass rounded-2xl p-6 flex gap-4 items-start">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
-                <ShieldCheck className="w-5 h-5 text-primary" />
+            <div className="card-glass rounded-2xl p-5 flex gap-4 items-start">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
+                <ShieldCheck className="w-4 h-4 text-primary" />
               </div>
               <div>
-                <div className="font-display text-4xl text-gradient-gold leading-none">{STATES.length}+</div>
-                <div className="text-xs uppercase tracking-[0.2em] text-primary mt-2">States Licensed</div>
-                <div className="text-sm text-muted-foreground mt-2">Independent broker — multi-carrier appointments.</div>
+                <div className="font-display text-3xl text-gradient-gold leading-none">{STATES.length}+</div>
+                <div className="text-xs uppercase tracking-[0.2em] text-primary mt-1">States Licensed</div>
+                <div className="text-sm text-muted-foreground mt-1">Independent broker — multi-carrier appointments.</div>
               </div>
             </div>
 
-            <div className="card-glass rounded-2xl p-6 flex gap-4 items-start">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
-                <Users className="w-5 h-5 text-primary" />
+            <div className="card-glass rounded-2xl p-5 flex gap-4 items-start">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
+                <Users className="w-4 h-4 text-primary" />
               </div>
               <div>
-                <div className="font-display text-4xl text-gradient-gold leading-none">Thousands+</div>
-                <div className="text-xs uppercase tracking-[0.2em] text-primary mt-2">Families Served</div>
-                <div className="text-sm text-muted-foreground mt-2">Self-employed, 1099, families, small business.</div>
+                <div className="font-display text-3xl text-gradient-gold leading-none">Thousands+</div>
+                <div className="text-xs uppercase tracking-[0.2em] text-primary mt-1">Families Served</div>
+                <div className="text-sm text-muted-foreground mt-1">Self-employed, 1099, families, small business.</div>
               </div>
             </div>
 
-            <div className="card-glass rounded-2xl p-6 flex gap-4 items-start">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
-                <Award className="w-5 h-5 text-primary" />
+            <div className="card-glass rounded-2xl p-5 flex gap-4 items-start">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
+                <Award className="w-4 h-4 text-primary" />
               </div>
               <div>
-                <div className="font-display text-3xl text-foreground leading-none tracking-wider">21032307</div>
-                <div className="text-xs uppercase tracking-[0.2em] text-primary mt-2">NPN</div>
-                <div className="text-sm text-muted-foreground mt-2">National Producer Number — verify at nipr.com.</div>
+                <div className="font-display text-2xl text-foreground leading-none tracking-wider">21032307</div>
+                <div className="text-xs uppercase tracking-[0.2em] text-primary mt-1">NPN</div>
+                <div className="text-sm text-muted-foreground mt-1">National Producer Number — verify at nipr.com.</div>
               </div>
             </div>
           </div>
         </div>
 
         {/* State pill grid */}
-        <div className="mt-12">
-          <div className="text-xs uppercase tracking-[0.3em] text-muted-foreground text-center mb-6">All licensed states</div>
+        <div className="mt-10">
+          <div className="text-xs uppercase tracking-[0.3em] text-muted-foreground text-center mb-4">All licensed states</div>
           <div className="flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
             {STATES.map((s) => (
-              <span key={s} className="px-4 py-2 rounded-lg text-sm font-medium tracking-wider text-foreground badge-glass cursor-default">
+              <span key={s} className="px-3 py-1.5 rounded-lg text-xs font-medium tracking-wider text-foreground badge-glass cursor-default">
                 {s}
               </span>
             ))}
@@ -508,17 +508,17 @@ export function Testimonials() {
     { quote: "Medicare felt impossible until Mo walked me through it. He treats you like family.", name: "Diane M.", role: "Retiree, OH" },
   ];
   return (
-    <section className="py-32 px-6">
+    <section className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Client Voices</div>
-          <h2 className="font-display text-5xl md:text-6xl">Trust, <span className="italic text-gradient-gold">earned.</span></h2>
+          <h2 className="font-display text-4xl md:text-5xl">Trust, <span className="italic text-gradient-gold">earned.</span></h2>
         </div>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-5">
           {items.map((t) => (
-            <div key={t.name} className="p-8 rounded-2xl card-glass hover:border-primary/45 transition">
-              <div className="flex gap-1 mb-4">{[...Array(5)].map((_,i)=><Star key={i} className="w-4 h-4 fill-primary text-primary"/>)}</div>
-              <p className="font-display text-xl leading-relaxed mb-6 text-foreground">"{t.quote}"</p>
+            <div key={t.name} className="p-6 rounded-2xl card-glass hover:border-primary/45 transition">
+              <div className="flex gap-1 mb-3">{[...Array(5)].map((_,i)=><Star key={i} className="w-4 h-4 fill-primary text-primary"/>)}</div>
+              <p className="font-display text-base leading-relaxed mb-4 text-foreground">"{t.quote}"</p>
               <div className="text-sm">
                 <div className="font-medium text-foreground">{t.name}</div>
                 <div className="text-muted-foreground">{t.role}</div>
@@ -533,32 +533,32 @@ export function Testimonials() {
 
 export function Contact() {
   return (
-    <section id="contact" className="py-32 px-6">
+    <section id="contact" className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="relative rounded-2xl overflow-hidden card-glass">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-gold opacity-5" />
-          <div className="relative grid lg:grid-cols-2 gap-12 p-10 md:p-16">
+          <div className="relative grid lg:grid-cols-2 gap-10 p-8 md:p-10">
             <div>
               <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Get In Touch</div>
-              <h2 className="font-display text-5xl md:text-6xl mb-6 leading-[1]">Let's find the right <span className="italic text-gradient-gold">coverage.</span></h2>
-              <p className="text-muted-foreground mb-10 leading-relaxed">Free, no-pressure consultation. Reach out by phone, email, or send a quick note — I personally respond to every inquiry.</p>
-              <div className="space-y-5">
+              <h2 className="font-display text-4xl md:text-5xl mb-5 leading-[1]">Let's find the right <span className="italic text-gradient-gold">coverage.</span></h2>
+              <p className="text-muted-foreground mb-8 leading-relaxed text-sm">Free, no-pressure consultation. Reach out by phone, email, or send a quick note — I personally respond to every inquiry.</p>
+              <div className="space-y-4">
                 <a href={`tel:${PHONE}`} className="flex items-center gap-4 group">
-                  <div className="w-12 h-12 rounded-xl icon-glass flex items-center justify-center group-hover:bg-gradient-gold transition">
-                    <Phone className="w-5 h-5 text-primary group-hover:text-primary-foreground" />
+                  <div className="w-10 h-10 rounded-lg icon-glass flex items-center justify-center group-hover:bg-gradient-gold transition">
+                    <Phone className="w-4 h-4 text-primary group-hover:text-primary-foreground" />
                   </div>
                   <div>
                     <div className="text-xs uppercase tracking-wider text-muted-foreground">Phone</div>
-                    <div className="font-sans text-xl tracking-wide">{PHONE}</div>
+                    <div className="font-sans text-lg tracking-wide">{PHONE}</div>
                   </div>
                 </a>
                 <a href={`mailto:${EMAIL}`} className="flex items-center gap-4 group">
-                  <div className="w-12 h-12 rounded-xl icon-glass flex items-center justify-center group-hover:bg-gradient-gold transition">
-                    <Mail className="w-5 h-5 text-primary group-hover:text-primary-foreground" />
+                  <div className="w-10 h-10 rounded-lg icon-glass flex items-center justify-center group-hover:bg-gradient-gold transition">
+                    <Mail className="w-4 h-4 text-primary group-hover:text-primary-foreground" />
                   </div>
                   <div>
                     <div className="text-xs uppercase tracking-wider text-muted-foreground">Email</div>
-                    <div className="font-display text-lg break-all">{EMAIL}</div>
+                    <div className="font-display text-base break-all">{EMAIL}</div>
                   </div>
                 </a>
               </div>
@@ -574,9 +574,9 @@ export function Contact() {
               <Field label="State" name="state" />
               <div>
                 <label className="text-xs uppercase tracking-wider text-muted-foreground">How can I help?</label>
-                <textarea rows={4} className="mt-2 w-full rounded-lg px-4 py-3 input-glass" />
+                <textarea rows={3} className="mt-2 w-full rounded-lg px-4 py-3 input-glass" />
               </div>
-              <button type="submit" className="w-full inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl btn-glass-gold font-medium">
+              <button type="submit" className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl btn-glass-gold font-medium text-sm">
                 Request Free Quote <ArrowRight className="w-4 h-4" />
               </button>
             </form>
@@ -604,12 +604,12 @@ export function Stats() {
     { num: "4.9★", label: "Client Rating" },
   ];
   return (
-    <section className="py-20 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+    <section className="py-16 px-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-5">
         {stats.map((s) => (
-          <div key={s.label} className="card-glass rounded-2xl p-8 text-center">
-            <div className="font-display text-5xl md:text-6xl text-gradient-gold">{s.num}</div>
-            <div className="text-xs uppercase tracking-[0.25em] text-muted-foreground mt-3">{s.label}</div>
+          <div key={s.label} className="card-glass rounded-2xl p-6 text-center">
+            <div className="font-display text-4xl md:text-5xl text-gradient-gold">{s.num}</div>
+            <div className="text-xs uppercase tracking-[0.25em] text-muted-foreground mt-2">{s.label}</div>
           </div>
         ))}
       </div>
@@ -625,17 +625,17 @@ export function Process() {
     { num: "04", title: "Year-Round Support", body: "Renewals, claims questions, life changes — I'm one call away, all year." },
   ];
   return (
-    <section className="py-32 px-6">
+    <section className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-12">
           <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">How It Works</div>
-          <h2 className="font-display text-5xl md:text-6xl">A simple, <span className="italic text-gradient-gold">human process.</span></h2>
+          <h2 className="font-display text-4xl md:text-5xl">A simple, <span className="italic text-gradient-gold">human process.</span></h2>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
           {steps.map((s) => (
-            <div key={s.num} className="card-glass rounded-2xl p-8 relative">
-              <span className="font-display text-5xl text-gradient-gold">{s.num}</span>
-              <h3 className="font-display text-2xl mt-4 mb-3">{s.title}</h3>
+            <div key={s.num} className="card-glass rounded-2xl p-6 relative">
+              <span className="font-display text-4xl text-gradient-gold">{s.num}</span>
+              <h3 className="font-display text-xl mt-3 mb-2">{s.title}</h3>
               <p className="text-muted-foreground leading-relaxed text-sm">{s.body}</p>
             </div>
           ))}
@@ -655,22 +655,22 @@ export function WhoWeHelp() {
     { icon: Baby, title: "New Parents", body: "Add a child to your plan or find better family coverage in a Special Enrollment Period." },
   ];
   return (
-    <section className="py-32 px-6 bg-card/30">
+    <section className="py-20 px-6 bg-card/30">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-[1fr_2fr] gap-16 mb-16">
+        <div className="grid lg:grid-cols-[1fr_2fr] gap-12 mb-12">
           <div>
             <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Who I Help</div>
-            <h2 className="font-display text-5xl md:text-6xl">For every <span className="italic text-gradient-gold">stage of life.</span></h2>
+            <h2 className="font-display text-4xl md:text-5xl">For every <span className="italic text-gradient-gold">stage of life.</span></h2>
           </div>
-          <p className="text-lg text-muted-foreground self-end leading-relaxed">
+          <p className="text-base text-muted-foreground self-end leading-relaxed">
             No matter where you are right now, there's a path to coverage that makes sense — and I'll help you find it.
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {personas.map(({ icon: Icon, title, body }) => (
-            <div key={title} className="card-glass rounded-2xl p-8">
-              <Icon className="w-7 h-7 text-primary mb-5" />
-              <h3 className="font-display text-xl mb-2">{title}</h3>
+            <div key={title} className="card-glass rounded-2xl p-6">
+              <Icon className="w-6 h-6 text-primary mb-4" />
+              <h3 className="font-display text-lg mb-1">{title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{body}</p>
             </div>
           ))}
@@ -701,24 +701,24 @@ export function Carriers() {
 
 export function DeadlinesCallout() {
   return (
-    <section className="py-20 px-6">
-      <div className="max-w-6xl mx-auto card-glass rounded-2xl p-10 md:p-14 relative overflow-hidden">
+    <section className="py-16 px-6">
+      <div className="max-w-6xl mx-auto card-glass rounded-2xl p-8 md:p-10 relative overflow-hidden">
         <div className="absolute -top-20 -right-20 w-72 h-72 bg-gradient-gold opacity-10 blur-3xl rounded-full" />
-        <div className="relative grid md:grid-cols-[auto_1fr_auto] gap-8 items-center">
-          <div className="w-16 h-16 rounded-2xl icon-glass flex items-center justify-center shrink-0">
-            <Calendar className="w-7 h-7 text-primary" />
+        <div className="relative grid md:grid-cols-[auto_1fr_auto] gap-6 items-center">
+          <div className="w-12 h-12 rounded-xl icon-glass flex items-center justify-center shrink-0">
+            <Calendar className="w-5 h-5 text-primary" />
           </div>
           <div>
             <div className="text-xs uppercase tracking-[0.3em] text-primary mb-2">Key Dates</div>
-            <h3 className="font-display text-3xl md:text-4xl mb-3">Don't miss your <span className="italic text-gradient-gold">enrollment window.</span></h3>
-            <div className="grid sm:grid-cols-2 gap-x-8 gap-y-2 text-sm text-muted-foreground">
+            <h3 className="font-display text-2xl md:text-3xl mb-2">Don't miss your <span className="italic text-gradient-gold">enrollment window.</span></h3>
+            <div className="grid sm:grid-cols-2 gap-x-8 gap-y-1 text-sm text-muted-foreground">
               <div><span className="text-foreground font-medium">ACA Open Enrollment:</span> Nov 1 – Jan 15</div>
               <div><span className="text-foreground font-medium">Medicare AEP:</span> Oct 15 – Dec 7</div>
               <div><span className="text-foreground font-medium">Medicare OEP:</span> Jan 1 – Mar 31</div>
               <div><span className="text-foreground font-medium">SEP:</span> Triggered by life events year-round</div>
             </div>
           </div>
-          <a href="#contact" className="inline-flex items-center gap-2 px-6 py-4 rounded-xl btn-glass-gold font-medium shrink-0">
+          <a href="#contact" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl btn-glass-gold font-medium text-sm shrink-0">
             Check Eligibility <ArrowRight className="w-4 h-4" />
           </a>
         </div>
@@ -738,24 +738,24 @@ export function FAQ() {
   ];
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section className="py-32 px-6 bg-card/30">
+    <section className="py-20 px-6 bg-card/30">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Common Questions</div>
-          <h2 className="font-display text-5xl md:text-6xl">Honest <span className="italic text-gradient-gold">answers.</span></h2>
+          <h2 className="font-display text-4xl md:text-5xl">Honest <span className="italic text-gradient-gold">answers.</span></h2>
         </div>
         <div className="space-y-3">
           {faqs.map((f, i) => (
             <div key={i} className="card-glass rounded-2xl overflow-hidden">
               <button
                 onClick={() => setOpen(open === i ? null : i)}
-                className="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer"
+                className="w-full flex items-center justify-between gap-4 p-5 text-left cursor-pointer"
               >
-                <span className="font-display text-lg md:text-xl">{f.q}</span>
+                <span className="font-display text-base md:text-lg">{f.q}</span>
                 {open === i ? <Minus className="w-5 h-5 text-primary shrink-0" /> : <Plus className="w-5 h-5 text-primary shrink-0" />}
               </button>
               {open === i && (
-                <div className="px-6 pb-6 text-muted-foreground leading-relaxed border-t border-border/50 pt-4">
+                <div className="px-5 pb-5 text-muted-foreground leading-relaxed border-t border-border/50 pt-4 text-sm">
                   {f.a}
                 </div>
               )}
@@ -794,26 +794,26 @@ export function PlanTypes() {
     { name: "Dental & Vision", price: "Add-on coverage", bullets: ["Standalone or bundled", "Major retail networks", "Preventive care included", "Family plans available"], best: "Rounding out your protection" },
   ];
   return (
-    <section className="py-32 px-6">
+    <section className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-12">
           <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Plan Types</div>
-          <h2 className="font-display text-5xl md:text-6xl">Compare your <span className="italic text-gradient-gold">options.</span></h2>
+          <h2 className="font-display text-4xl md:text-5xl">Compare your <span className="italic text-gradient-gold">options.</span></h2>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
           {plans.map((p) => (
-            <div key={p.name} className={`card-glass rounded-2xl p-8 flex flex-col ${p.featured ? "ring-1 ring-primary/40" : ""}`}>
-              {p.featured && <div className="text-[10px] uppercase tracking-[0.3em] text-primary mb-3">Most Asked About</div>}
-              <h3 className="font-display text-2xl mb-1">{p.name}</h3>
-              <div className="text-sm text-muted-foreground mb-6">{p.price}</div>
-              <ul className="space-y-2.5 mb-6 flex-1">
+            <div key={p.name} className={`card-glass rounded-2xl p-6 flex flex-col ${p.featured ? "ring-1 ring-primary/40" : ""}`}>
+              {p.featured && <div className="text-[10px] uppercase tracking-[0.3em] text-primary mb-2">Most Asked About</div>}
+              <h3 className="font-display text-xl mb-1">{p.name}</h3>
+              <div className="text-sm text-muted-foreground mb-4">{p.price}</div>
+              <ul className="space-y-2 mb-4 flex-1">
                 {p.bullets.map((b) => (
                   <li key={b} className="flex items-start gap-2.5 text-sm text-foreground/90">
                     <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" /> {b}
                   </li>
                 ))}
               </ul>
-              <div className="border-t border-border/50 pt-4">
+              <div className="border-t border-border/50 pt-3">
                 <div className="text-[10px] uppercase tracking-[0.3em] text-primary mb-1">Best For</div>
                 <div className="text-sm text-muted-foreground">{p.best}</div>
               </div>
@@ -855,27 +855,27 @@ export function TrustStrip() {
 
 export function LeadMagnet() {
   return (
-    <section className="py-24 px-6">
-      <div className="max-w-5xl mx-auto card-glass rounded-2xl p-10 md:p-14 relative overflow-hidden">
+    <section className="py-16 px-6">
+      <div className="max-w-5xl mx-auto card-glass rounded-2xl p-8 md:p-10 relative overflow-hidden">
         <div className="absolute -bottom-24 -left-20 w-80 h-80 bg-gradient-gold opacity-10 blur-3xl rounded-full" />
-        <div className="relative grid md:grid-cols-[1fr_auto] gap-8 items-center">
+        <div className="relative grid md:grid-cols-[1fr_auto] gap-6 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-primary mb-4">
+            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-primary mb-3">
               <Sparkles className="w-3 h-3" /> Free Guide
             </div>
-            <h3 className="font-display text-3xl md:text-4xl mb-3 leading-tight">
+            <h3 className="font-display text-2xl md:text-3xl mb-2 leading-tight">
               The plain-English guide to <span className="italic text-gradient-gold">choosing a health plan.</span>
             </h3>
-            <p className="text-muted-foreground leading-relaxed max-w-xl">
+            <p className="text-muted-foreground leading-relaxed max-w-xl text-sm">
               A 12-page PDF covering deductibles, premiums, networks, and subsidies — without the jargon. Delivered to your inbox in seconds.
             </p>
           </div>
           <form
             onSubmit={(e) => { e.preventDefault(); window.location.href = `mailto:${EMAIL}?subject=Send%20me%20the%20guide`; }}
-            className="flex flex-col gap-3 w-full md:w-80"
+            className="flex flex-col gap-3 w-full md:w-72"
           >
-            <input type="email" required placeholder="your@email.com" className="w-full rounded-xl px-5 py-4 input-glass" />
-            <button type="submit" className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl btn-glass-gold font-medium">
+            <input type="email" required placeholder="your@email.com" className="w-full rounded-xl px-4 py-3 input-glass text-sm" />
+            <button type="submit" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl btn-glass-gold font-medium text-sm">
               Send Me the Guide <ArrowRight className="w-4 h-4" />
             </button>
           </form>
@@ -888,14 +888,14 @@ export function LeadMagnet() {
 export function Languages() {
   const langs = ["English", "Arabic", "Spanish (via interpreter)"];
   return (
-    <section className="py-20 px-6">
-      <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
-        <div className="card-glass rounded-2xl p-8">
+    <section className="py-16 px-6">
+      <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-5">
+        <div className="card-glass rounded-2xl p-6">
           <div className="text-xs uppercase tracking-[0.3em] text-primary mb-3">Languages Spoken</div>
-          <h3 className="font-display text-2xl mb-4">Clear conversations, <span className="italic text-gradient-gold">your language.</span></h3>
+          <h3 className="font-display text-xl mb-3">Clear conversations, <span className="italic text-gradient-gold">your language.</span></h3>
           <div className="flex flex-wrap gap-2">
             {langs.map((l) => (
-              <span key={l} className="px-4 py-2 rounded-lg badge-glass text-sm">{l}</span>
+              <span key={l} className="px-3 py-1.5 rounded-lg badge-glass text-sm">{l}</span>
             ))}
           </div>
         </div>
@@ -934,32 +934,32 @@ export function SavingsCalculator() {
   const yourCost = Math.max(0, benchmark - subsidy);
 
   return (
-    <section className="px-6 py-24 bg-card/20">
+    <section className="px-6 py-16 bg-card/20">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <div className="inline-flex items-center gap-2 badge-glass px-4 py-1.5 rounded-full text-xs uppercase tracking-[0.2em] text-primary mb-4">
             <Calculator className="w-3.5 h-3.5" /> Subsidy Estimator
           </div>
-          <h2 className="font-display text-4xl md:text-5xl mb-3">See what you could save</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">Move the sliders. Estimates use 2025 ACA premium tax credit guidelines — final amounts depend on your verified application.</p>
+          <h2 className="font-display text-3xl md:text-4xl mb-3">See what you could save</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-sm">Move the sliders. Estimates use 2025 ACA premium tax credit guidelines — final amounts depend on your verified application.</p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          <div className="card-glass rounded-2xl p-8 space-y-8">
+        <div className="grid lg:grid-cols-2 gap-6">
+          <div className="card-glass rounded-2xl p-6 space-y-6">
             <Slider label="Your age" value={age} min={18} max={64} suffix=" yrs" onChange={setAge} />
             <Slider label="Household size" value={household} min={1} max={8} suffix={household === 1 ? " person" : " people"} onChange={setHousehold} />
             <Slider label="Annual household income" value={income} min={15000} max={200000} step={1000} prefix="$" onChange={setIncome} />
           </div>
 
-          <div className="card-glass rounded-2xl p-8 flex flex-col justify-between">
+          <div className="card-glass rounded-2xl p-6 flex flex-col justify-between">
             <div>
               <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">Estimated monthly</div>
-              <div className="flex items-baseline gap-3 mb-6">
-                <div className="font-display text-6xl text-gradient-gold">${yourCost}</div>
+              <div className="flex items-baseline gap-3 mb-5">
+                <div className="font-display text-5xl text-gradient-gold">${yourCost}</div>
                 <div className="text-muted-foreground">/month</div>
               </div>
 
-              <div className="space-y-3 text-sm">
+              <div className="space-y-2 text-sm">
                 <Row label="Benchmark silver plan" value={`$${benchmark}/mo`} />
                 <Row label="Premium tax credit" value={`−$${subsidy}/mo`} accent />
                 <div className="h-px bg-border" />
@@ -968,9 +968,9 @@ export function SavingsCalculator() {
               </div>
             </div>
 
-            <div className="mt-8 pt-6 border-t border-border">
-              <p className="text-xs text-muted-foreground mb-4">Want the real number? I'll run an exact quote against live carrier rates — no fee, no commitment.</p>
-              <Link to="/contact" className="btn-glass-gold inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium uppercase tracking-wider">
+            <div className="mt-6 pt-5 border-t border-border">
+              <p className="text-xs text-muted-foreground mb-3">Want the real number? I'll run an exact quote against live carrier rates — no fee, no commitment.</p>
+              <Link to="/contact" className="btn-glass-gold inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium uppercase tracking-wider">
                 Get exact quote <ArrowRight className="w-4 h-4" />
               </Link>
             </div>

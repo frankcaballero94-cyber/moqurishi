@@ -21,21 +21,21 @@ export function PremiumTicker() {
   ];
   const doubled = [...rows, ...rows];
   return (
-    <section className="py-16 border-y border-border bg-card/30 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 mb-6 flex items-end justify-between flex-wrap gap-4">
+    <section className="py-12 border-y border-border bg-card/30 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 mb-4 flex items-end justify-between flex-wrap gap-4">
         <div>
           <div className="text-xs uppercase tracking-[0.25em] text-primary mb-2">Live Marketplace</div>
-          <h2 className="font-display text-3xl md:text-4xl">Avg. monthly premiums <span className="text-gradient-gold italic">right now</span></h2>
+          <h2 className="font-display text-2xl md:text-3xl">Avg. monthly premiums <span className="text-gradient-gold italic">right now</span></h2>
         </div>
         <a href="#contact" className="text-sm text-primary hover:underline inline-flex items-center gap-2">See your rate <ArrowRight className="w-4 h-4" /></a>
       </div>
       <div className="relative">
         <div className="flex gap-3 animate-[ticker_60s_linear_infinite] w-max">
           {doubled.map((r, i) => (
-            <div key={i} className="card-glass rounded-xl px-5 py-4 min-w-[220px] flex items-center justify-between gap-4">
+            <div key={i} className="card-glass rounded-xl px-4 py-3 min-w-[200px] flex items-center justify-between gap-4">
               <div>
                 <div className="text-xs text-muted-foreground">{r.state} · {r.tier}</div>
-                <div className="font-display text-2xl">${r.price}<span className="text-xs text-muted-foreground">/mo</span></div>
+                <div className="font-display text-xl">${r.price}<span className="text-xs text-muted-foreground">/mo</span></div>
               </div>
               <div className={`text-xs px-2 py-1 rounded-full ${r.trend.startsWith("-") ? "bg-primary/15 text-primary" : r.trend === "0%" ? "bg-muted text-muted-foreground" : "bg-destructive/15 text-destructive"}`}>{r.trend}</div>
             </div>
