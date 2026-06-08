@@ -121,11 +121,13 @@ export function Nav() {
           </div>
           <span className="font-display text-lg tracking-wide">Qurishi <span className="text-gradient-gold">Advising</span></span>
         </Link>
-        <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-          <Link to="/why" className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>Why Us</Link>
+        <nav className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
           <Link to="/services" className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>Services</Link>
           <Link to="/about" className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>About</Link>
           <Link to="/coverage" className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>Coverage</Link>
+          <Link to="/testimonials" className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>Reviews</Link>
+          <Link to="/resources" className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>Resources</Link>
+          <Link to="/join" className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>Join Us</Link>
           <Link to="/contact" className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>Contact</Link>
         </nav>
         <Link to="/contact" className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl btn-glass-gold text-sm font-medium">
@@ -913,19 +915,56 @@ export function FAQ() {
 }
 
 export function Footer() {
+  const cols: { title: string; links: { label: string; to: string }[] }[] = [
+    { title: "Explore", links: [
+      { label: "Why Us", to: "/why" },
+      { label: "Services", to: "/services" },
+      { label: "About", to: "/about" },
+      { label: "Coverage", to: "/coverage" },
+    ]},
+    { title: "Learn", links: [
+      { label: "Reviews", to: "/testimonials" },
+      { label: "Resources", to: "/resources" },
+      { label: "Join the Team", to: "/join" },
+      { label: "Contact", to: "/contact" },
+    ]},
+  ];
   return (
-    <footer className="border-t border-border py-12 px-6 bg-card/30">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-6 items-center">
-        <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-gradient-gold flex items-center justify-center">
-            <span className="font-display font-bold text-primary-foreground">Q</span>
+    <footer className="border-t border-border py-14 px-6 bg-card/30">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-[1.5fr_1fr_1fr_1fr] gap-10">
+        <div>
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-8 h-8 rounded-lg bg-gradient-gold flex items-center justify-center">
+              <span className="font-display font-bold text-primary-foreground">Q</span>
+            </div>
+            <div>
+              <div className="font-display text-lg">Qurishi Healthcare Advising</div>
+              <div className="text-xs text-muted-foreground">Mo Qurishi · Licensed Health Advisor</div>
+            </div>
           </div>
-          <div>
-            <div className="font-display text-lg">Qurishi Healthcare Advising</div>
-            <div className="text-xs text-muted-foreground">Mo Qurishi · Licensed Health Advisor</div>
-          </div>
+          <p className="text-sm text-muted-foreground max-w-xs leading-relaxed">Independent health insurance guidance — licensed in 35+ states. No pressure, ever.</p>
         </div>
-        <div className="text-sm text-muted-foreground">© {new Date().getFullYear()} Qurishi Healthcare Advising. All rights reserved.</div>
+        {cols.map((col) => (
+          <div key={col.title}>
+            <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">{col.title}</div>
+            <ul className="space-y-2.5 text-sm">
+              {col.links.map((l) => (
+                <li key={l.to}><Link to={l.to} className="text-muted-foreground hover:text-foreground transition">{l.label}</Link></li>
+              ))}
+            </ul>
+          </div>
+        ))}
+        <div>
+          <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Direct</div>
+          <ul className="space-y-2.5 text-sm">
+            <li><a href={`tel:${PHONE}`} className="text-muted-foreground hover:text-foreground transition">{PHONE}</a></li>
+            <li><a href={`mailto:${EMAIL}`} className="text-muted-foreground hover:text-foreground transition break-all">{EMAIL}</a></li>
+          </ul>
+        </div>
+      </div>
+      <div className="max-w-7xl mx-auto mt-10 pt-6 border-t border-border text-xs text-muted-foreground flex flex-col md:flex-row justify-between gap-2">
+        <div>© {new Date().getFullYear()} Qurishi Healthcare Advising. All rights reserved.</div>
+        <div>NPN · 21032307 · Licensed in 35+ states</div>
       </div>
     </footer>
   );
@@ -1311,7 +1350,7 @@ export function ResourceLibrary() {
 
         <div className="grid sm:grid-cols-2 gap-5">
           {RESOURCES.map((r) => (
-            <a key={r.title} href="#" className="card-glass rounded-2xl p-6 group flex gap-5 items-start">
+            <Link key={r.title} to="/resources" className="card-glass rounded-2xl p-6 group flex gap-5 items-start">
               <div className="icon-glass rounded-xl p-3.5 shrink-0">
                 <r.icon className="w-6 h-6 text-primary" />
               </div>
@@ -1326,7 +1365,7 @@ export function ResourceLibrary() {
                   Open <ChevronRight className="w-3 h-3" />
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
