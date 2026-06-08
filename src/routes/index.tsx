@@ -1042,17 +1042,18 @@ export function Footer() {
     <footer className="border-t border-border py-14 px-6 bg-card/30">
       <div className="max-w-7xl mx-auto grid md:grid-cols-[1.5fr_1fr_1fr_1fr] gap-10">
         <div>
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-8 h-8 rounded-lg bg-gradient-gold flex items-center justify-center">
-              <span className="font-display font-bold text-primary-foreground">Q</span>
-            </div>
-            <div>
-              <div className="font-display text-lg">Qurishi Healthcare Advising</div>
-              <div className="text-xs text-muted-foreground">Mo Qurishi · Licensed Health Advisor</div>
-            </div>
-          </div>
+          <Link to="/" className="inline-flex items-center mb-4" aria-label="Qurishi Healthcare — Home">
+            <img
+              src={qurishiHealthcareLogo.url}
+              alt="Qurishi Healthcare"
+              className="h-14 w-auto"
+              style={{ filter: "drop-shadow(0 2px 10px rgba(201,168,76,0.18))" }}
+            />
+          </Link>
+          <div className="text-xs uppercase tracking-[0.25em] text-muted-foreground mb-3">Mo Qurishi · Licensed Health Advisor</div>
           <p className="text-sm text-muted-foreground max-w-xs leading-relaxed">Independent health insurance guidance — licensed in 35+ states. No pressure, ever.</p>
         </div>
+
         {cols.map((col) => (
           <div key={col.title}>
             <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">{col.title}</div>
