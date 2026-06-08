@@ -4,6 +4,7 @@ import { Phone, Mail, MapPin, ShieldCheck, HeartPulse, Users, Clock, Award, Arro
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { USMap } from "@/components/USMap";
 import { PremiumTicker, AdvisorCompareSlider, AppointmentCalendar, CostDonut, QuickActionFAB, LicenseVerifier, TypewriterText, Tilt3D, TrustBadgeBar, MobileShowcase } from "@/components/CoolFeatures";
+import qurishiLogo from "@/assets/qurishi-logo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -126,39 +127,32 @@ function Hero() {
         </div>
 
         <div className="relative w-full">
-          <div className="absolute -inset-8 bg-gradient-gold opacity-10 blur-3xl rounded-full" />
+          <div className="absolute -inset-8 bg-gradient-gold opacity-20 blur-3xl rounded-full" />
           <CornerOrnaments />
-          <div className="relative rounded-2xl card-glass p-10 md:p-12 overflow-hidden">
+          <div className="relative rounded-2xl card-glass p-8 md:p-10 overflow-hidden">
             <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "repeating-linear-gradient(135deg, var(--gold) 0 1px, transparent 1px 22px)" }} />
-            <div className="relative space-y-8">
-              <div>
-                <div className="text-[10px] uppercase tracking-[0.4em] text-primary mb-3">Office of</div>
-                <div className="font-display text-4xl md:text-5xl leading-tight">Mo Qurishi</div>
-                <div className="text-sm uppercase tracking-[0.25em] text-muted-foreground mt-2">Licensed Health Advisor</div>
-                <div className="h-px w-20 bg-gradient-gold my-6" />
+            <div className="relative space-y-6">
+              <div className="rounded-xl bg-gradient-to-br from-[oklch(0.99_0.008_85)] to-[oklch(0.95_0.014_85)] border border-primary/15 p-6 shadow-inner">
+                <img src={qurishiLogo} alt="Qurishi Healthcare — Expert Guidance. Better Coverage. Peace of Mind." className="w-full h-auto rounded-lg" />
               </div>
+              <div className="h-px w-full bg-gradient-gold opacity-60" />
               <div className="grid grid-cols-2 gap-6">
                 <div>
                   <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-2">Direct Line</div>
-                  <a href={`tel:${PHONE}`} className="font-sans text-lg tracking-wide text-foreground hover:text-primary transition">{PHONE}</a>
+                  <a href={`tel:${PHONE}`} className="font-sans text-base tracking-wide text-foreground hover:text-primary transition">{PHONE}</a>
                 </div>
                 <div>
                   <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-2">Established</div>
                   <div className="font-display text-lg">2020</div>
                 </div>
               </div>
-              <ul className="space-y-3 text-sm text-muted-foreground border-t border-border pt-6">
+              <ul className="space-y-2.5 text-sm text-muted-foreground border-t border-border pt-5">
                 <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> NPN credentialed advisor</li>
                 <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> ACA Marketplace certified</li>
                 <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> Medicare AHIP certified</li>
                 <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> Independent &amp; multi-carrier appointed</li>
               </ul>
-              <div className="flex items-end justify-between pt-2">
-                <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Licensed in 35+ States</div>
-                <div className="w-12 h-12 rounded-full border border-primary/50 flex items-center justify-center">
-                  <span className="font-display text-base text-gradient-gold">MQ</span>
-                </div>
-              </div>
+              <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground text-center pt-1">Licensed in 35+ States</div>
             </div>
           </div>
         </div>
