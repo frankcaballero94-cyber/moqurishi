@@ -604,12 +604,12 @@ export function Stats() {
     { num: "4.9★", label: "Client Rating" },
   ];
   return (
-    <section className="py-20 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+    <section className="py-16 px-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-5">
         {stats.map((s) => (
-          <div key={s.label} className="card-glass rounded-2xl p-8 text-center">
-            <div className="font-display text-5xl md:text-6xl text-gradient-gold">{s.num}</div>
-            <div className="text-xs uppercase tracking-[0.25em] text-muted-foreground mt-3">{s.label}</div>
+          <div key={s.label} className="card-glass rounded-2xl p-6 text-center">
+            <div className="font-display text-4xl md:text-5xl text-gradient-gold">{s.num}</div>
+            <div className="text-xs uppercase tracking-[0.25em] text-muted-foreground mt-2">{s.label}</div>
           </div>
         ))}
       </div>
