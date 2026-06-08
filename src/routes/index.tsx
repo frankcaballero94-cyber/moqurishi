@@ -794,26 +794,26 @@ export function PlanTypes() {
     { name: "Dental & Vision", price: "Add-on coverage", bullets: ["Standalone or bundled", "Major retail networks", "Preventive care included", "Family plans available"], best: "Rounding out your protection" },
   ];
   return (
-    <section className="py-32 px-6">
+    <section className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-12">
           <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Plan Types</div>
-          <h2 className="font-display text-5xl md:text-6xl">Compare your <span className="italic text-gradient-gold">options.</span></h2>
+          <h2 className="font-display text-4xl md:text-5xl">Compare your <span className="italic text-gradient-gold">options.</span></h2>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
           {plans.map((p) => (
-            <div key={p.name} className={`card-glass rounded-2xl p-8 flex flex-col ${p.featured ? "ring-1 ring-primary/40" : ""}`}>
-              {p.featured && <div className="text-[10px] uppercase tracking-[0.3em] text-primary mb-3">Most Asked About</div>}
-              <h3 className="font-display text-2xl mb-1">{p.name}</h3>
-              <div className="text-sm text-muted-foreground mb-6">{p.price}</div>
-              <ul className="space-y-2.5 mb-6 flex-1">
+            <div key={p.name} className={`card-glass rounded-2xl p-6 flex flex-col ${p.featured ? "ring-1 ring-primary/40" : ""}`}>
+              {p.featured && <div className="text-[10px] uppercase tracking-[0.3em] text-primary mb-2">Most Asked About</div>}
+              <h3 className="font-display text-xl mb-1">{p.name}</h3>
+              <div className="text-sm text-muted-foreground mb-4">{p.price}</div>
+              <ul className="space-y-2 mb-4 flex-1">
                 {p.bullets.map((b) => (
                   <li key={b} className="flex items-start gap-2.5 text-sm text-foreground/90">
                     <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" /> {b}
                   </li>
                 ))}
               </ul>
-              <div className="border-t border-border/50 pt-4">
+              <div className="border-t border-border/50 pt-3">
                 <div className="text-[10px] uppercase tracking-[0.3em] text-primary mb-1">Best For</div>
                 <div className="text-sm text-muted-foreground">{p.best}</div>
               </div>
