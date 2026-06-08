@@ -619,27 +619,130 @@ export function Stats() {
 
 export function Process() {
   const steps = [
-    { num: "01", title: "Discovery Call", body: "A short, no-pressure conversation to understand your situation, budget, and care needs." },
-    { num: "02", title: "Plan Matching", body: "I shop the market across multiple carriers and surface only the plans that genuinely fit." },
-    { num: "03", title: "Enrollment", body: "I handle the paperwork and walk you through every detail before you sign." },
-    { num: "04", title: "Year-Round Support", body: "Renewals, claims questions, life changes — I'm one call away, all year." },
+    { num: "01", title: "Free 15-min call", body: "Tell us about your health, budget, and family. No commitment, no pressure — ever." },
+    { num: "02", title: "We compare carriers", body: "We shop across major carriers and plan types — ACA, private, supplemental — to find your fit." },
+    { num: "03", title: "You enroll with confidence", body: "We walk you through enrollment and stay your advisor for life. Coverage often starts within days." },
   ];
   return (
-    <section className="py-20 px-6">
+    <section id="how" className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">How It Works</div>
-          <h2 className="font-display text-4xl md:text-5xl">A simple, <span className="italic text-gradient-gold">human process.</span></h2>
+          <h2 className="font-display text-4xl md:text-5xl">Three steps from <span className="italic text-gradient-gold">confused to covered.</span></h2>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-          {steps.map((s) => (
-            <div key={s.num} className="card-glass rounded-2xl p-6 relative">
-              <span className="font-display text-4xl text-gradient-gold">{s.num}</span>
-              <h3 className="font-display text-xl mt-3 mb-2">{s.title}</h3>
+        <div className="grid md:grid-cols-3 gap-5 relative">
+          {steps.map((s, i) => (
+            <div key={s.num} className="card-glass rounded-2xl p-7 relative">
+              <div className="flex items-baseline gap-3 mb-3">
+                <span className="font-display text-5xl text-gradient-gold leading-none">{s.num}</span>
+                {i < steps.length - 1 && (
+                  <ArrowRight className="hidden md:block w-4 h-4 text-primary/40 ml-auto" />
+                )}
+              </div>
+              <h3 className="font-display text-xl mb-2">{s.title}</h3>
               <p className="text-muted-foreground leading-relaxed text-sm">{s.body}</p>
             </div>
           ))}
         </div>
+      </div>
+    </section>
+  );
+}
+
+export function WhyNow() {
+  const items = [
+    { icon: Clock, title: "Year-Round Enrollment", body: "Private plans don't require Open Enrollment. Coverage can start in days, not months." },
+    { icon: Calendar, title: "Open Enrollment: Nov 1 – Jan 15", body: "For ACA plans, you can change or apply once a year. We can prep your case ahead of time." },
+    { icon: Sparkles, title: "Qualifying Life Events", body: "New job, marriage, baby, moving states? You may have a 60-day Special Enrollment Period." },
+  ];
+  return (
+    <section id="why-now" className="py-20 px-6 bg-card/30">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Why Now</div>
+          <h2 className="font-display text-4xl md:text-5xl">The right moment depends on <span className="italic text-gradient-gold">your situation.</span></h2>
+          <p className="text-muted-foreground text-sm mt-3">Here's what to know — and when to act.</p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-5">
+          {items.map(({ icon: Icon, title, body }) => (
+            <div key={title} className="card-glass rounded-2xl p-6">
+              <div className="w-10 h-10 rounded-lg icon-glass flex items-center justify-center mb-4">
+                <Icon className="w-4 h-4 text-primary" />
+              </div>
+              <h3 className="font-display text-lg mb-2">{title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const LICENSE_STATES: { code: string; name: string }[] = [
+  { code: "AL", name: "Alabama" }, { code: "AR", name: "Arkansas" }, { code: "CO", name: "Colorado" },
+  { code: "DE", name: "Delaware" }, { code: "FL", name: "Florida" }, { code: "GA", name: "Georgia" },
+  { code: "IA", name: "Iowa" }, { code: "IL", name: "Illinois" }, { code: "IN", name: "Indiana" },
+  { code: "KS", name: "Kansas" }, { code: "KY", name: "Kentucky" }, { code: "LA", name: "Louisiana" },
+  { code: "MD", name: "Maryland" }, { code: "MI", name: "Michigan" }, { code: "MO", name: "Missouri" },
+  { code: "MS", name: "Mississippi" }, { code: "MT", name: "Montana" }, { code: "NC", name: "North Carolina" },
+  { code: "NE", name: "Nebraska" }, { code: "NV", name: "Nevada" }, { code: "OH", name: "Ohio" },
+  { code: "OK", name: "Oklahoma" }, { code: "SC", name: "South Carolina" }, { code: "SD", name: "South Dakota" },
+  { code: "TN", name: "Tennessee" }, { code: "TX", name: "Texas" }, { code: "UT", name: "Utah" },
+  { code: "VA", name: "Virginia" }, { code: "WI", name: "Wisconsin" }, { code: "WV", name: "West Virginia" },
+  { code: "WY", name: "Wyoming" },
+];
+
+export function LicenseGrid() {
+  return (
+    <section id="licenses" className="py-20 px-6">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-10">
+          <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Official Documentation</div>
+          <h2 className="font-display text-4xl md:text-5xl">State-by-state <span className="italic text-gradient-gold">licenses.</span></h2>
+          <p className="text-muted-foreground text-sm mt-3 max-w-xl mx-auto">Tap any card to request the official state-issued license document.</p>
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+          {LICENSE_STATES.map((s) => (
+            <a
+              key={s.code}
+              href="#contact"
+              className="card-glass rounded-xl p-4 flex flex-col items-center text-center hover:border-primary/50 transition-colors group"
+            >
+              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/15 to-primary/5 border border-primary/20 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
+                <FileText className="w-5 h-5 text-primary" />
+              </div>
+              <div className="font-display text-base leading-tight">{s.name}</div>
+              <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-1">License · {s.code}</div>
+            </a>
+          ))}
+        </div>
+
+        <div className="mt-10 card-glass rounded-2xl p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center justify-between">
+          <div className="flex items-start gap-4">
+            <div className="w-12 h-12 rounded-xl icon-glass flex items-center justify-center shrink-0">
+              <ShieldCheck className="w-5 h-5 text-primary" />
+            </div>
+            <div>
+              <div className="text-xs uppercase tracking-[0.3em] text-primary mb-1">NPN · 21032307</div>
+              <h3 className="font-display text-xl">National Producer Number</h3>
+              <p className="text-muted-foreground text-sm mt-1">Verify any licensed advisor at <span className="text-foreground">nipr.com</span>.</p>
+            </div>
+          </div>
+          <div className="flex gap-3">
+            <a href="#contact" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl btn-glass-gold font-medium text-sm">
+              Get instant estimate <ArrowRight className="w-4 h-4" />
+            </a>
+            <a href="https://nipr.com" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl badge-glass font-medium text-sm">
+              Verify license
+            </a>
+          </div>
+        </div>
+
+        <p className="text-center text-xs text-muted-foreground mt-6">
+          Don't see your state? Email us — new state licenses are added regularly.
+        </p>
       </div>
     </section>
   );
