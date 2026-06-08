@@ -855,27 +855,27 @@ export function TrustStrip() {
 
 export function LeadMagnet() {
   return (
-    <section className="py-24 px-6">
-      <div className="max-w-5xl mx-auto card-glass rounded-2xl p-10 md:p-14 relative overflow-hidden">
+    <section className="py-16 px-6">
+      <div className="max-w-5xl mx-auto card-glass rounded-2xl p-8 md:p-10 relative overflow-hidden">
         <div className="absolute -bottom-24 -left-20 w-80 h-80 bg-gradient-gold opacity-10 blur-3xl rounded-full" />
-        <div className="relative grid md:grid-cols-[1fr_auto] gap-8 items-center">
+        <div className="relative grid md:grid-cols-[1fr_auto] gap-6 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-primary mb-4">
+            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-primary mb-3">
               <Sparkles className="w-3 h-3" /> Free Guide
             </div>
-            <h3 className="font-display text-3xl md:text-4xl mb-3 leading-tight">
+            <h3 className="font-display text-2xl md:text-3xl mb-2 leading-tight">
               The plain-English guide to <span className="italic text-gradient-gold">choosing a health plan.</span>
             </h3>
-            <p className="text-muted-foreground leading-relaxed max-w-xl">
+            <p className="text-muted-foreground leading-relaxed max-w-xl text-sm">
               A 12-page PDF covering deductibles, premiums, networks, and subsidies — without the jargon. Delivered to your inbox in seconds.
             </p>
           </div>
           <form
             onSubmit={(e) => { e.preventDefault(); window.location.href = `mailto:${EMAIL}?subject=Send%20me%20the%20guide`; }}
-            className="flex flex-col gap-3 w-full md:w-80"
+            className="flex flex-col gap-3 w-full md:w-72"
           >
-            <input type="email" required placeholder="your@email.com" className="w-full rounded-xl px-5 py-4 input-glass" />
-            <button type="submit" className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl btn-glass-gold font-medium">
+            <input type="email" required placeholder="your@email.com" className="w-full rounded-xl px-4 py-3 input-glass text-sm" />
+            <button type="submit" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl btn-glass-gold font-medium text-sm">
               Send Me the Guide <ArrowRight className="w-4 h-4" />
             </button>
           </form>
