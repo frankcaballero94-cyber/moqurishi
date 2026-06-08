@@ -34,39 +34,17 @@ function Index() {
     <div className="min-h-screen">
       <Nav />
       <Hero />
-      <Marquee />
-      <Stats />
-      <PremiumTicker />
       <WhyUs />
       <Services />
-      <AdvisorCompareSlider />
-      <PlanTypes />
-      <Process />
       <About />
-      <WhoWeHelp />
       <Carriers />
       <TrustBadgeBar />
-      <TrustStrip />
-      <MobileShowcase />
       <StatesSection />
       <LicenseGrid />
-      <LicenseVerifier />
-      <WhyNow />
-      <SavingsCalculator />
-      <CostDonut />
-      <PlanComparison />
-      <Testimonials />
-      <EnrollmentTimeline />
-      <DeadlinesCallout />
       <AppointmentCalendar />
-      <ResourceLibrary />
-      <LeadMagnet />
-      <Glossary />
       <FAQ />
-      <Languages />
       <Contact />
       <Footer />
-      <QuickActionFAB />
     </div>
   );
 }
