@@ -590,9 +590,7 @@ export function Contact() {
 
   return (
     <section id="contact" className="relative py-24 px-6 overflow-hidden">
-      {/* Ambient background orbs */}
-      <div className="pointer-events-none absolute -top-32 -left-32 w-[28rem] h-[28rem] rounded-full bg-gradient-gold opacity-20 blur-3xl animate-[ambient-drift_14s_ease-in-out_infinite]" />
-      <div className="pointer-events-none absolute -bottom-32 -right-32 w-[32rem] h-[32rem] rounded-full bg-gradient-gold opacity-15 blur-3xl animate-[ambient-drift_18s_ease-in-out_infinite]" />
+
 
       <div className="relative max-w-6xl mx-auto">
         <div className="text-center mb-14 motion-reveal is-visible">
