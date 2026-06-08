@@ -5,7 +5,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { USMap } from "@/components/USMap";
 import { PremiumTicker, AdvisorCompareSlider, AppointmentCalendar, CostDonut, QuickActionFAB, LicenseVerifier, TypewriterText, Tilt3D, TrustBadgeBar, MobileShowcase } from "@/components/CoolFeatures";
 import qurishiLogo from "@/assets/qurishi-logo.png";
-import qurishiHealthcareLogo from "@/assets/qurishi-healthcare-logo.png.asset.json";
+import qurishiHealthcareLogo from "@/assets/qurishi-healthcare-logo-transparent.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -101,7 +101,7 @@ function Index() {
       <Services />
       <About />
       <Carriers />
-      <TrustBadgeBar />
+      
       <StatesSection />
       <LicenseGrid />
       <AppointmentCalendar />
@@ -121,15 +121,11 @@ export function Nav() {
             src={qurishiHealthcareLogo.url}
             alt="Qurishi Healthcare"
             className="h-12 w-auto"
-            style={{
-              filter: "brightness(1.35) contrast(1.05) drop-shadow(0 2px 10px rgba(201,168,76,0.25))",
-              WebkitMaskImage:
-                "radial-gradient(ellipse at center, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 92%)",
-              maskImage:
-                "radial-gradient(ellipse at center, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 92%)",
-            }}
+            style={{ filter: "drop-shadow(0 2px 10px rgba(201,168,76,0.18))" }}
           />
         </Link>
+
+
         <nav className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
           <Link to="/services" className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>Services</Link>
           <Link to="/about" className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>About</Link>
