@@ -210,18 +210,18 @@ export function WhyUs() {
     { icon: Award, title: "Independent & Honest", body: "Not tied to one carrier. I shop the market so you only see plans that genuinely fit your life." },
   ];
   return (
-    <section id="why" className="py-32 px-6">
+    <section id="why" className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-20">
+        <div className="text-center max-w-2xl mx-auto mb-14">
           <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Why Choose Mo</div>
-          <h2 className="font-display text-5xl md:text-6xl">A different kind of <span className="italic text-gradient-gold">advisor.</span></h2>
+          <h2 className="font-display text-4xl md:text-5xl">A different kind of <span className="italic text-gradient-gold">advisor.</span></h2>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
           {items.map(({ icon: Icon, title, body }) => (
-            <div key={title} className="card-glass rounded-2xl p-10 hover:border-primary/45 transition group">
-              <Icon className="w-8 h-8 text-primary mb-6 group-hover:scale-110 transition" />
-              <h3 className="font-display text-2xl mb-3">{title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{body}</p>
+            <div key={title} className="card-glass rounded-2xl p-6 hover:border-primary/45 transition group">
+              <Icon className="w-7 h-7 text-primary mb-4 group-hover:scale-110 transition" />
+              <h3 className="font-display text-xl mb-2">{title}</h3>
+              <p className="text-muted-foreground leading-relaxed text-sm">{body}</p>
             </div>
           ))}
         </div>
