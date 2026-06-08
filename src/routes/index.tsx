@@ -49,7 +49,9 @@ function Index() {
       <TrustStrip />
       <MobileShowcase />
       <StatesSection />
+      <LicenseGrid />
       <LicenseVerifier />
+      <WhyNow />
       <SavingsCalculator />
       <CostDonut />
       <PlanComparison />
