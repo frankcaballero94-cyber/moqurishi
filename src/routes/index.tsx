@@ -934,32 +934,32 @@ export function SavingsCalculator() {
   const yourCost = Math.max(0, benchmark - subsidy);
 
   return (
-    <section className="px-6 py-24 bg-card/20">
+    <section className="px-6 py-16 bg-card/20">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <div className="inline-flex items-center gap-2 badge-glass px-4 py-1.5 rounded-full text-xs uppercase tracking-[0.2em] text-primary mb-4">
             <Calculator className="w-3.5 h-3.5" /> Subsidy Estimator
           </div>
-          <h2 className="font-display text-4xl md:text-5xl mb-3">See what you could save</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">Move the sliders. Estimates use 2025 ACA premium tax credit guidelines — final amounts depend on your verified application.</p>
+          <h2 className="font-display text-3xl md:text-4xl mb-3">See what you could save</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-sm">Move the sliders. Estimates use 2025 ACA premium tax credit guidelines — final amounts depend on your verified application.</p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          <div className="card-glass rounded-2xl p-8 space-y-8">
+        <div className="grid lg:grid-cols-2 gap-6">
+          <div className="card-glass rounded-2xl p-6 space-y-6">
             <Slider label="Your age" value={age} min={18} max={64} suffix=" yrs" onChange={setAge} />
             <Slider label="Household size" value={household} min={1} max={8} suffix={household === 1 ? " person" : " people"} onChange={setHousehold} />
             <Slider label="Annual household income" value={income} min={15000} max={200000} step={1000} prefix="$" onChange={setIncome} />
           </div>
 
-          <div className="card-glass rounded-2xl p-8 flex flex-col justify-between">
+          <div className="card-glass rounded-2xl p-6 flex flex-col justify-between">
             <div>
               <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">Estimated monthly</div>
-              <div className="flex items-baseline gap-3 mb-6">
-                <div className="font-display text-6xl text-gradient-gold">${yourCost}</div>
+              <div className="flex items-baseline gap-3 mb-5">
+                <div className="font-display text-5xl text-gradient-gold">${yourCost}</div>
                 <div className="text-muted-foreground">/month</div>
               </div>
 
-              <div className="space-y-3 text-sm">
+              <div className="space-y-2 text-sm">
                 <Row label="Benchmark silver plan" value={`$${benchmark}/mo`} />
                 <Row label="Premium tax credit" value={`−$${subsidy}/mo`} accent />
                 <div className="h-px bg-border" />
@@ -968,9 +968,9 @@ export function SavingsCalculator() {
               </div>
             </div>
 
-            <div className="mt-8 pt-6 border-t border-border">
-              <p className="text-xs text-muted-foreground mb-4">Want the real number? I'll run an exact quote against live carrier rates — no fee, no commitment.</p>
-              <Link to="/contact" className="btn-glass-gold inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium uppercase tracking-wider">
+            <div className="mt-6 pt-5 border-t border-border">
+              <p className="text-xs text-muted-foreground mb-3">Want the real number? I'll run an exact quote against live carrier rates — no fee, no commitment.</p>
+              <Link to="/contact" className="btn-glass-gold inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium uppercase tracking-wider">
                 Get exact quote <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
