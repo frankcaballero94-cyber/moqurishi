@@ -533,32 +533,32 @@ export function Testimonials() {
 
 export function Contact() {
   return (
-    <section id="contact" className="py-32 px-6">
+    <section id="contact" className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="relative rounded-2xl overflow-hidden card-glass">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-gold opacity-5" />
-          <div className="relative grid lg:grid-cols-2 gap-12 p-10 md:p-16">
+          <div className="relative grid lg:grid-cols-2 gap-10 p-8 md:p-10">
             <div>
               <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Get In Touch</div>
-              <h2 className="font-display text-5xl md:text-6xl mb-6 leading-[1]">Let's find the right <span className="italic text-gradient-gold">coverage.</span></h2>
-              <p className="text-muted-foreground mb-10 leading-relaxed">Free, no-pressure consultation. Reach out by phone, email, or send a quick note — I personally respond to every inquiry.</p>
-              <div className="space-y-5">
+              <h2 className="font-display text-4xl md:text-5xl mb-5 leading-[1]">Let's find the right <span className="italic text-gradient-gold">coverage.</span></h2>
+              <p className="text-muted-foreground mb-8 leading-relaxed text-sm">Free, no-pressure consultation. Reach out by phone, email, or send a quick note — I personally respond to every inquiry.</p>
+              <div className="space-y-4">
                 <a href={`tel:${PHONE}`} className="flex items-center gap-4 group">
-                  <div className="w-12 h-12 rounded-xl icon-glass flex items-center justify-center group-hover:bg-gradient-gold transition">
-                    <Phone className="w-5 h-5 text-primary group-hover:text-primary-foreground" />
+                  <div className="w-10 h-10 rounded-lg icon-glass flex items-center justify-center group-hover:bg-gradient-gold transition">
+                    <Phone className="w-4 h-4 text-primary group-hover:text-primary-foreground" />
                   </div>
                   <div>
                     <div className="text-xs uppercase tracking-wider text-muted-foreground">Phone</div>
-                    <div className="font-sans text-xl tracking-wide">{PHONE}</div>
+                    <div className="font-sans text-lg tracking-wide">{PHONE}</div>
                   </div>
                 </a>
                 <a href={`mailto:${EMAIL}`} className="flex items-center gap-4 group">
-                  <div className="w-12 h-12 rounded-xl icon-glass flex items-center justify-center group-hover:bg-gradient-gold transition">
-                    <Mail className="w-5 h-5 text-primary group-hover:text-primary-foreground" />
+                  <div className="w-10 h-10 rounded-lg icon-glass flex items-center justify-center group-hover:bg-gradient-gold transition">
+                    <Mail className="w-4 h-4 text-primary group-hover:text-primary-foreground" />
                   </div>
                   <div>
                     <div className="text-xs uppercase tracking-wider text-muted-foreground">Email</div>
-                    <div className="font-display text-lg break-all">{EMAIL}</div>
+                    <div className="font-display text-base break-all">{EMAIL}</div>
                   </div>
                 </a>
               </div>
@@ -574,9 +574,9 @@ export function Contact() {
               <Field label="State" name="state" />
               <div>
                 <label className="text-xs uppercase tracking-wider text-muted-foreground">How can I help?</label>
-                <textarea rows={4} className="mt-2 w-full rounded-lg px-4 py-3 input-glass" />
+                <textarea rows={3} className="mt-2 w-full rounded-lg px-4 py-3 input-glass" />
               </div>
-              <button type="submit" className="w-full inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl btn-glass-gold font-medium">
+              <button type="submit" className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl btn-glass-gold font-medium text-sm">
                 Request Free Quote <ArrowRight className="w-4 h-4" />
               </button>
             </form>
