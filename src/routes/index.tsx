@@ -125,8 +125,7 @@ export function Nav() {
           />
         </Link>
 
-          />
-        </Link>
+
         <nav className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
           <Link to="/services" className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>Services</Link>
           <Link to="/about" className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>About</Link>
