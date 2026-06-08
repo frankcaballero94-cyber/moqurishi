@@ -10,11 +10,14 @@ import qurishiHealthcareLogo from "@/assets/qurishi-healthcare-logo-transparent.
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Mo Qurishi · Licensed Health Advisor in 35+ States" },
-      { name: "description", content: "Personal health insurance guidance from Mo Qurishi. Licensed in 35+ states. Free, no-pressure consultations for individuals, families, and small businesses." },
+      { title: "Mo Qurishi · Licensed Health Advisor" },
+      { name: "description", content: "Personal health insurance guidance from Mo Qurishi. Licensed in 35+ states. Free, no-pressure consultations." },
       { property: "og:title", content: "Mo Qurishi · Licensed Health Advisor" },
-      { property: "og:description", content: "Personal health insurance guidance from a licensed advisor — clear answers, no pressure." },
+      { property: "og:description", content: "Licensed in 35+ states — call 656-266-3462" },
+      { property: "og:site_name", content: "Mo Qurishi" },
       { property: "og:type", content: "website" },
+      { name: "twitter:title", content: "Mo Qurishi · Licensed Health Advisor" },
+      { name: "twitter:description", content: "Licensed in 35+ states — call 656-266-3462" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
