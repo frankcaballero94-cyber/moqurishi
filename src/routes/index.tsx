@@ -625,17 +625,17 @@ export function Process() {
     { num: "04", title: "Year-Round Support", body: "Renewals, claims questions, life changes — I'm one call away, all year." },
   ];
   return (
-    <section className="py-32 px-6">
+    <section className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-12">
           <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">How It Works</div>
-          <h2 className="font-display text-5xl md:text-6xl">A simple, <span className="italic text-gradient-gold">human process.</span></h2>
+          <h2 className="font-display text-4xl md:text-5xl">A simple, <span className="italic text-gradient-gold">human process.</span></h2>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
           {steps.map((s) => (
-            <div key={s.num} className="card-glass rounded-2xl p-8 relative">
-              <span className="font-display text-5xl text-gradient-gold">{s.num}</span>
-              <h3 className="font-display text-2xl mt-4 mb-3">{s.title}</h3>
+            <div key={s.num} className="card-glass rounded-2xl p-6 relative">
+              <span className="font-display text-4xl text-gradient-gold">{s.num}</span>
+              <h3 className="font-display text-xl mt-3 mb-2">{s.title}</h3>
               <p className="text-muted-foreground leading-relaxed text-sm">{s.body}</p>
             </div>
           ))}
