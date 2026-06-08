@@ -701,24 +701,24 @@ export function Carriers() {
 
 export function DeadlinesCallout() {
   return (
-    <section className="py-20 px-6">
-      <div className="max-w-6xl mx-auto card-glass rounded-2xl p-10 md:p-14 relative overflow-hidden">
+    <section className="py-16 px-6">
+      <div className="max-w-6xl mx-auto card-glass rounded-2xl p-8 md:p-10 relative overflow-hidden">
         <div className="absolute -top-20 -right-20 w-72 h-72 bg-gradient-gold opacity-10 blur-3xl rounded-full" />
-        <div className="relative grid md:grid-cols-[auto_1fr_auto] gap-8 items-center">
-          <div className="w-16 h-16 rounded-2xl icon-glass flex items-center justify-center shrink-0">
-            <Calendar className="w-7 h-7 text-primary" />
+        <div className="relative grid md:grid-cols-[auto_1fr_auto] gap-6 items-center">
+          <div className="w-12 h-12 rounded-xl icon-glass flex items-center justify-center shrink-0">
+            <Calendar className="w-5 h-5 text-primary" />
           </div>
           <div>
             <div className="text-xs uppercase tracking-[0.3em] text-primary mb-2">Key Dates</div>
-            <h3 className="font-display text-3xl md:text-4xl mb-3">Don't miss your <span className="italic text-gradient-gold">enrollment window.</span></h3>
-            <div className="grid sm:grid-cols-2 gap-x-8 gap-y-2 text-sm text-muted-foreground">
+            <h3 className="font-display text-2xl md:text-3xl mb-2">Don't miss your <span className="italic text-gradient-gold">enrollment window.</span></h3>
+            <div className="grid sm:grid-cols-2 gap-x-8 gap-y-1 text-sm text-muted-foreground">
               <div><span className="text-foreground font-medium">ACA Open Enrollment:</span> Nov 1 – Jan 15</div>
               <div><span className="text-foreground font-medium">Medicare AEP:</span> Oct 15 – Dec 7</div>
               <div><span className="text-foreground font-medium">Medicare OEP:</span> Jan 1 – Mar 31</div>
               <div><span className="text-foreground font-medium">SEP:</span> Triggered by life events year-round</div>
             </div>
           </div>
-          <a href="#contact" className="inline-flex items-center gap-2 px-6 py-4 rounded-xl btn-glass-gold font-medium shrink-0">
+          <a href="#contact" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl btn-glass-gold font-medium text-sm shrink-0">
             Check Eligibility <ArrowRight className="w-4 h-4" />
           </a>
         </div>
