@@ -888,14 +888,14 @@ export function LeadMagnet() {
 export function Languages() {
   const langs = ["English", "Arabic", "Spanish (via interpreter)"];
   return (
-    <section className="py-20 px-6">
-      <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
-        <div className="card-glass rounded-2xl p-8">
+    <section className="py-16 px-6">
+      <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-5">
+        <div className="card-glass rounded-2xl p-6">
           <div className="text-xs uppercase tracking-[0.3em] text-primary mb-3">Languages Spoken</div>
-          <h3 className="font-display text-2xl mb-4">Clear conversations, <span className="italic text-gradient-gold">your language.</span></h3>
+          <h3 className="font-display text-xl mb-3">Clear conversations, <span className="italic text-gradient-gold">your language.</span></h3>
           <div className="flex flex-wrap gap-2">
             {langs.map((l) => (
-              <span key={l} className="px-4 py-2 rounded-lg badge-glass text-sm">{l}</span>
+              <span key={l} className="px-3 py-1.5 rounded-lg badge-glass text-sm">{l}</span>
             ))}
           </div>
         </div>
