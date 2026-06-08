@@ -655,22 +655,22 @@ export function WhoWeHelp() {
     { icon: Baby, title: "New Parents", body: "Add a child to your plan or find better family coverage in a Special Enrollment Period." },
   ];
   return (
-    <section className="py-32 px-6 bg-card/30">
+    <section className="py-20 px-6 bg-card/30">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-[1fr_2fr] gap-16 mb-16">
+        <div className="grid lg:grid-cols-[1fr_2fr] gap-12 mb-12">
           <div>
             <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Who I Help</div>
-            <h2 className="font-display text-5xl md:text-6xl">For every <span className="italic text-gradient-gold">stage of life.</span></h2>
+            <h2 className="font-display text-4xl md:text-5xl">For every <span className="italic text-gradient-gold">stage of life.</span></h2>
           </div>
-          <p className="text-lg text-muted-foreground self-end leading-relaxed">
+          <p className="text-base text-muted-foreground self-end leading-relaxed">
             No matter where you are right now, there's a path to coverage that makes sense — and I'll help you find it.
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {personas.map(({ icon: Icon, title, body }) => (
-            <div key={title} className="card-glass rounded-2xl p-8">
-              <Icon className="w-7 h-7 text-primary mb-5" />
-              <h3 className="font-display text-xl mb-2">{title}</h3>
+            <div key={title} className="card-glass rounded-2xl p-6">
+              <Icon className="w-6 h-6 text-primary mb-4" />
+              <h3 className="font-display text-lg mb-1">{title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{body}</p>
             </div>
           ))}
