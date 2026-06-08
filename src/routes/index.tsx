@@ -5,6 +5,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { USMap } from "@/components/USMap";
 import { PremiumTicker, AdvisorCompareSlider, AppointmentCalendar, CostDonut, QuickActionFAB, LicenseVerifier, TypewriterText, Tilt3D, TrustBadgeBar, MobileShowcase } from "@/components/CoolFeatures";
 import qurishiLogo from "@/assets/qurishi-logo.png";
+import qurishiHealthcareLogo from "@/assets/qurishi-healthcare-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
