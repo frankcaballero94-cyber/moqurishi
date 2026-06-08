@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Phone, Mail, MapPin, ShieldCheck, HeartPulse, Users, Clock, Award, ArrowRight, Check, Star, X, Calendar, Plus, Minus, Briefcase, Building2, Plane, UserCheck, Baby, Sparkles, Calculator, TrendingDown, BookOpen, Search, FileText, Video, Headphones, Quote, ChevronRight } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { USMap } from "@/components/USMap";
@@ -30,6 +30,68 @@ const PHONE = "656-266-3462";
 const EMAIL = "alqurishihealthcareadvising@gmail.com";
 
 function Index() {
+  useEffect(() => {
+    const sections = Array.from(document.querySelectorAll<HTMLElement>("section"));
+    sections.forEach((section, index) => {
+      if (index % 2 === 0) section.classList.add("ambient-section");
+    });
+
+    const revealEls = Array.from(document.querySelectorAll<HTMLElement>("section > div"));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+    );
+
+    revealEls.forEach((el, index) => {
+      el.classList.add("motion-reveal");
+      el.style.transitionDelay = `${Math.min(index * 60, 280)}ms`;
+      observer.observe(el);
+    });
+    revealEls[0]?.classList.add("is-visible");
+
+    const cleanups: Array<() => void> = [];
+    if (window.matchMedia("(pointer:fine)").matches) {
+      const glowEls = document.querySelectorAll<HTMLElement>(".card-glass, .badge-glass, .btn-glass-gold, .icon-glass, .mouse-glow-card");
+      glowEls.forEach((el) => {
+        const move = (event: MouseEvent) => {
+          const rect = el.getBoundingClientRect();
+          const x = ((event.clientX - rect.left) / rect.width) * 100;
+          const y = ((event.clientY - rect.top) / rect.height) * 100;
+          el.style.setProperty("--glow-x", `${x}%`);
+          el.style.setProperty("--glow-y", `${y}%`);
+        };
+        const enter = () => el.style.setProperty("--glow-opacity", "1");
+        const leave = () => {
+          el.style.setProperty("--glow-opacity", "0");
+          el.style.setProperty("--glow-x", "50%");
+          el.style.setProperty("--glow-y", "50%");
+        };
+
+        leave();
+        el.addEventListener("mousemove", move);
+        el.addEventListener("mouseenter", enter);
+        el.addEventListener("mouseleave", leave);
+        cleanups.push(() => {
+          el.removeEventListener("mousemove", move);
+          el.removeEventListener("mouseenter", enter);
+          el.removeEventListener("mouseleave", leave);
+        });
+      });
+    }
+
+    return () => {
+      observer.disconnect();
+      cleanups.forEach((cleanup) => cleanup());
+    };
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Nav />
@@ -832,13 +894,13 @@ export function FAQ() {
             <div key={i} className="card-glass rounded-2xl overflow-hidden">
               <button
                 onClick={() => setOpen(open === i ? null : i)}
-                className="w-full flex items-center justify-between gap-4 p-5 text-left cursor-pointer"
+                className="w-full flex items-center justify-between gap-4 p-5 text-left cursor-pointer transition-colors hover:bg-primary/5"
               >
                 <span className="font-display text-base md:text-lg">{f.q}</span>
                 {open === i ? <Minus className="w-5 h-5 text-primary shrink-0" /> : <Plus className="w-5 h-5 text-primary shrink-0" />}
               </button>
               {open === i && (
-                <div className="px-5 pb-5 text-muted-foreground leading-relaxed border-t border-border/50 pt-4 text-sm">
+                <div className="animate-accordion-down px-5 pb-5 text-muted-foreground leading-relaxed border-t border-border/50 pt-4 text-sm">
                   {f.a}
                 </div>
               )}

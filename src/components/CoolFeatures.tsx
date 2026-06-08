@@ -447,7 +447,7 @@ export function TrustBadgeBar() {
           {badges.map(({ icon: Icon, label, sub }, i) => (
             <div
               key={label}
-              className="group relative bg-card/60 p-6 flex flex-col items-center text-center hover:bg-card transition"
+              className="mouse-glow-card group relative bg-card/60 p-6 flex flex-col items-center text-center transition hover:bg-card hover:-translate-y-1"
               style={{ animation: `fade-in 0.6s ease-out ${i * 0.08}s both` }}
             >
               <div className="relative mb-3">
