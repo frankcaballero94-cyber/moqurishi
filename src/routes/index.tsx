@@ -96,30 +96,30 @@ export function Nav() {
 
 function Hero() {
   return (
-    <section id="top" className="relative pt-32 pb-24 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-        <div className="space-y-8">
+    <section id="top" className="relative pt-24 pb-16 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
+        <div className="space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-xs uppercase tracking-[0.2em] text-primary">
             <Star className="w-3 h-3 fill-primary" /> Licensed in 35+ States
           </div>
-          <h1 className="font-display text-6xl md:text-7xl lg:text-8xl leading-[0.95] font-medium">
+          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-medium">
             Your Health <br />
             <span className="text-gradient-gold italic">
               <TypewriterText words={["Deserves an Advocate.", "Deserves Clarity.", "Deserves Real Answers.", "Deserves Mo."]} />
             </span>
           </h1>
-          <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
+          <p className="text-base text-muted-foreground max-w-xl leading-relaxed">
             I'm Mo Qurishi — a licensed health insurance advisor helping individuals, families, and small businesses cut through the noise and find coverage that actually fits.
           </p>
-          <div className="flex flex-wrap gap-4">
-            <a href="#contact" className="inline-flex items-center gap-2 px-7 py-4 rounded-xl btn-glass-gold font-medium">
+          <div className="flex flex-wrap gap-3">
+            <a href="#contact" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl btn-glass-gold font-medium text-sm">
               Get a Free Quote <ArrowRight className="w-4 h-4" />
             </a>
-            <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 px-7 py-4 rounded-xl border border-primary/40 text-foreground hover:bg-primary/5 transition">
+            <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-primary/40 text-foreground hover:bg-primary/5 transition text-sm">
               <Phone className="w-4 h-4 text-primary" /> {PHONE}
             </a>
           </div>
-          <div className="flex items-center gap-6 pt-4 text-sm text-muted-foreground">
+          <div className="flex items-center gap-6 pt-2 text-sm text-muted-foreground">
             <div className="flex items-center gap-2"><Check className="w-4 h-4 text-primary"/>No pressure</div>
             <div className="flex items-center gap-2"><Check className="w-4 h-4 text-primary"/>Free consults</div>
             <div className="flex items-center gap-2"><Check className="w-4 h-4 text-primary"/>Real advisor</div>
@@ -127,16 +127,16 @@ function Hero() {
         </div>
 
         <div className="relative w-full">
-          <div className="absolute -inset-8 bg-gradient-gold opacity-20 blur-3xl rounded-full" />
+          <div className="absolute -inset-6 bg-gradient-gold opacity-15 blur-3xl rounded-full" />
           <CornerOrnaments />
-          <div className="relative rounded-2xl card-glass p-8 md:p-10 overflow-hidden">
+          <div className="relative rounded-2xl card-glass p-6 md:p-8 overflow-hidden">
             <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "repeating-linear-gradient(135deg, var(--gold) 0 1px, transparent 1px 22px)" }} />
-            <div className="relative space-y-6">
-              <div className="rounded-xl bg-gradient-to-br from-[oklch(0.99_0.008_85)] to-[oklch(0.95_0.014_85)] border border-primary/15 p-6 shadow-inner">
+            <div className="relative space-y-5">
+              <div className="rounded-xl bg-gradient-to-br from-[oklch(0.99_0.008_85)] to-[oklch(0.95_0.014_85)] border border-primary/15 p-5 shadow-inner">
                 <img src={qurishiLogo} alt="Qurishi Healthcare — Expert Guidance. Better Coverage. Peace of Mind." className="w-full h-auto rounded-lg" />
               </div>
               <div className="h-px w-full bg-gradient-gold opacity-60" />
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 gap-5">
                 <div>
                   <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-2">Direct Line</div>
                   <a href={`tel:${PHONE}`} className="font-sans text-base tracking-wide text-foreground hover:text-primary transition">{PHONE}</a>
@@ -146,7 +146,7 @@ function Hero() {
                   <div className="font-display text-lg">2020</div>
                 </div>
               </div>
-              <ul className="space-y-2.5 text-sm text-muted-foreground border-t border-border pt-5">
+              <ul className="space-y-2 text-sm text-muted-foreground border-t border-border pt-4">
                 <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> NPN credentialed advisor</li>
                 <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> ACA Marketplace certified</li>
                 <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> Medicare AHIP certified</li>
