@@ -590,9 +590,7 @@ export function Contact() {
 
   return (
     <section id="contact" className="relative py-24 px-6 overflow-hidden">
-      {/* Ambient background orbs */}
-      <div className="pointer-events-none absolute -top-32 -left-32 w-[28rem] h-[28rem] rounded-full bg-gradient-gold opacity-20 blur-3xl animate-[ambient-drift_14s_ease-in-out_infinite]" />
-      <div className="pointer-events-none absolute -bottom-32 -right-32 w-[32rem] h-[32rem] rounded-full bg-gradient-gold opacity-15 blur-3xl animate-[ambient-drift_18s_ease-in-out_infinite]" />
+
 
       <div className="relative max-w-6xl mx-auto">
         <div className="text-center mb-14 motion-reveal is-visible">
@@ -620,7 +618,7 @@ export function Contact() {
 
             <div className="relative">
               <div className="text-xs uppercase tracking-[0.3em] text-gold-soft mb-3">Direct Line</div>
-              <h3 className="font-display text-3xl mb-2">Talk to Mo, not a call center.</h3>
+              <h3 className="font-display text-3xl mb-2" style={{ color: "oklch(0.97 0.012 85)" }}>Talk to Mo, not a call center.</h3>
               <p className="text-primary-foreground/70 text-sm leading-relaxed mb-10">
                 One advisor. One promise. Honest guidance — for life.
               </p>
