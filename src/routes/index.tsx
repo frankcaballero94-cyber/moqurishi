@@ -101,7 +101,7 @@ function Index() {
       <Services />
       <About />
       <Carriers />
-      <TrustBadgeBar />
+      
       <StatesSection />
       <LicenseGrid />
       <AppointmentCalendar />
