@@ -585,66 +585,172 @@ export function Testimonials() {
 }
 
 export function Contact() {
+  const [sent, setSent] = useState(false);
+  const [focused, setFocused] = useState<string | null>(null);
+
   return (
-    <section id="contact" className="py-20 px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="relative rounded-2xl overflow-hidden card-glass">
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-gold opacity-5" />
-          <div className="relative grid lg:grid-cols-2 gap-10 p-8 md:p-10">
-            <div>
-              <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Get In Touch</div>
-              <h2 className="font-display text-4xl md:text-5xl mb-5 leading-[1]">Let's find the right <span className="italic text-gradient-gold">coverage.</span></h2>
-              <p className="text-muted-foreground mb-8 leading-relaxed text-sm">Free, no-pressure consultation. Reach out by phone, email, or send a quick note — I personally respond to every inquiry.</p>
+    <section id="contact" className="relative py-24 px-6 overflow-hidden">
+      {/* Ambient background orbs */}
+      <div className="pointer-events-none absolute -top-32 -left-32 w-[28rem] h-[28rem] rounded-full bg-gradient-gold opacity-20 blur-3xl animate-[ambient-drift_14s_ease-in-out_infinite]" />
+      <div className="pointer-events-none absolute -bottom-32 -right-32 w-[32rem] h-[32rem] rounded-full bg-gradient-gold opacity-15 blur-3xl animate-[ambient-drift_18s_ease-in-out_infinite]" />
+
+      <div className="relative max-w-6xl mx-auto">
+        <div className="text-center mb-14 motion-reveal is-visible">
+          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-primary mb-5">
+            <span className="h-px w-8 bg-gradient-gold" />
+            Get In Touch
+            <span className="h-px w-8 bg-gradient-gold" />
+          </div>
+          <h2 className="font-display text-5xl md:text-6xl leading-[1.05]">
+            Let's find the right <span className="italic text-gradient-gold">coverage.</span>
+          </h2>
+          <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
+            Free, no-pressure consultation. I personally respond to every inquiry — usually within a few hours.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-5 gap-6">
+          {/* LEFT: Dark navy contact card */}
+          <div className="lg:col-span-2 relative rounded-3xl overflow-hidden p-8 md:p-10 text-primary-foreground shadow-elegant"
+               style={{ background: "var(--gradient-navy)" }}>
+            {/* Gold sheen */}
+            <div className="pointer-events-none absolute -top-24 -right-24 w-72 h-72 rounded-full bg-gradient-gold opacity-30 blur-3xl" />
+            <div className="pointer-events-none absolute inset-0 opacity-[0.07]"
+                 style={{ backgroundImage: "linear-gradient(135deg, transparent 48%, oklch(0.85 0.10 85) 49%, oklch(0.85 0.10 85) 51%, transparent 52%)" }} />
+
+            <div className="relative">
+              <div className="text-xs uppercase tracking-[0.3em] text-gold-soft mb-3">Direct Line</div>
+              <h3 className="font-display text-3xl mb-2">Talk to Mo, not a call center.</h3>
+              <p className="text-primary-foreground/70 text-sm leading-relaxed mb-10">
+                One advisor. One promise. Honest guidance — for life.
+              </p>
+
               <div className="space-y-4">
-                <a href={`tel:${PHONE}`} className="flex items-center gap-4 group">
-                  <div className="w-10 h-10 rounded-lg icon-glass flex items-center justify-center group-hover:bg-gradient-gold transition">
-                    <Phone className="w-4 h-4 text-primary group-hover:text-primary-foreground" />
+                <a href={`tel:${PHONE}`} className="group flex items-center gap-4 p-4 rounded-2xl border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] hover:border-[oklch(0.74_0.13_78/0.55)] transition-all hover:-translate-y-0.5">
+                  <div className="w-11 h-11 rounded-xl bg-gradient-gold flex items-center justify-center shadow-gold">
+                    <Phone className="w-5 h-5 text-primary" />
                   </div>
-                  <div>
-                    <div className="text-xs uppercase tracking-wider text-muted-foreground">Phone</div>
+                  <div className="flex-1">
+                    <div className="text-[10px] uppercase tracking-[0.25em] text-gold-soft">Phone</div>
                     <div className="font-sans text-lg tracking-wide">{PHONE}</div>
                   </div>
+                  <ArrowRight className="w-4 h-4 text-gold-soft opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition" />
                 </a>
-                <a href={`mailto:${EMAIL}`} className="flex items-center gap-4 group">
-                  <div className="w-10 h-10 rounded-lg icon-glass flex items-center justify-center group-hover:bg-gradient-gold transition">
-                    <Mail className="w-4 h-4 text-primary group-hover:text-primary-foreground" />
+
+                <a href={`mailto:${EMAIL}`} className="group flex items-center gap-4 p-4 rounded-2xl border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] hover:border-[oklch(0.74_0.13_78/0.55)] transition-all hover:-translate-y-0.5">
+                  <div className="w-11 h-11 rounded-xl bg-gradient-gold flex items-center justify-center shadow-gold">
+                    <Mail className="w-5 h-5 text-primary" />
                   </div>
-                  <div>
-                    <div className="text-xs uppercase tracking-wider text-muted-foreground">Email</div>
-                    <div className="font-display text-base break-all">{EMAIL}</div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-[10px] uppercase tracking-[0.25em] text-gold-soft">Email</div>
+                    <div className="font-display text-base truncate">{EMAIL}</div>
                   </div>
+                  <ArrowRight className="w-4 h-4 text-gold-soft opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition" />
                 </a>
+
+                <div className="flex items-center gap-4 p-4 rounded-2xl border border-white/10 bg-white/[0.04]">
+                  <div className="w-11 h-11 rounded-xl bg-gradient-gold flex items-center justify-center shadow-gold">
+                    <Clock className="w-5 h-5 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="text-[10px] uppercase tracking-[0.25em] text-gold-soft">Hours</div>
+                    <div className="font-sans text-sm">Mon–Sat · 8a – 8p CT</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-10 pt-6 border-t border-white/10 flex items-center gap-3 text-xs text-primary-foreground/70">
+                <span className="inline-flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                Accepting new clients · Avg. response under 2 hours
               </div>
             </div>
-
-            <form onSubmit={(e) => { e.preventDefault(); window.location.href = `mailto:${EMAIL}`; }} className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
-                <Field label="First name" name="first" />
-                <Field label="Last name" name="last" />
-              </div>
-              <Field label="Email" name="email" type="email" />
-              <Field label="Phone" name="phone" type="tel" />
-              <Field label="State" name="state" />
-              <div>
-                <label className="text-xs uppercase tracking-wider text-muted-foreground">How can I help?</label>
-                <textarea rows={3} className="mt-2 w-full rounded-lg px-4 py-3 input-glass" />
-              </div>
-              <button type="submit" className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl btn-glass-gold font-medium text-sm">
-                Request Free Quote <ArrowRight className="w-4 h-4" />
-              </button>
-            </form>
           </div>
+
+          {/* RIGHT: Form */}
+          <div className="lg:col-span-3 relative rounded-3xl card-glass p-8 md:p-10">
+            {sent ? (
+              <div className="min-h-[420px] flex flex-col items-center justify-center text-center animate-fade-in">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-gold flex items-center justify-center shadow-gold mb-5">
+                  <Check className="w-7 h-7 text-primary" />
+                </div>
+                <h3 className="font-display text-3xl mb-2">Message on its way.</h3>
+                <p className="text-muted-foreground max-w-sm">Your email client should open in a moment. I'll personally reply shortly.</p>
+                <button onClick={() => setSent(false)} className="mt-6 text-xs uppercase tracking-[0.25em] text-primary story-link">
+                  Send another
+                </button>
+              </div>
+            ) : (
+              <form
+                onSubmit={(e) => { e.preventDefault(); setSent(true); setTimeout(() => { window.location.href = `mailto:${EMAIL}`; }, 400); }}
+                className="space-y-5"
+              >
+                <div className="grid grid-cols-2 gap-4">
+                  <FloatField label="First name" name="first" focused={focused} setFocused={setFocused} />
+                  <FloatField label="Last name" name="last" focused={focused} setFocused={setFocused} />
+                </div>
+                <FloatField label="Email" name="email" type="email" focused={focused} setFocused={setFocused} />
+                <div className="grid grid-cols-2 gap-4">
+                  <FloatField label="Phone" name="phone" type="tel" focused={focused} setFocused={setFocused} />
+                  <FloatField label="State" name="state" focused={focused} setFocused={setFocused} />
+                </div>
+                <div className="relative">
+                  <label className="block text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-2">How can I help?</label>
+                  <textarea
+                    rows={4}
+                    placeholder="Tell me a bit about who I'd be insuring and any coverage you have today…"
+                    className="w-full rounded-xl px-4 py-3 input-glass resize-none placeholder:text-muted-foreground/60"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="group relative w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl btn-glass-gold font-medium text-sm overflow-hidden"
+                >
+                  <span className="relative z-10">Request Free Quote</span>
+                  <ArrowRight className="relative z-10 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </button>
+
+                <p className="text-[11px] text-center text-muted-foreground">
+                  🔒 Your information is private. No spam. No selling. Ever.
+                </p>
+              </form>
+            )}
+          </div>
+        </div>
+
+        {/* Trust strip */}
+        <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3">
+          {[
+            { k: "< 2 hrs", v: "Avg response" },
+            { k: "35+", v: "States licensed" },
+            { k: "$0", v: "Consultation fee" },
+            { k: "100%", v: "Confidential" },
+          ].map((s) => (
+            <div key={s.v} className="card-glass rounded-2xl px-4 py-5 text-center">
+              <div className="font-display text-2xl text-gradient-gold">{s.k}</div>
+              <div className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground mt-1">{s.v}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
   );
 }
 
-function Field({ label, name, type = "text" }: { label: string; name: string; type?: string }) {
+function FloatField({ label, name, type = "text", focused, setFocused }: { label: string; name: string; type?: string; focused: string | null; setFocused: (v: string | null) => void; }) {
   return (
-    <div>
-      <label htmlFor={name} className="text-xs uppercase tracking-wider text-muted-foreground">{label}</label>
-      <input id={name} name={name} type={type} className="mt-2 w-full rounded-lg px-4 py-3 input-glass" />
+    <div className="relative">
+      <label htmlFor={name} className={`block text-[10px] uppercase tracking-[0.25em] mb-2 transition-colors ${focused === name ? "text-primary" : "text-muted-foreground"}`}>
+        {label}
+      </label>
+      <input
+        id={name}
+        name={name}
+        type={type}
+        onFocus={() => setFocused(name)}
+        onBlur={() => setFocused(null)}
+        className="w-full rounded-xl px-4 py-3 input-glass"
+      />
     </div>
   );
 }
