@@ -508,17 +508,17 @@ export function Testimonials() {
     { quote: "Medicare felt impossible until Mo walked me through it. He treats you like family.", name: "Diane M.", role: "Retiree, OH" },
   ];
   return (
-    <section className="py-32 px-6">
+    <section className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Client Voices</div>
-          <h2 className="font-display text-5xl md:text-6xl">Trust, <span className="italic text-gradient-gold">earned.</span></h2>
+          <h2 className="font-display text-4xl md:text-5xl">Trust, <span className="italic text-gradient-gold">earned.</span></h2>
         </div>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-5">
           {items.map((t) => (
-            <div key={t.name} className="p-8 rounded-2xl card-glass hover:border-primary/45 transition">
-              <div className="flex gap-1 mb-4">{[...Array(5)].map((_,i)=><Star key={i} className="w-4 h-4 fill-primary text-primary"/>)}</div>
-              <p className="font-display text-xl leading-relaxed mb-6 text-foreground">"{t.quote}"</p>
+            <div key={t.name} className="p-6 rounded-2xl card-glass hover:border-primary/45 transition">
+              <div className="flex gap-1 mb-3">{[...Array(5)].map((_,i)=><Star key={i} className="w-4 h-4 fill-primary text-primary"/>)}</div>
+              <p className="font-display text-base leading-relaxed mb-4 text-foreground">"{t.quote}"</p>
               <div className="text-sm">
                 <div className="font-medium text-foreground">{t.name}</div>
                 <div className="text-muted-foreground">{t.role}</div>
