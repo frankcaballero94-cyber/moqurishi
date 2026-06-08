@@ -10,7 +10,10 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WhyRouteImport } from './routes/why'
+import { Route as TestimonialsRouteImport } from './routes/testimonials'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as JoinRouteImport } from './routes/join'
 import { Route as CoverageRouteImport } from './routes/coverage'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
@@ -21,9 +24,24 @@ const WhyRoute = WhyRouteImport.update({
   path: '/why',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TestimonialsRoute = TestimonialsRouteImport.update({
+  id: '/testimonials',
+  path: '/testimonials',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JoinRoute = JoinRouteImport.update({
+  id: '/join',
+  path: '/join',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CoverageRoute = CoverageRouteImport.update({
@@ -52,7 +70,10 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/coverage': typeof CoverageRoute
+  '/join': typeof JoinRoute
+  '/resources': typeof ResourcesRoute
   '/services': typeof ServicesRoute
+  '/testimonials': typeof TestimonialsRoute
   '/why': typeof WhyRoute
 }
 export interface FileRoutesByTo {
@@ -60,7 +81,10 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/coverage': typeof CoverageRoute
+  '/join': typeof JoinRoute
+  '/resources': typeof ResourcesRoute
   '/services': typeof ServicesRoute
+  '/testimonials': typeof TestimonialsRoute
   '/why': typeof WhyRoute
 }
 export interface FileRoutesById {
@@ -69,21 +93,45 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/coverage': typeof CoverageRoute
+  '/join': typeof JoinRoute
+  '/resources': typeof ResourcesRoute
   '/services': typeof ServicesRoute
+  '/testimonials': typeof TestimonialsRoute
   '/why': typeof WhyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/contact' | '/coverage' | '/services' | '/why'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/coverage'
+    | '/join'
+    | '/resources'
+    | '/services'
+    | '/testimonials'
+    | '/why'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/coverage' | '/services' | '/why'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/coverage'
+    | '/join'
+    | '/resources'
+    | '/services'
+    | '/testimonials'
+    | '/why'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/contact'
     | '/coverage'
+    | '/join'
+    | '/resources'
     | '/services'
+    | '/testimonials'
     | '/why'
   fileRoutesById: FileRoutesById
 }
@@ -92,7 +140,10 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   CoverageRoute: typeof CoverageRoute
+  JoinRoute: typeof JoinRoute
+  ResourcesRoute: typeof ResourcesRoute
   ServicesRoute: typeof ServicesRoute
+  TestimonialsRoute: typeof TestimonialsRoute
   WhyRoute: typeof WhyRoute
 }
 
@@ -105,11 +156,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WhyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/testimonials': {
+      id: '/testimonials'
+      path: '/testimonials'
+      fullPath: '/testimonials'
+      preLoaderRoute: typeof TestimonialsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/join': {
+      id: '/join'
+      path: '/join'
+      fullPath: '/join'
+      preLoaderRoute: typeof JoinRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/coverage': {
@@ -148,7 +220,10 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   CoverageRoute: CoverageRoute,
+  JoinRoute: JoinRoute,
+  ResourcesRoute: ResourcesRoute,
   ServicesRoute: ServicesRoute,
+  TestimonialsRoute: TestimonialsRoute,
   WhyRoute: WhyRoute,
 }
 export const routeTree = rootRouteImport
