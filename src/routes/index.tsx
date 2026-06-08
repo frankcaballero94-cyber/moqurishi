@@ -301,30 +301,30 @@ export function Services() {
   const active = openIdx !== null ? services[openIdx] : null;
 
   return (
-    <section id="services" className="py-32 px-6 bg-card/30">
+    <section id="services" className="py-20 px-6 bg-card/30">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-[1fr_2fr] gap-16 mb-16">
+        <div className="grid lg:grid-cols-[1fr_2fr] gap-12 mb-12">
           <div>
             <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">What I Do</div>
-            <h2 className="font-display text-5xl md:text-6xl">Coverage built around <span className="italic text-gradient-gold">your life.</span></h2>
+            <h2 className="font-display text-4xl md:text-5xl">Coverage built around <span className="italic text-gradient-gold">your life.</span></h2>
           </div>
-          <p className="text-lg text-muted-foreground self-end leading-relaxed">
+          <p className="text-base text-muted-foreground self-end leading-relaxed">
             Whether you're self-employed, between jobs, raising a family, or running a business — there's a right plan, and we'll find it together.
           </p>
         </div>
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-5">
           {services.map((s, i) => (
             <Tilt3D key={s.num} className="h-full">
               <button
                 onClick={() => setOpenIdx(i)}
-                className="group relative p-10 rounded-2xl card-glass transition text-left cursor-pointer w-full h-full"
+                className="group relative p-6 rounded-2xl card-glass transition text-left cursor-pointer w-full h-full"
               >
-                <div className="flex items-start justify-between mb-6" style={{ transform: "translateZ(40px)" }}>
-                  <span className="font-display text-5xl text-gradient-gold">{s.num}</span>
+                <div className="flex items-start justify-between mb-4" style={{ transform: "translateZ(40px)" }}>
+                  <span className="font-display text-4xl text-gradient-gold">{s.num}</span>
                   <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition" />
                 </div>
-                <h3 className="font-display text-2xl mb-3" style={{ transform: "translateZ(30px)" }}>{s.title}</h3>
-                <p className="text-muted-foreground mb-4">{s.body}</p>
+                <h3 className="font-display text-xl mb-2" style={{ transform: "translateZ(30px)" }}>{s.title}</h3>
+                <p className="text-muted-foreground text-sm mb-3">{s.body}</p>
                 <span className="text-xs uppercase tracking-[0.25em] text-primary inline-flex items-center gap-2">
                   View Details <ArrowRight className="w-3 h-3" />
                 </span>
