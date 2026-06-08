@@ -738,24 +738,24 @@ export function FAQ() {
   ];
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section className="py-32 px-6 bg-card/30">
+    <section className="py-20 px-6 bg-card/30">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Common Questions</div>
-          <h2 className="font-display text-5xl md:text-6xl">Honest <span className="italic text-gradient-gold">answers.</span></h2>
+          <h2 className="font-display text-4xl md:text-5xl">Honest <span className="italic text-gradient-gold">answers.</span></h2>
         </div>
         <div className="space-y-3">
           {faqs.map((f, i) => (
             <div key={i} className="card-glass rounded-2xl overflow-hidden">
               <button
                 onClick={() => setOpen(open === i ? null : i)}
-                className="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer"
+                className="w-full flex items-center justify-between gap-4 p-5 text-left cursor-pointer"
               >
-                <span className="font-display text-lg md:text-xl">{f.q}</span>
+                <span className="font-display text-base md:text-lg">{f.q}</span>
                 {open === i ? <Minus className="w-5 h-5 text-primary shrink-0" /> : <Plus className="w-5 h-5 text-primary shrink-0" />}
               </button>
               {open === i && (
-                <div className="px-6 pb-6 text-muted-foreground leading-relaxed border-t border-border/50 pt-4">
+                <div className="px-5 pb-5 text-muted-foreground leading-relaxed border-t border-border/50 pt-4 text-sm">
                   {f.a}
                 </div>
               )}
