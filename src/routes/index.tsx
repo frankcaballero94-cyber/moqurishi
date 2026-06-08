@@ -115,11 +115,12 @@ export function Nav() {
   return (
     <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-gradient-gold flex items-center justify-center">
-            <span className="font-display font-bold text-primary-foreground">Q</span>
-          </div>
-          <span className="font-display text-lg tracking-wide">Qurishi <span className="text-gradient-gold">Advising</span></span>
+        <Link to="/" className="flex items-center" aria-label="Qurishi Healthcare — Home">
+          <img
+            src={qurishiHealthcareLogo.url}
+            alt="Qurishi Healthcare"
+            className="h-10 w-auto drop-shadow-[0_2px_8px_rgba(201,168,76,0.25)]"
+          />
         </Link>
         <nav className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
           <Link to="/services" className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>Services</Link>
