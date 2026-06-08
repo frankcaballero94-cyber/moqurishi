@@ -181,7 +181,7 @@ function Hero() {
           <div className="relative rounded-2xl card-glass p-6 md:p-8 overflow-hidden">
             <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "repeating-linear-gradient(135deg, var(--gold) 0 1px, transparent 1px 22px)" }} />
             <div className="relative space-y-5">
-              <div className="rounded-xl bg-gradient-to-br from-[oklch(0.99_0.008_85)] to-[oklch(0.95_0.014_85)] border border-primary/15 p-5 shadow-inner">
+              <div className="rounded-xl bg-gradient-to-br from-[oklch(0.88_0.006_265)] to-[oklch(0.80_0.008_265)] border border-primary/15 p-5 shadow-inner">
                 <img src={qurishiLogo} alt="Qurishi Healthcare — Expert Guidance. Better Coverage. Peace of Mind." className="w-full h-auto rounded-lg" />
               </div>
               <div className="h-px w-full bg-gradient-gold opacity-60" />
