@@ -83,12 +83,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "Lovable App" },
       { property: "og:description", content: "A modern, visually appealing website showcasing business information with custom design elements." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Lovable App" },
       { name: "twitter:description", content: "A modern, visually appealing website showcasing business information with custom design elements." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5d59ec22-ed22-4ee0-b8b6-a0386393fd5c/id-preview-50b43625--4c76e7b1-5fa0-4334-8dc8-8485deed3c57.lovable.app-1780275709689.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5d59ec22-ed22-4ee0-b8b6-a0386393fd5c/id-preview-50b43625--4c76e7b1-5fa0-4334-8dc8-8485deed3c57.lovable.app-1780275709689.png" },
+      { property: "og:image", content: "https://moqurishi.lovable.app/__l5e/assets-v1/76789ecc-4930-4a69-943c-26d933d34035/mo-qurishi-card.png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "800" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://moqurishi.lovable.app/__l5e/assets-v1/76789ecc-4930-4a69-943c-26d933d34035/mo-qurishi-card.png" },
     ],
     links: [
       {
