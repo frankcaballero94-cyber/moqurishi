@@ -36,25 +36,25 @@
 
 :root {
   --radius: 0rem;
-  /* Cream paper background, deep navy ink, gold accent — matched to the Qurishi Healthcare logo */
-  --background: oklch(0.97 0.012 85);
+  /* Stale grey background, deep navy ink, gold accent — matched to the Qurishi Healthcare logo */
+  --background: oklch(0.82 0.008 265);
   --foreground: oklch(0.18 0.04 265);
-  --card: oklch(0.99 0.008 85);
+  --card: oklch(0.86 0.006 265);
   --card-foreground: oklch(0.18 0.04 265);
-  --popover: oklch(0.99 0.008 85);
+  --popover: oklch(0.86 0.006 265);
   --popover-foreground: oklch(0.18 0.04 265);
   --primary: oklch(0.20 0.05 265);
   --primary-foreground: oklch(0.97 0.012 85);
-  --secondary: oklch(0.93 0.015 85);
+  --secondary: oklch(0.78 0.010 265);
   --secondary-foreground: oklch(0.20 0.05 265);
-  --muted: oklch(0.93 0.015 85);
+  --muted: oklch(0.78 0.010 265);
   --muted-foreground: oklch(0.42 0.03 265);
   --accent: oklch(0.74 0.13 78);
   --accent-foreground: oklch(0.18 0.04 265);
   --destructive: oklch(0.55 0.22 27);
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(0.74 0.13 78 / 35%);
-  --input: oklch(0.95 0.012 85);
+  --input: oklch(0.80 0.008 265);
   --ring: oklch(0.74 0.13 78);
 
   --gold: oklch(0.74 0.13 78);
