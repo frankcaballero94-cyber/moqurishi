@@ -381,19 +381,19 @@ export function Services() {
 
 export function About() {
   return (
-    <section id="about" className="py-32 px-6">
-      <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <section id="about" className="py-20 px-6">
+      <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
         <div className="relative">
-          <div className="absolute -inset-6 bg-gradient-gold opacity-10 blur-2xl rounded-full" />
+          <div className="absolute -inset-4 bg-gradient-gold opacity-10 blur-2xl rounded-full" />
           <CornerOrnaments />
-          <div className="relative rounded-2xl aspect-square card-glass p-10 flex flex-col justify-between overflow-hidden">
+          <div className="relative rounded-2xl aspect-square card-glass p-6 flex flex-col justify-between overflow-hidden">
             {/* subtle diagonal gold lines */}
             <div className="absolute inset-0 opacity-[0.08]" style={{ backgroundImage: "repeating-linear-gradient(135deg, var(--gold) 0 1px, transparent 1px 24px)" }} />
             <div className="relative">
               <div className="text-[10px] uppercase tracking-[0.4em] text-primary mb-3">Credentials</div>
-              <div className="font-display text-3xl leading-tight">Independent <br/>Licensed Advisor</div>
-              <div className="h-px w-16 bg-gradient-gold my-5" />
-              <ul className="space-y-3 text-sm text-muted-foreground">
+              <div className="font-display text-2xl leading-tight">Independent <br/>Licensed Advisor</div>
+              <div className="h-px w-16 bg-gradient-gold my-4" />
+              <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> NPN credentialed</li>
                 <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> ACA Marketplace certified</li>
                 <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> Medicare AHIP certified</li>
@@ -402,28 +402,28 @@ export function About() {
             </div>
             <div className="relative flex items-end justify-between">
               <div>
-                <div className="font-display text-2xl italic text-gradient-gold">Mo Qurishi</div>
+                <div className="font-display text-xl italic text-gradient-gold">Mo Qurishi</div>
                 <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mt-1">Health Advisor · Est. 2020</div>
               </div>
-              <div className="w-14 h-14 rounded-full border border-primary/50 flex items-center justify-center">
-                <span className="font-display text-xl text-gradient-gold">MQ</span>
+              <div className="w-12 h-12 rounded-full border border-primary/50 flex items-center justify-center">
+                <span className="font-display text-lg text-gradient-gold">MQ</span>
               </div>
             </div>
           </div>
         </div>
-        <div className="space-y-6">
+        <div className="space-y-5">
           <div className="text-xs uppercase tracking-[0.3em] text-primary">About Mo</div>
-          <h2 className="font-display text-5xl md:text-6xl leading-[1]">A trusted voice in a <span className="italic text-gradient-gold">complicated industry.</span></h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <h2 className="font-display text-4xl md:text-5xl leading-[1]">A trusted voice in a <span className="italic text-gradient-gold">complicated industry.</span></h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
             For years, Mo Qurishi has helped Americans navigate the health insurance maze with calm, clarity, and zero pressure. As an independent advisor, he isn't tied to any single carrier — which means his only loyalty is to the people he serves.
           </p>
-          <p className="text-muted-foreground leading-relaxed">
+          <p className="text-sm text-muted-foreground leading-relaxed">
             From first-time enrollees to families switching plans, small business owners to retirees approaching Medicare — every client gets the same white-glove treatment: a real conversation, real research, and real recommendations.
           </p>
-          <div className="grid grid-cols-3 gap-6 pt-6 border-t border-border">
-            <div><div className="font-display text-4xl text-gradient-gold">35+</div><div className="text-xs uppercase tracking-wider text-muted-foreground mt-1">States Licensed</div></div>
-            <div><div className="font-display text-4xl text-gradient-gold">5.0</div><div className="text-xs uppercase tracking-wider text-muted-foreground mt-1">Client Rating</div></div>
-            <div><div className="font-display text-4xl text-gradient-gold">1:1</div><div className="text-xs uppercase tracking-wider text-muted-foreground mt-1">Personal Service</div></div>
+          <div className="grid grid-cols-3 gap-4 pt-5 border-t border-border">
+            <div><div className="font-display text-3xl text-gradient-gold">35+</div><div className="text-xs uppercase tracking-wider text-muted-foreground mt-1">States Licensed</div></div>
+            <div><div className="font-display text-3xl text-gradient-gold">5.0</div><div className="text-xs uppercase tracking-wider text-muted-foreground mt-1">Client Rating</div></div>
+            <div><div className="font-display text-3xl text-gradient-gold">1:1</div><div className="text-xs uppercase tracking-wider text-muted-foreground mt-1">Personal Service</div></div>
           </div>
         </div>
       </div>
