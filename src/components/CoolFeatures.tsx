@@ -159,7 +159,7 @@ export function AppointmentCalendar() {
             style={{ minWidth: "320px", height: "700px" }}
           />
         </div>
-        <div className="text-center mt-6">
+        <div className="text-center mt-6 flex flex-col items-center gap-5">
           <a
             href={CALENDLY_URL}
             target="_blank"
@@ -168,6 +168,10 @@ export function AppointmentCalendar() {
           >
             <Calendar className="w-4 h-4" /> Open scheduling in a new tab
           </a>
+          <div className="flex flex-col items-center gap-2">
+            <div className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">Or connect with Mo</div>
+            <SocialLinks />
+          </div>
         </div>
       </div>
     </section>
