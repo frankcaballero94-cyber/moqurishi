@@ -316,7 +316,7 @@ function HeroShowcase() {
       <div className="absolute -inset-10 bg-gradient-gold opacity-10 blur-3xl rounded-full pointer-events-none" />
       <div className="relative card-glass rounded-3xl p-6 md:p-8 border border-border/40 shadow-elegant">
         {/* Logo + advisor portrait side-by-side on shared cream panel */}
-        <div className="flex items-stretch gap-0 rounded-2xl overflow-hidden" style={{ background: "#efe4ce" }}>
+        <div className="flex items-stretch gap-0 rounded-2xl overflow-hidden" style={{ background: "#f3eeea" }}>
           <img
             src={qurishiLogo}
             alt="Qurishi Healthcare — Expert Guidance. Better Coverage. Peace of Mind."
