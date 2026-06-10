@@ -918,11 +918,24 @@ export function Contact() {
                  style={{ backgroundImage: "linear-gradient(135deg, transparent 48%, oklch(0.85 0.10 85) 49%, oklch(0.85 0.10 85) 51%, transparent 52%)" }} />
 
             <div className="relative">
-              <div className="text-xs uppercase tracking-[0.3em] text-gold-soft mb-3">Direct Line</div>
-              <h3 className="font-display text-3xl mb-2" style={{ color: "oklch(0.97 0.012 85)" }}>Talk to Mo, not a call center.</h3>
+              <div className="flex items-center gap-4 mb-5">
+                <div className="relative shrink-0">
+                  <div className="absolute -inset-1 rounded-full bg-gradient-gold opacity-40 blur-md" />
+                  <img
+                    src={moHeadshot.url}
+                    alt="Mo Qurishi"
+                    className="relative w-20 h-20 rounded-full object-cover ring-2 ring-[oklch(0.74_0.13_78/0.7)] shadow-elegant"
+                  />
+                </div>
+                <div>
+                  <div className="text-xs uppercase tracking-[0.3em] text-gold-soft mb-1">Direct Line</div>
+                  <h3 className="font-display text-2xl md:text-3xl leading-tight" style={{ color: "oklch(0.97 0.012 85)" }}>Talk to Mo, not a call center.</h3>
+                </div>
+              </div>
               <p className="text-white text-sm leading-relaxed mb-10">
                 One advisor. One promise. Honest guidance — for life.
               </p>
+
 
               <div className="space-y-4">
                 <a href={`tel:${PHONE}`} className="group flex items-center gap-4 p-4 rounded-2xl border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] hover:border-[oklch(0.74_0.13_78/0.55)] transition-all hover:-translate-y-0.5">
