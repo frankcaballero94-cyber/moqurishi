@@ -7,6 +7,7 @@ import { PremiumTicker, AdvisorCompareSlider, AppointmentCalendar, CostDonut, Qu
 import { SocialLinks } from "@/components/SocialLinks";
 import qurishiHealthcareLogo from "@/assets/qurishi-healthcare-logo-transparent.png.asset.json";
 import heroLogoPortrait from "@/assets/hero-logo-portrait.png.asset.json";
+import moHeadshot from "@/assets/mo-headshot.png.asset.json";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import alabamaLic from "@/assets/licenses/alabama.pdf.asset.json";
 import arkansasLic from "@/assets/licenses/arkansas.pdf.asset.json";
