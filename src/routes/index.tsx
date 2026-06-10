@@ -5,7 +5,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { USMap } from "@/components/USMap";
 import { PremiumTicker, AdvisorCompareSlider, AppointmentCalendar, CostDonut, QuickActionFAB, LicenseVerifier, TypewriterText, Tilt3D, TrustBadgeBar, MobileShowcase } from "@/components/CoolFeatures";
 import qurishiHealthcareLogo from "@/assets/qurishi-healthcare-logo-transparent.png.asset.json";
-import moPortrait from "@/assets/mo-portrait.png.asset.json";
+import heroLogoPortrait from "@/assets/hero-logo-portrait.png.asset.json";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import alabamaLic from "@/assets/licenses/alabama.pdf.asset.json";
 import arkansasLic from "@/assets/licenses/arkansas.pdf.asset.json";
@@ -315,19 +315,12 @@ function HeroShowcase() {
       <div className="absolute -inset-10 bg-gradient-gold opacity-10 blur-3xl rounded-full pointer-events-none" />
       <div className="relative card-glass rounded-3xl p-6 md:p-8 border border-border/40 shadow-elegant">
         {/* Logo + advisor portrait side-by-side on shared cream panel */}
-        <div className="flex items-stretch gap-0 rounded-2xl overflow-hidden" style={{ background: "#f3eeea" }}>
+        <div className="rounded-2xl overflow-hidden" style={{ background: "#f3eeea" }}>
           <img
-            src={qurishiHealthcareLogo.url}
+            src={heroLogoPortrait.url}
             alt="Qurishi Healthcare — Expert Guidance. Better Coverage. Peace of Mind."
-            className="flex-1 min-w-0 h-auto object-contain p-4 md:p-6"
+            className="block w-full h-auto"
           />
-          <div className="relative shrink-0 w-32 md:w-44 flex items-end">
-            <img
-              src={moPortrait.url}
-              alt="Mo Qurishi — Licensed Health Advisor"
-              className="relative w-full h-auto drop-shadow-xl"
-            />
-          </div>
         </div>
 
         {/* Clickable pillar hotspots overlaid as a single seamless row beneath the logo's pillar graphics */}
