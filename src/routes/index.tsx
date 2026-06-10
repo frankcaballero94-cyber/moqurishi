@@ -1377,10 +1377,16 @@ export function Footer() {
       </div>
       <div className="max-w-7xl mx-auto mt-10 pt-6 border-t border-border text-xs text-muted-foreground flex flex-col md:flex-row justify-between gap-2">
         <div>© {new Date().getFullYear()} Qurishi Healthcare Advising. All rights reserved.</div>
-        <div className="flex items-center gap-4">
-          <a href="https://www.linkedin.com/in/mo-qurishi-7312813a9" target="_blank" rel="noreferrer" className="hover:text-foreground transition">LinkedIn</a>
-          <a href="https://www.instagram.com/qurishihealthcare/" target="_blank" rel="noreferrer" className="hover:text-foreground transition">Instagram</a>
-          <a href="https://www.facebook.com/people/Qurishi-HealthCare/pfbid02A1oiT4GBXAFNzW6kuizjC68ZtGURANSPumXgin8g9ANEXs6duzk2m8N9uuR6xgyil/" target="_blank" rel="noreferrer" className="hover:text-foreground transition">Facebook</a>
+        <div className="flex items-center gap-3">
+          <a href="https://www.linkedin.com/in/mo-qurishi-7312813a9" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-border text-muted-foreground hover:text-accent hover:border-accent transition">
+            <Linkedin className="w-4 h-4" />
+          </a>
+          <a href="https://www.instagram.com/qurishihealthcare/" target="_blank" rel="noreferrer" aria-label="Instagram" className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-border text-muted-foreground hover:text-accent hover:border-accent transition">
+            <Instagram className="w-4 h-4" />
+          </a>
+          <a href="https://www.facebook.com/people/Qurishi-HealthCare/pfbid02A1oiT4GBXAFNzW6kuizjC68ZtGURANSPumXgin8g9ANEXs6duzk2m8N9uuR6xgyil/" target="_blank" rel="noreferrer" aria-label="Facebook" className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-border text-muted-foreground hover:text-accent hover:border-accent transition">
+            <Facebook className="w-4 h-4" />
+          </a>
         </div>
         <div>NPN · 19229315 · Licensed in 28 states</div>
       </div>
