@@ -4,6 +4,7 @@ import { Phone, Mail, MapPin, ShieldCheck, HeartPulse, Users, Clock, Award, Arro
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { USMap } from "@/components/USMap";
 import { PremiumTicker, AdvisorCompareSlider, AppointmentCalendar, CostDonut, QuickActionFAB, LicenseVerifier, TypewriterText, Tilt3D, TrustBadgeBar, MobileShowcase } from "@/components/CoolFeatures";
+import { SocialLinks } from "@/components/SocialLinks";
 import qurishiHealthcareLogo from "@/assets/qurishi-healthcare-logo-transparent.png.asset.json";
 import heroLogoPortrait from "@/assets/hero-logo-portrait.png.asset.json";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
