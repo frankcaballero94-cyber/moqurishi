@@ -4,7 +4,6 @@ import { Phone, Mail, MapPin, ShieldCheck, HeartPulse, Users, Clock, Award, Arro
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { USMap } from "@/components/USMap";
 import { PremiumTicker, AdvisorCompareSlider, AppointmentCalendar, CostDonut, QuickActionFAB, LicenseVerifier, TypewriterText, Tilt3D, TrustBadgeBar, MobileShowcase } from "@/components/CoolFeatures";
-import qurishiLogo from "@/assets/qurishi-logo.png";
 import qurishiHealthcareLogo from "@/assets/qurishi-healthcare-logo-transparent.png.asset.json";
 import moPortrait from "@/assets/mo-portrait.png.asset.json";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
@@ -318,9 +317,9 @@ function HeroShowcase() {
         {/* Logo + advisor portrait side-by-side on shared cream panel */}
         <div className="flex items-stretch gap-0 rounded-2xl overflow-hidden" style={{ background: "#f3eeea" }}>
           <img
-            src={qurishiLogo}
+            src={qurishiHealthcareLogo.url}
             alt="Qurishi Healthcare — Expert Guidance. Better Coverage. Peace of Mind."
-            className="flex-1 min-w-0 h-auto object-contain"
+            className="flex-1 min-w-0 h-auto object-contain p-4 md:p-6"
           />
           <div className="relative shrink-0 w-32 md:w-44 flex items-end">
             <img
