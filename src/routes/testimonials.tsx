@@ -6,7 +6,7 @@ export const Route = createFileRoute("/testimonials")({
   head: () => ({
     meta: [
       { title: "Client Reviews — Qurishi Healthcare Advising" },
-      { name: "description", content: "Read what clients across 35+ states say about working with Mo Qurishi for health insurance guidance." },
+      { name: "description", content: "Read what clients across 28 states say about working with Mo Qurishi for health insurance guidance." },
       { property: "og:title", content: "Client Reviews — Qurishi Healthcare" },
       { property: "og:description", content: "Real stories from individuals, families, and small businesses Mo has helped." },
     ],
