@@ -741,7 +741,7 @@ export function StatesSection() {
                 <Award className="w-4 h-4 text-primary" />
               </div>
               <div>
-                <div className="font-display text-2xl text-foreground leading-none tracking-wider">21032307</div>
+                <div className="font-display text-2xl text-foreground leading-none tracking-wider">19229315</div>
                 <div className="text-xs uppercase tracking-[0.2em] text-primary mt-1">NPN</div>
                 <div className="text-sm text-muted-foreground mt-1">National Producer Number — verify at nipr.com.</div>
               </div>
@@ -1178,7 +1178,7 @@ export function LicenseGrid() {
               <ShieldCheck className="w-5 h-5 text-primary" />
             </div>
             <div>
-              <div className="text-xs uppercase tracking-[0.3em] text-primary mb-1">NPN · 21032307</div>
+              <div className="text-xs uppercase tracking-[0.3em] text-primary mb-1">NPN · 19229315</div>
               <h3 className="font-display text-xl">National Producer Number</h3>
               <p className="text-muted-foreground text-sm mt-1">Verify any licensed advisor at <span className="text-foreground">nipr.com</span>.</p>
             </div>
@@ -1374,7 +1374,7 @@ export function Footer() {
       </div>
       <div className="max-w-7xl mx-auto mt-10 pt-6 border-t border-border text-xs text-muted-foreground flex flex-col md:flex-row justify-between gap-2">
         <div>© {new Date().getFullYear()} Qurishi Healthcare Advising. All rights reserved.</div>
-        <div>NPN · 21032307 · Licensed in 28 states</div>
+        <div>NPN · 19229315 · Licensed in 28 states</div>
       </div>
     </footer>
   );
