@@ -685,7 +685,7 @@ export function About() {
             From first-time enrollees to families switching plans, small business owners to retirees approaching Medicare — every client gets the same white-glove treatment: a real conversation, real research, and real recommendations.
           </p>
           <div className="grid grid-cols-3 gap-4 pt-5 border-t border-border">
-            <div><div className="font-display text-3xl text-gradient-gold">35+</div><div className="text-xs uppercase tracking-wider text-muted-foreground mt-1">States Licensed</div></div>
+            <div><div className="font-display text-3xl text-gradient-gold">28</div><div className="text-xs uppercase tracking-wider text-muted-foreground mt-1">States Licensed</div></div>
             <div><div className="font-display text-3xl text-gradient-gold">5.0</div><div className="text-xs uppercase tracking-wider text-muted-foreground mt-1">Client Rating</div></div>
             <div><div className="font-display text-3xl text-gradient-gold">1:1</div><div className="text-xs uppercase tracking-wider text-muted-foreground mt-1">Personal Service</div></div>
           </div>
