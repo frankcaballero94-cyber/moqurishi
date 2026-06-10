@@ -620,7 +620,6 @@ function LicenseCarousel() {
                     {lic.code}
                   </span>
                 </div>
-                </div>
                 <div className="flex items-center justify-between">
                   <div>
                     <div className="font-display text-xl text-foreground leading-tight">{lic.state}</div>
