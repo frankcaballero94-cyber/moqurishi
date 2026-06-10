@@ -296,7 +296,7 @@ export function QuickActionFAB() {
           <a href="tel:656-266-3462" className="card-glass rounded-full pl-4 pr-5 py-3 flex items-center gap-3 text-sm hover:scale-105 transition">
             <Phone className="w-4 h-4 text-primary" /> Call now
           </a>
-          <a href="mailto:alqurishihealthcareadvising@gmail.com" className="card-glass rounded-full pl-4 pr-5 py-3 flex items-center gap-3 text-sm hover:scale-105 transition">
+          <a href="mailto:Qurishihealthcare@gmail.com" className="card-glass rounded-full pl-4 pr-5 py-3 flex items-center gap-3 text-sm hover:scale-105 transition">
             <Mail className="w-4 h-4 text-primary" /> Email
           </a>
           <a href="#contact" className="card-glass rounded-full pl-4 pr-5 py-3 flex items-center gap-3 text-sm hover:scale-105 transition">

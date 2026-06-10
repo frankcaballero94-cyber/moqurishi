@@ -73,7 +73,7 @@ function JoinPage() {
           </div>
           <form
             id="apply"
-            onSubmit={(e) => { e.preventDefault(); window.location.href = "mailto:alqurishihealthcareadvising@gmail.com?subject=Join%20the%20Team%20Application"; }}
+            onSubmit={(e) => { e.preventDefault(); window.location.href = "mailto:Qurishihealthcare@gmail.com?subject=Join%20the%20Team%20Application"; }}
             className="card-glass rounded-2xl p-8 space-y-4"
           >
             <h3 className="font-display text-2xl mb-2">Apply in 60 seconds</h3>
