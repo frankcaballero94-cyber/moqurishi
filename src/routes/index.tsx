@@ -189,7 +189,7 @@ export function Nav() {
             src={qurishiHealthcareLogo.url}
             alt="Qurishi Healthcare"
             className="h-12 w-auto"
-            style={{ filter: "drop-shadow(0 2px 10px rgba(201,168,76,0.18))" }}
+            style={{ filter: "brightness(1.25) contrast(1.08) drop-shadow(0 2px 14px rgba(201,168,76,0.45))" }}
           />
         </Link>
 
@@ -1347,7 +1347,7 @@ export function Footer() {
               src={qurishiHealthcareLogo.url}
               alt="Qurishi Healthcare"
               className="h-14 w-auto"
-              style={{ filter: "drop-shadow(0 2px 10px rgba(201,168,76,0.18))" }}
+              style={{ filter: "brightness(1.25) contrast(1.08) drop-shadow(0 2px 14px rgba(201,168,76,0.45))" }}
             />
           </Link>
           <div className="text-xs uppercase tracking-[0.25em] text-muted-foreground mb-3">Mo Qurishi · Licensed Health Advisor</div>
