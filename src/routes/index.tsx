@@ -315,19 +315,18 @@ function HeroShowcase() {
     <div className="relative w-full">
       <div className="absolute -inset-10 bg-gradient-gold opacity-10 blur-3xl rounded-full pointer-events-none" />
       <div className="relative card-glass rounded-3xl p-6 md:p-8 border border-border/40 shadow-elegant">
-        {/* Logo + advisor portrait side-by-side */}
-        <div className="flex items-center gap-4">
+        {/* Logo + advisor portrait side-by-side on shared cream panel */}
+        <div className="flex items-stretch gap-0 rounded-2xl overflow-hidden" style={{ background: "#f3ead6" }}>
           <img
             src={qurishiLogo}
             alt="Qurishi Healthcare — Expert Guidance. Better Coverage. Peace of Mind."
-            className="flex-1 min-w-0 h-auto"
+            className="flex-1 min-w-0 h-auto object-contain"
           />
-          <div className="relative shrink-0 w-32 md:w-44">
-            <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full pointer-events-none" />
+          <div className="relative shrink-0 w-32 md:w-44 flex items-end">
             <img
               src={moPortrait.url}
               alt="Mo Qurishi — Licensed Health Advisor"
-              className="relative w-full h-auto drop-shadow-2xl"
+              className="relative w-full h-auto drop-shadow-xl"
             />
           </div>
         </div>
