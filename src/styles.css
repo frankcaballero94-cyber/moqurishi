@@ -167,10 +167,10 @@
 
 .btn-glass-gold {
   overflow: hidden;
-  background: linear-gradient(135deg, oklch(0.20 0.05 265), oklch(0.12 0.04 265));
+  background: linear-gradient(135deg, oklch(0.28 0.05 265), oklch(0.20 0.04 265));
   border: 1px solid oklch(0.74 0.13 78 / 0.55);
   color: oklch(0.97 0.012 85);
-  box-shadow: 0 8px 28px -10px oklch(0.20 0.05 265 / 0.45), inset 0 1px 0 oklch(0.74 0.13 78 / 0.25);
+  box-shadow: 0 8px 28px -10px oklch(0.28 0.05 265 / 0.45), inset 0 1px 0 oklch(0.74 0.13 78 / 0.25);
   transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
 }
 .btn-glass-gold::after {
@@ -184,7 +184,7 @@
 }
 .btn-glass-gold:hover {
   transform: translateY(-2px);
-  background: linear-gradient(135deg, oklch(0.28 0.05 265), oklch(0.18 0.04 265));
+  background: linear-gradient(135deg, oklch(0.36 0.05 265), oklch(0.26 0.04 265));
   border-color: oklch(0.74 0.13 78 / 0.9);
   box-shadow: 0 14px 40px -10px oklch(0.62 0.14 70 / 0.5), inset 0 1px 0 oklch(0.74 0.13 78 / 0.35);
 }
@@ -193,7 +193,7 @@
 }
 
 .card-glass {
-  background: linear-gradient(135deg, oklch(0.24 0.006 265 / 0.85), oklch(0.18 0.005 265 / 0.7));
+  background: linear-gradient(135deg, oklch(0.32 0.006 265 / 0.85), oklch(0.24 0.005 265 / 0.7));
   border: 1px solid oklch(0.74 0.13 78 / 0.35);
   backdrop-filter: blur(12px) saturate(120%);
   -webkit-backdrop-filter: blur(12px) saturate(120%);
@@ -207,7 +207,7 @@
 }
 
 .input-glass {
-  background: oklch(0.22 0.006 265 / 0.85);
+  background: oklch(0.30 0.006 265 / 0.85);
   border: 1px solid oklch(0.74 0.13 78 / 0.4);
   color: var(--color-foreground);
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
@@ -219,7 +219,7 @@
 }
 
 .badge-glass {
-  background: oklch(0.24 0.006 265 / 0.75);
+  background: oklch(0.32 0.006 265 / 0.75);
   border: 1px solid oklch(0.74 0.13 78 / 0.4);
   color: var(--foreground);
   transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
@@ -232,16 +232,16 @@
 }
 
 .icon-glass {
-  background: linear-gradient(135deg, oklch(0.22 0.05 265), oklch(0.14 0.04 265));
+  background: linear-gradient(135deg, oklch(0.28 0.05 265), oklch(0.20 0.04 265));
   border: 1px solid oklch(0.74 0.13 78 / 0.5);
   color: oklch(0.85 0.10 85);
   transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
 }
 .icon-glass:hover {
   transform: translateY(-2px);
-  background: linear-gradient(135deg, oklch(0.30 0.05 265), oklch(0.20 0.04 265));
+  background: linear-gradient(135deg, oklch(0.36 0.05 265), oklch(0.26 0.04 265));
   border-color: oklch(0.74 0.13 78 / 0.9);
-  box-shadow: 0 16px 28px -18px oklch(0.20 0.05 265 / 0.42);
+  box-shadow: 0 16px 28px -18px oklch(0.28 0.05 265 / 0.42);
 }
 
 .diagonal-frame {
