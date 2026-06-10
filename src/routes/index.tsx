@@ -315,22 +315,22 @@ function HeroShowcase() {
     <div className="relative w-full">
       <div className="absolute -inset-10 bg-gradient-gold opacity-10 blur-3xl rounded-full pointer-events-none" />
       <div className="relative card-glass rounded-3xl p-6 md:p-8 border border-border/40 shadow-elegant">
-        {/* Advisor portrait — transparent PNG blends into the card */}
-        <div className="relative -mt-16 md:-mt-20 mb-2 flex justify-center">
-          <div className="absolute inset-x-8 bottom-2 h-24 bg-primary/20 blur-3xl rounded-full pointer-events-none" />
+        {/* Logo + advisor portrait side-by-side */}
+        <div className="flex items-center gap-4">
           <img
-            src={moPortrait.url}
-            alt="Mo Qurishi — Licensed Health Advisor"
-            className="relative w-48 md:w-56 h-auto drop-shadow-2xl"
+            src={qurishiLogo}
+            alt="Qurishi Healthcare — Expert Guidance. Better Coverage. Peace of Mind."
+            className="flex-1 min-w-0 h-auto"
           />
+          <div className="relative shrink-0 w-32 md:w-44">
+            <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full pointer-events-none" />
+            <img
+              src={moPortrait.url}
+              alt="Mo Qurishi — Licensed Health Advisor"
+              className="relative w-full h-auto drop-shadow-2xl"
+            />
+          </div>
         </div>
-
-        {/* Logo */}
-        <img
-          src={qurishiLogo}
-          alt="Qurishi Healthcare — Expert Guidance. Better Coverage. Peace of Mind."
-          className="w-full h-auto"
-        />
 
         {/* Clickable pillar hotspots overlaid as a single seamless row beneath the logo's pillar graphics */}
         <div className="mt-2 grid grid-cols-5 gap-1">
