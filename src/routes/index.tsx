@@ -872,7 +872,7 @@ export function Contact() {
             <div className="relative">
               <div className="text-xs uppercase tracking-[0.3em] text-gold-soft mb-3">Direct Line</div>
               <h3 className="font-display text-3xl mb-2" style={{ color: "oklch(0.97 0.012 85)" }}>Talk to Mo, not a call center.</h3>
-              <p className="text-primary-foreground/70 text-sm leading-relaxed mb-10">
+              <p className="text-white text-sm leading-relaxed mb-10">
                 One advisor. One promise. Honest guidance — for life.
               </p>
 
@@ -910,7 +910,7 @@ export function Contact() {
                 </div>
               </div>
 
-              <div className="mt-10 pt-6 border-t border-white/10 flex items-center gap-3 text-xs text-primary-foreground/70">
+              <div className="mt-10 pt-6 border-t border-white/10 flex items-center gap-3 text-xs text-white">
                 <span className="inline-flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
                 Accepting new clients · Avg. response under 2 hours
               </div>
