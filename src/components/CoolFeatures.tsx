@@ -258,7 +258,7 @@ export function QuickActionFAB() {
           <a href="mailto:Qurishihealthcare@gmail.com" className="card-glass rounded-full pl-4 pr-5 py-3 flex items-center gap-3 text-sm hover:scale-105 transition">
             <Mail className="w-4 h-4 text-primary" /> Email
           </a>
-          <a href="#contact" className="card-glass rounded-full pl-4 pr-5 py-3 flex items-center gap-3 text-sm hover:scale-105 transition">
+          <a href={CALENDLY_URL} target="_blank" rel="noreferrer" className="card-glass rounded-full pl-4 pr-5 py-3 flex items-center gap-3 text-sm hover:scale-105 transition">
             <Calendar className="w-4 h-4 text-primary" /> Book a call
           </a>
         </div>
