@@ -201,7 +201,7 @@ export function Nav() {
         </nav>
         <a href={CALENDLY} target="_blank" rel="noreferrer" className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl btn-glass-gold text-sm font-medium">
           Free Quote <ArrowRight className="w-4 h-4" />
-        </Link>
+        </a>
 
         <button
           type="button"
