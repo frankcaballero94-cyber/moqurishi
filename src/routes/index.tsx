@@ -17,6 +17,16 @@ import indianaLic from "@/assets/licenses/indiana.pdf.asset.json";
 import iowaLic from "@/assets/licenses/iowa.pdf.asset.json";
 import kansasLic from "@/assets/licenses/kansas.pdf.asset.json";
 import kentuckyLic from "@/assets/licenses/kentucky.pdf.asset.json";
+import alabamaImg from "@/assets/licenses/alabama.jpg.asset.json";
+import arkansasImg from "@/assets/licenses/arkansas.jpg.asset.json";
+import coloradoImg from "@/assets/licenses/colorado.jpg.asset.json";
+import floridaImg from "@/assets/licenses/florida.jpg.asset.json";
+import georgiaImg from "@/assets/licenses/georgia.jpg.asset.json";
+import illinoisImg from "@/assets/licenses/illinois.jpg.asset.json";
+import indianaImg from "@/assets/licenses/indiana.jpg.asset.json";
+import iowaImg from "@/assets/licenses/iowa.jpg.asset.json";
+import kansasImg from "@/assets/licenses/kansas.jpg.asset.json";
+import kentuckyImg from "@/assets/licenses/kentucky.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
