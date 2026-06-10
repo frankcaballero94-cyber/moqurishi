@@ -171,10 +171,20 @@ function Index() {
 }
 
 export function Nav() {
+  const [open, setOpen] = useState(false);
+  const navLinks: { to: string; label: string }[] = [
+    { to: "/services", label: "Services" },
+    { to: "/about", label: "About" },
+    { to: "/coverage", label: "Coverage" },
+    { to: "/testimonials", label: "Reviews" },
+    { to: "/resources", label: "Resources" },
+    { to: "/join", label: "Join Us" },
+    { to: "/contact", label: "Contact" },
+  ];
   return (
     <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center" aria-label="Qurishi Healthcare — Home">
+        <Link to="/" className="flex items-center" aria-label="Qurishi Healthcare — Home" onClick={() => setOpen(false)}>
           <img
             src={qurishiHealthcareLogo.url}
             alt="Qurishi Healthcare"
@@ -183,20 +193,51 @@ export function Nav() {
           />
         </Link>
 
-
         <nav className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
-          <Link to="/services" className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>Services</Link>
-          <Link to="/about" className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>About</Link>
-          <Link to="/coverage" className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>Coverage</Link>
-          <Link to="/testimonials" className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>Reviews</Link>
-          <Link to="/resources" className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>Resources</Link>
-          <Link to="/join" className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>Join Us</Link>
-          <Link to="/contact" className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>Contact</Link>
+          {navLinks.map((l) => (
+            <Link key={l.to} to={l.to} className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>{l.label}</Link>
+          ))}
         </nav>
         <Link to="/contact" className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl btn-glass-gold text-sm font-medium">
           Free Quote <ArrowRight className="w-4 h-4" />
         </Link>
+
+        <button
+          type="button"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
+          className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border border-border text-foreground"
+        >
+          {open ? <X className="w-5 h-5" /> : <Plus className="w-5 h-5 rotate-45" style={{ transform: "none" }} />}
+          <span className="sr-only">Menu</span>
+        </button>
       </div>
+
+      {open && (
+        <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-xl">
+          <nav className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-1 text-base">
+            {navLinks.map((l) => (
+              <Link
+                key={l.to}
+                to={l.to}
+                onClick={() => setOpen(false)}
+                className="py-3 px-3 rounded-lg text-muted-foreground hover:text-foreground hover:bg-card/50 transition"
+                activeProps={{ className: "text-foreground bg-card/50" }}
+              >
+                {l.label}
+              </Link>
+            ))}
+            <Link
+              to="/contact"
+              onClick={() => setOpen(false)}
+              className="mt-2 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl btn-glass-gold text-sm font-medium"
+            >
+              Free Quote <ArrowRight className="w-4 h-4" />
+            </Link>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
