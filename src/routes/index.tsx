@@ -895,14 +895,6 @@ export function Contact() {
 
       <div className="relative max-w-6xl mx-auto">
         <div className="text-center mb-14 motion-reveal is-visible">
-          <div className="relative inline-block mb-6">
-            <div className="absolute -inset-2 rounded-full bg-gradient-gold opacity-40 blur-xl" />
-            <img
-              src={moHeadshot.url}
-              alt="Mo Qurishi, licensed health insurance advisor"
-              className="relative w-32 h-32 md:w-40 md:h-40 rounded-full object-cover ring-2 ring-[oklch(0.74_0.13_78/0.7)] shadow-elegant"
-            />
-          </div>
           <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-primary mb-5">
             <span className="h-px w-8 bg-gradient-gold" />
             Get In Touch
