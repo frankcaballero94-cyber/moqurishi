@@ -596,21 +596,35 @@ function LicenseCarousel() {
                 href={lic.pdf}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block card-glass rounded-2xl p-6 h-full group transition"
+                className="block card-glass rounded-2xl p-5 h-full group transition"
               >
-                <div className="flex items-start justify-between mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center">
-                    <FileText className="w-5 h-5 text-primary" />
-                  </div>
-                  <span className="text-xs uppercase tracking-[0.2em] text-primary px-2 py-1 rounded-md border border-primary/30 bg-primary/5">
+                {/* PDF preview */}
+                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-white border border-primary/20 mb-5">
+                  <object
+                    data={`${lic.pdf}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
+                    type="application/pdf"
+                    className="absolute inset-0 w-full h-full pointer-events-none"
+                    aria-label={`${lic.state} license preview`}
+                  >
+                    <div className="flex items-center justify-center w-full h-full text-xs text-muted-foreground">
+                      Preview unavailable
+                    </div>
+                  </object>
+                  {/* click-shield so the whole card is the link */}
+                  <div className="absolute inset-0" />
+                  <span className="absolute top-2 right-2 text-[10px] uppercase tracking-[0.2em] text-primary px-2 py-1 rounded-md border border-primary/40 bg-background/80 backdrop-blur">
                     {lic.code}
                   </span>
                 </div>
-                <div className="font-display text-2xl text-foreground mb-1">{lic.state}</div>
-                <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-6">Health Insurance License</div>
-                <div className="flex items-center gap-2 text-sm text-primary group-hover:gap-3 transition-all">
-                  <span>View official PDF</span>
-                  <ArrowRight className="w-4 h-4" />
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="font-display text-xl text-foreground leading-tight">{lic.state}</div>
+                    <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-0.5">Health Insurance License</div>
+                  </div>
+                  <div className="flex items-center gap-1.5 text-xs text-primary group-hover:gap-2.5 transition-all whitespace-nowrap">
+                    <span>View PDF</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </div>
                 </div>
               </a>
             </CarouselItem>
