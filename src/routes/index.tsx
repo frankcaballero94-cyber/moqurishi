@@ -209,7 +209,7 @@ export function Nav() {
           onClick={() => setOpen((v) => !v)}
           className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border border-border text-foreground"
         >
-          {open ? <X className="w-5 h-5" /> : <Plus className="w-5 h-5 rotate-45" style={{ transform: "none" }} />}
+          {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           <span className="sr-only">Menu</span>
         </button>
       </div>
