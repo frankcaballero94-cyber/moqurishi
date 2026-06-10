@@ -37,24 +37,24 @@
 :root {
   --radius: 0rem;
   /* Black & grey background, light foreground, gold accent */
-  --background: oklch(0.24 0.005 265);
+  --background: oklch(0.32 0.005 265);
   --foreground: oklch(0.95 0.005 265);
-  --card: oklch(0.22 0.006 265);
+  --card: oklch(0.28 0.006 265);
   --card-foreground: oklch(0.95 0.005 265);
-  --popover: oklch(0.22 0.006 265);
+  --popover: oklch(0.28 0.006 265);
   --popover-foreground: oklch(0.18 0.04 265);
-  --primary: oklch(0.20 0.05 265);
+  --primary: oklch(0.28 0.05 265);
   --primary-foreground: oklch(0.97 0.012 85);
-  --secondary: oklch(0.28 0.006 265);
+  --secondary: oklch(0.34 0.006 265);
   --secondary-foreground: oklch(0.95 0.005 265);
-  --muted: oklch(0.26 0.006 265);
+  --muted: oklch(0.36 0.006 265);
   --muted-foreground: oklch(0.70 0.01 265);
   --accent: oklch(0.74 0.13 78);
   --accent-foreground: oklch(0.15 0.01 265);
   --destructive: oklch(0.55 0.22 27);
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(0.74 0.13 78 / 30%);
-  --input: oklch(0.28 0.006 265);
+  --input: oklch(0.34 0.006 265);
   --ring: oklch(0.74 0.13 78);
 
   --gold: oklch(0.74 0.13 78);
@@ -66,8 +66,8 @@
   --font-sans: "Inter", system-ui, sans-serif;
 
   --gradient-gold: linear-gradient(135deg, oklch(0.85 0.10 85), oklch(0.62 0.14 70));
-  --gradient-navy: linear-gradient(135deg, oklch(0.22 0.005 265) 0%, oklch(0.10 0.004 265) 100%);
-  --gradient-dark: linear-gradient(135deg, oklch(0.22 0.005 265) 0%, oklch(0.08 0.004 265) 100%);
+  --gradient-navy: linear-gradient(135deg, oklch(0.28 0.005 265) 0%, oklch(0.16 0.004 265) 100%);
+  --gradient-dark: linear-gradient(135deg, oklch(0.28 0.005 265) 0%, oklch(0.14 0.004 265) 100%);
   --shadow-gold: 0 20px 60px -20px oklch(0.62 0.14 70 / 0.40);
   --shadow-elegant: 0 30px 80px -30px oklch(0 0 0 / 0.6);
 }
@@ -84,10 +84,10 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     background-image:
-      radial-gradient(ellipse 60% 80% at 100% 0%, oklch(0.36 0.008 265 / 0.55), transparent 60%),
-      radial-gradient(ellipse 70% 90% at 0% 100%, oklch(0.30 0.008 265 / 0.45), transparent 60%),
+      radial-gradient(ellipse 60% 80% at 100% 0%, oklch(0.44 0.008 265 / 0.55), transparent 60%),
+      radial-gradient(ellipse 70% 90% at 0% 100%, oklch(0.38 0.008 265 / 0.45), transparent 60%),
       radial-gradient(ellipse 80% 50% at 50% 100%, oklch(0.74 0.13 78 / 0.06), transparent 55%),
-      linear-gradient(180deg, oklch(0.22 0.005 265) 0%, oklch(0.12 0.004 265) 100%);
+      linear-gradient(180deg, oklch(0.30 0.005 265) 0%, oklch(0.18 0.004 265) 100%);
     background-attachment: fixed;
   }
   h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.02em; color: var(--foreground); }
@@ -167,10 +167,10 @@
 
 .btn-glass-gold {
   overflow: hidden;
-  background: linear-gradient(135deg, oklch(0.20 0.05 265), oklch(0.12 0.04 265));
+  background: linear-gradient(135deg, oklch(0.28 0.05 265), oklch(0.20 0.04 265));
   border: 1px solid oklch(0.74 0.13 78 / 0.55);
   color: oklch(0.97 0.012 85);
-  box-shadow: 0 8px 28px -10px oklch(0.20 0.05 265 / 0.45), inset 0 1px 0 oklch(0.74 0.13 78 / 0.25);
+  box-shadow: 0 8px 28px -10px oklch(0.28 0.05 265 / 0.45), inset 0 1px 0 oklch(0.74 0.13 78 / 0.25);
   transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
 }
 .btn-glass-gold::after {
@@ -184,7 +184,7 @@
 }
 .btn-glass-gold:hover {
   transform: translateY(-2px);
-  background: linear-gradient(135deg, oklch(0.28 0.05 265), oklch(0.18 0.04 265));
+  background: linear-gradient(135deg, oklch(0.36 0.05 265), oklch(0.26 0.04 265));
   border-color: oklch(0.74 0.13 78 / 0.9);
   box-shadow: 0 14px 40px -10px oklch(0.62 0.14 70 / 0.5), inset 0 1px 0 oklch(0.74 0.13 78 / 0.35);
 }
@@ -193,7 +193,7 @@
 }
 
 .card-glass {
-  background: linear-gradient(135deg, oklch(0.24 0.006 265 / 0.85), oklch(0.18 0.005 265 / 0.7));
+  background: linear-gradient(135deg, oklch(0.32 0.006 265 / 0.85), oklch(0.24 0.005 265 / 0.7));
   border: 1px solid oklch(0.74 0.13 78 / 0.35);
   backdrop-filter: blur(12px) saturate(120%);
   -webkit-backdrop-filter: blur(12px) saturate(120%);
@@ -207,7 +207,7 @@
 }
 
 .input-glass {
-  background: oklch(0.22 0.006 265 / 0.85);
+  background: oklch(0.30 0.006 265 / 0.85);
   border: 1px solid oklch(0.74 0.13 78 / 0.4);
   color: var(--color-foreground);
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
@@ -219,7 +219,7 @@
 }
 
 .badge-glass {
-  background: oklch(0.24 0.006 265 / 0.75);
+  background: oklch(0.32 0.006 265 / 0.75);
   border: 1px solid oklch(0.74 0.13 78 / 0.4);
   color: var(--foreground);
   transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
@@ -232,16 +232,16 @@
 }
 
 .icon-glass {
-  background: linear-gradient(135deg, oklch(0.22 0.05 265), oklch(0.14 0.04 265));
+  background: linear-gradient(135deg, oklch(0.28 0.05 265), oklch(0.20 0.04 265));
   border: 1px solid oklch(0.74 0.13 78 / 0.5);
   color: oklch(0.85 0.10 85);
   transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
 }
 .icon-glass:hover {
   transform: translateY(-2px);
-  background: linear-gradient(135deg, oklch(0.30 0.05 265), oklch(0.20 0.04 265));
+  background: linear-gradient(135deg, oklch(0.36 0.05 265), oklch(0.26 0.04 265));
   border-color: oklch(0.74 0.13 78 / 0.9);
-  box-shadow: 0 16px 28px -18px oklch(0.20 0.05 265 / 0.42);
+  box-shadow: 0 16px 28px -18px oklch(0.28 0.05 265 / 0.42);
 }
 
 .diagonal-frame {
