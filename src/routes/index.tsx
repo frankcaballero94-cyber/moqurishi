@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Phone, Mail, MapPin, ShieldCheck, HeartPulse, Users, Clock, Award, ArrowRight, Check, Star, X, Calendar, Plus, Minus, Briefcase, Building2, Plane, UserCheck, Baby, Sparkles, Calculator, TrendingDown, BookOpen, Search, FileText, Video, Headphones, Quote, ChevronRight } from "lucide-react";
+import { Phone, Mail, MapPin, ShieldCheck, HeartPulse, Users, Clock, Award, ArrowRight, Check, Star, X, Calendar, Plus, Minus, Briefcase, Building2, Plane, UserCheck, Baby, Sparkles, Calculator, TrendingDown, BookOpen, Search, FileText, Video, Headphones, Quote, ChevronRight, Compass, Handshake } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { USMap } from "@/components/USMap";
 import { PremiumTicker, AdvisorCompareSlider, AppointmentCalendar, CostDonut, QuickActionFAB, LicenseVerifier, TypewriterText, Tilt3D, TrustBadgeBar, MobileShowcase } from "@/components/CoolFeatures";
@@ -234,33 +234,59 @@ function Hero() {
         </div>
 
         <div className="relative w-full">
-          <div className="absolute -inset-6 bg-gradient-gold opacity-15 blur-3xl rounded-full" />
-          <CornerOrnaments />
-          <div className="relative rounded-2xl card-glass p-6 md:p-8 overflow-hidden">
-            <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "repeating-linear-gradient(135deg, var(--gold) 0 1px, transparent 1px 22px)" }} />
-            <div className="relative space-y-5">
-              <div className="rounded-xl bg-gradient-to-br from-[oklch(0.88_0.006_265)] to-[oklch(0.80_0.008_265)] border border-primary/15 p-5 shadow-inner">
-                <img src={qurishiLogo} alt="Qurishi Healthcare — Expert Guidance. Better Coverage. Peace of Mind." className="w-full h-auto rounded-lg" />
-              </div>
-              <div className="h-px w-full bg-gradient-gold opacity-60" />
-              <div className="grid grid-cols-2 gap-5">
-                <div>
-                  <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-2">Direct Line</div>
-                  <a href={`tel:${PHONE}`} className="font-sans text-base tracking-wide text-foreground hover:text-primary transition">{PHONE}</a>
-                </div>
-                <div>
-                  <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-2">Established</div>
-                  <div className="font-display text-lg">2020</div>
-                </div>
-              </div>
-              <ul className="space-y-2 text-sm text-muted-foreground border-t border-border pt-4">
-                <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> NPN credentialed advisor</li>
-                <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> ACA Marketplace certified</li>
-                <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> Medicare AHIP certified</li>
-                <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> Independent &amp; multi-carrier appointed</li>
-              </ul>
-              <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground text-center pt-1">Licensed in 35+ States</div>
+          <div className="absolute -inset-10 bg-gradient-gold opacity-10 blur-3xl rounded-full pointer-events-none" />
+          <div className="relative space-y-8">
+            {/* Logo — integrated, no card chrome */}
+            <div className="relative">
+              <img
+                src={qurishiLogo}
+                alt="Qurishi Healthcare — Expert Guidance. Better Coverage. Peace of Mind."
+                className="w-full h-auto"
+              />
             </div>
+
+            {/* Interactive pillars — these are the Protect / Guide / Support / Care / Trust badges, now clickable */}
+            <div className="grid grid-cols-5 gap-2 md:gap-3">
+              {[
+                { label: "Protect", icon: ShieldCheck, href: "#why" },
+                { label: "Guide", icon: Compass, href: "#services" },
+                { label: "Support", icon: Headphones, href: "#contact" },
+                { label: "Care", icon: HeartPulse, href: "#about" },
+                { label: "Trust", icon: Handshake, href: "#states" },
+              ].map(({ label, icon: Icon, href }) => (
+                <a
+                  key={label}
+                  href={href}
+                  className="group flex flex-col items-center gap-2 p-3 rounded-xl border border-primary/20 bg-card/40 hover:bg-primary/10 hover:border-primary/60 transition"
+                >
+                  <span className="w-10 h-10 rounded-full border border-primary/40 bg-background/60 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Icon className="w-5 h-5 text-primary" />
+                  </span>
+                  <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-muted-foreground group-hover:text-foreground transition">
+                    {label}
+                  </span>
+                </a>
+              ))}
+            </div>
+
+            {/* Trust info row */}
+            <div className="grid grid-cols-2 gap-6 pt-2 border-t border-border">
+              <div className="pt-4">
+                <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-2">Direct Line</div>
+                <a href={`tel:${PHONE}`} className="font-sans text-base tracking-wide text-foreground hover:text-primary transition">{PHONE}</a>
+              </div>
+              <div className="pt-4">
+                <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-2">Established</div>
+                <div className="font-display text-lg">2020</div>
+              </div>
+            </div>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> NPN credentialed advisor</li>
+              <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> ACA Marketplace certified</li>
+              <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> Medicare AHIP certified</li>
+              <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> Independent &amp; multi-carrier appointed</li>
+            </ul>
+            <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground text-center">Licensed in 35+ States</div>
           </div>
         </div>
       </div>
