@@ -162,7 +162,6 @@ function Index() {
       <Carriers />
       
       <StatesSection />
-      <LicenseGrid />
       <AppointmentCalendar />
       <FAQ />
       <Contact />
