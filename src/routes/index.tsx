@@ -6,6 +6,7 @@ import { USMap } from "@/components/USMap";
 import { PremiumTicker, AdvisorCompareSlider, AppointmentCalendar, CostDonut, QuickActionFAB, LicenseVerifier, TypewriterText, Tilt3D, TrustBadgeBar, MobileShowcase } from "@/components/CoolFeatures";
 import qurishiLogo from "@/assets/qurishi-logo.png";
 import qurishiHealthcareLogo from "@/assets/qurishi-healthcare-logo-transparent.png.asset.json";
+import moPortrait from "@/assets/mo-portrait.png.asset.json";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import alabamaLic from "@/assets/licenses/alabama.pdf.asset.json";
 import arkansasLic from "@/assets/licenses/arkansas.pdf.asset.json";
@@ -314,6 +315,16 @@ function HeroShowcase() {
     <div className="relative w-full">
       <div className="absolute -inset-10 bg-gradient-gold opacity-10 blur-3xl rounded-full pointer-events-none" />
       <div className="relative card-glass rounded-3xl p-6 md:p-8 border border-border/40 shadow-elegant">
+        {/* Advisor portrait — transparent PNG blends into the card */}
+        <div className="relative -mt-16 md:-mt-20 mb-2 flex justify-center">
+          <div className="absolute inset-x-8 bottom-2 h-24 bg-primary/20 blur-3xl rounded-full pointer-events-none" />
+          <img
+            src={moPortrait.url}
+            alt="Mo Qurishi — Licensed Health Advisor"
+            className="relative w-48 md:w-56 h-auto drop-shadow-2xl"
+          />
+        </div>
+
         {/* Logo */}
         <img
           src={qurishiLogo}
