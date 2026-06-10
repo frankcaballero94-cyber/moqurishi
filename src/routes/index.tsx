@@ -894,7 +894,7 @@ export function Contact() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="text-[10px] uppercase tracking-[0.25em] text-gold-soft">Email</div>
-                    <div className="font-display text-base truncate">{EMAIL}</div>
+                    <div className="font-display text-base truncate text-white">{EMAIL}</div>
                   </div>
                   <ArrowRight className="w-4 h-4 text-gold-soft opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition" />
                 </a>
