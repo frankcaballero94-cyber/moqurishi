@@ -229,13 +229,15 @@ export function Nav() {
                 {l.label}
               </Link>
             ))}
-            <Link
-              to="/contact"
+            <a
+              href={CALENDLY}
+              target="_blank"
+              rel="noreferrer"
               onClick={() => setOpen(false)}
               className="mt-2 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl btn-glass-gold text-sm font-medium"
             >
               Free Quote <ArrowRight className="w-4 h-4" />
-            </Link>
+            </a>
           </nav>
         </div>
       )}
