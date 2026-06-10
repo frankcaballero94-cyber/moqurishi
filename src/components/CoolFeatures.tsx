@@ -128,27 +128,21 @@ export function AdvisorCompareSlider() {
   );
 }
 
-/* ============= 4. Appointment Calendar Widget ============= */
+/* ============= 4. Appointment Calendar Widget (Calendly Embed) ============= */
+const CALENDLY_URL = "https://calendly.com/alqurishihealthcareadvising/new-meeting-2";
+
 export function AppointmentCalendar() {
-  const today = new Date();
-  const [month, setMonth] = useState(new Date(today.getFullYear(), today.getMonth(), 1));
-  const [selected, setSelected] = useState<Date | null>(null);
-  const [time, setTime] = useState<string | null>(null);
+  useEffect(() => {
+    const id = "calendly-widget-script";
+    if (document.getElementById(id)) return;
+    const s = document.createElement("script");
+    s.id = id;
+    s.src = "https://assets.calendly.com/assets/external/widget.js";
+    s.async = true;
+    document.body.appendChild(s);
+  }, []);
+
   const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
-  const days = useMemo(() => {
-    const first = new Date(month);
-    const start = new Date(first);
-    start.setDate(1 - first.getDay());
-    return Array.from({ length: 42 }, (_, i) => {
-      const d = new Date(start);
-      d.setDate(start.getDate() + i);
-      return d;
-    });
-  }, [month]);
-
-  const times = ["9:00 AM","10:00 AM","11:00 AM","1:00 PM","2:30 PM","4:00 PM"];
-  const monthName = month.toLocaleString("en-US", { month: "long", year: "numeric" });
 
   return (
     <section className="py-24 bg-card/20">
@@ -158,57 +152,22 @@ export function AppointmentCalendar() {
           <h2 className="font-display text-4xl md:text-5xl">Pick a time that <span className="text-gradient-gold italic">works for you</span></h2>
           <p className="text-muted-foreground mt-3 flex items-center justify-center gap-2"><Clock className="w-4 h-4" /> Your timezone: {tz}</p>
         </div>
-        <div className="grid md:grid-cols-[1.4fr_1fr] gap-8">
-          <div className="card-glass rounded-2xl p-6">
-            <div className="flex items-center justify-between mb-4">
-              <button onClick={() => setMonth(new Date(month.getFullYear(), month.getMonth() - 1, 1))} className="p-2 hover:bg-primary/10 rounded-lg"><ChevronLeft className="w-4 h-4" /></button>
-              <div className="font-display text-xl">{monthName}</div>
-              <button onClick={() => setMonth(new Date(month.getFullYear(), month.getMonth() + 1, 1))} className="p-2 hover:bg-primary/10 rounded-lg"><ChevronRight className="w-4 h-4" /></button>
-            </div>
-            <div className="grid grid-cols-7 gap-1 text-xs text-muted-foreground mb-2">
-              {["S","M","T","W","T","F","S"].map((d,i) => <div key={i} className="text-center py-1">{d}</div>)}
-            </div>
-            <div className="grid grid-cols-7 gap-1">
-              {days.map((d, i) => {
-                const inMonth = d.getMonth() === month.getMonth();
-                const past = d < new Date(today.getFullYear(), today.getMonth(), today.getDate());
-                const weekend = d.getDay() === 0 || d.getDay() === 6;
-                const disabled = !inMonth || past || weekend;
-                const isSel = selected && d.toDateString() === selected.toDateString();
-                return (
-                  <button
-                    key={i}
-                    disabled={disabled}
-                    onClick={() => { setSelected(d); setTime(null); }}
-                    className={`aspect-square rounded-lg text-sm transition ${disabled ? "text-muted-foreground/30 cursor-not-allowed" : "hover:bg-primary/10"} ${isSel ? "bg-primary text-primary-foreground hover:bg-primary" : ""}`}
-                  >
-                    {d.getDate()}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-          <div className="card-glass rounded-2xl p-6">
-            <div className="text-sm text-muted-foreground mb-4">
-              {selected ? <>Available on <span className="text-foreground">{selected.toLocaleDateString("en-US", { weekday: "long", month: "short", day: "numeric" })}</span></> : "Select a date to see times"}
-            </div>
-            <div className="grid grid-cols-2 gap-2 mb-6">
-              {times.map(t => (
-                <button
-                  key={t}
-                  disabled={!selected}
-                  onClick={() => setTime(t)}
-                  className={`px-4 py-3 rounded-lg border text-sm transition ${time === t ? "border-primary bg-primary/10 text-foreground" : "border-border hover:border-primary/40"} ${!selected ? "opacity-40 cursor-not-allowed" : ""}`}
-                >{t}</button>
-              ))}
-            </div>
-            <button
-              disabled={!time}
-              className="w-full px-6 py-4 rounded-xl btn-glass-gold font-medium disabled:opacity-40 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
-            >
-              <Calendar className="w-4 h-4" /> Confirm {time && selected ? `· ${selected.toLocaleDateString("en-US",{month:"short",day:"numeric"})} @ ${time}` : ""}
-            </button>
-          </div>
+        <div className="card-glass rounded-2xl p-2 md:p-4 overflow-hidden">
+          <div
+            className="calendly-inline-widget"
+            data-url={`${CALENDLY_URL}?hide_gdpr_banner=1&background_color=0b0b0f&text_color=ffffff&primary_color=c9a84c`}
+            style={{ minWidth: "320px", height: "700px" }}
+          />
+        </div>
+        <div className="text-center mt-6">
+          <a
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl btn-glass-gold font-medium text-sm"
+          >
+            <Calendar className="w-4 h-4" /> Open scheduling in a new tab
+          </a>
         </div>
       </div>
     </section>
