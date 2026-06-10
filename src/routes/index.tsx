@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Phone, Mail, MapPin, ShieldCheck, HeartPulse, Users, Clock, Award, ArrowRight, Check, Star, X, Calendar, Plus, Minus, Briefcase, Building2, Plane, UserCheck, Baby, Sparkles, Calculator, TrendingDown, BookOpen, Search, FileText, Video, Headphones, Quote, ChevronRight, Compass, Handshake, Menu } from "lucide-react";
+import { Phone, Mail, MapPin, ShieldCheck, HeartPulse, Users, Clock, Award, ArrowRight, Check, Star, X, Calendar, Plus, Minus, Briefcase, Building2, Plane, UserCheck, Baby, Sparkles, Calculator, TrendingDown, BookOpen, Search, FileText, Video, Headphones, Quote, ChevronRight, Compass, Handshake, Menu, Linkedin, Instagram, Facebook } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { USMap } from "@/components/USMap";
 import { PremiumTicker, AdvisorCompareSlider, AppointmentCalendar, CostDonut, QuickActionFAB, LicenseVerifier, TypewriterText, Tilt3D, TrustBadgeBar, MobileShowcase } from "@/components/CoolFeatures";
@@ -184,13 +184,13 @@ export function Nav() {
   ];
   return (
     <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border">
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center" aria-label="Qurishi Healthcare — Home" onClick={() => setOpen(false)}>
           <img
             src={qurishiHealthcareLogo.url}
             alt="Qurishi Healthcare"
-            className="h-12 w-auto"
-            style={{ filter: "brightness(1.25) contrast(1.08) drop-shadow(0 2px 14px rgba(201,168,76,0.45))" }}
+            className="h-16 md:h-18 w-auto"
+            style={{ filter: "brightness(1.3) contrast(1.1) drop-shadow(0 2px 16px rgba(201,168,76,0.55))" }}
           />
         </Link>
 
@@ -1377,10 +1377,16 @@ export function Footer() {
       </div>
       <div className="max-w-7xl mx-auto mt-10 pt-6 border-t border-border text-xs text-muted-foreground flex flex-col md:flex-row justify-between gap-2">
         <div>© {new Date().getFullYear()} Qurishi Healthcare Advising. All rights reserved.</div>
-        <div className="flex items-center gap-4">
-          <a href="https://www.linkedin.com/in/mo-qurishi-7312813a9" target="_blank" rel="noreferrer" className="hover:text-foreground transition">LinkedIn</a>
-          <a href="https://www.instagram.com/qurishihealthcare/" target="_blank" rel="noreferrer" className="hover:text-foreground transition">Instagram</a>
-          <a href="https://www.facebook.com/people/Qurishi-HealthCare/pfbid02A1oiT4GBXAFNzW6kuizjC68ZtGURANSPumXgin8g9ANEXs6duzk2m8N9uuR6xgyil/" target="_blank" rel="noreferrer" className="hover:text-foreground transition">Facebook</a>
+        <div className="flex items-center gap-3">
+          <a href="https://www.linkedin.com/in/mo-qurishi-7312813a9" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-border text-muted-foreground hover:text-accent hover:border-accent transition">
+            <Linkedin className="w-4 h-4" />
+          </a>
+          <a href="https://www.instagram.com/qurishihealthcare/" target="_blank" rel="noreferrer" aria-label="Instagram" className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-border text-muted-foreground hover:text-accent hover:border-accent transition">
+            <Instagram className="w-4 h-4" />
+          </a>
+          <a href="https://www.facebook.com/people/Qurishi-HealthCare/pfbid02A1oiT4GBXAFNzW6kuizjC68ZtGURANSPumXgin8g9ANEXs6duzk2m8N9uuR6xgyil/" target="_blank" rel="noreferrer" aria-label="Facebook" className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-border text-muted-foreground hover:text-accent hover:border-accent transition">
+            <Facebook className="w-4 h-4" />
+          </a>
         </div>
         <div>NPN · 19229315 · Licensed in 28 states</div>
       </div>
