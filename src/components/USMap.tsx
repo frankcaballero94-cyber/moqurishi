@@ -41,14 +41,14 @@ const POSTAL_TO_FIPS: Record<string, string> = {
 };
 
 const LICENSE_BY_NAME: Record<string, string> = {
-  Alabama: alabama, Arkansas: arkansas, Colorado: colorado, Florida: florida,
-  Georgia: georgia, Illinois: illinois, Indiana: indiana, Iowa: iowa,
-  Kansas: kansas, Kentucky: kentucky, Louisiana: louisiana, Maryland: maryland,
-  Michigan: michigan, Mississippi: mississippi, Missouri: missouri, Montana: montana,
-  Nebraska: nebraska, Nevada: nevada, "North Carolina": north_carolina, Ohio: ohio,
-  Oklahoma: oklahoma, "South Carolina": south_carolina, Tennessee: tennessee,
-  Texas: texas, Utah: utah, Virginia: virginia, "West Virginia": west_virginia,
-  Wisconsin: wisconsin,
+  Alabama: alabama.url, Arkansas: arkansas.url, Colorado: colorado.url, Florida: florida.url,
+  Georgia: georgia.url, Illinois: illinois.url, Indiana: indiana.url, Iowa: iowa.url,
+  Kansas: kansas.url, Kentucky: kentucky.url, Louisiana: louisiana.url, Maryland: maryland.url,
+  Michigan: michigan.url, Mississippi: mississippi.url, Missouri: missouri.url, Montana: montana.url,
+  Nebraska: nebraska.url, Nevada: nevada.url, "North Carolina": north_carolina.url, Ohio: ohio.url,
+  Oklahoma: oklahoma.url, "South Carolina": south_carolina.url, Tennessee: tennessee.url,
+  Texas: texas.url, Utah: utah.url, Virginia: virginia.url, "West Virginia": west_virginia.url,
+  Wisconsin: wisconsin.url,
 };
 
 export function USMap({ licensed }: { licensed: string[] }) {
