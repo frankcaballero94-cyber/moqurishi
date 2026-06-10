@@ -604,6 +604,9 @@ export function StatesSection() {
             ))}
           </div>
         </div>
+
+        {/* State-by-state license carousel */}
+        <LicenseCarousel />
       </div>
     </section>
   );
