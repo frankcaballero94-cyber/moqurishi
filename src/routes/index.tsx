@@ -88,6 +88,7 @@ const STATES = ["AL","AR","CO","DE","FL","GA","IA","IL","IN","KS","KY","LA","MD"
 
 const PHONE = "656-266-3462";
 const EMAIL = "Qurishihealthcare@gmail.com";
+export const CALENDLY = "https://calendly.com/alqurishihealthcareadvising/new-meeting-2";
 
 function Index() {
   useEffect(() => {
