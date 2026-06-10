@@ -184,13 +184,13 @@ export function Nav() {
   ];
   return (
     <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border">
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center" aria-label="Qurishi Healthcare — Home" onClick={() => setOpen(false)}>
           <img
             src={qurishiHealthcareLogo.url}
             alt="Qurishi Healthcare"
-            className="h-12 w-auto"
-            style={{ filter: "brightness(1.25) contrast(1.08) drop-shadow(0 2px 14px rgba(201,168,76,0.45))" }}
+            className="h-16 md:h-18 w-auto"
+            style={{ filter: "brightness(1.3) contrast(1.1) drop-shadow(0 2px 16px rgba(201,168,76,0.55))" }}
           />
         </Link>
 
