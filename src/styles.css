@@ -36,12 +36,12 @@
 
 :root {
   --radius: 0rem;
-  /* Stale grey background, deep navy ink, gold accent — matched to the Qurishi Healthcare logo */
-  --background: oklch(0.82 0.008 265);
-  --foreground: oklch(0.18 0.04 265);
-  --card: oklch(0.86 0.006 265);
-  --card-foreground: oklch(0.18 0.04 265);
-  --popover: oklch(0.86 0.006 265);
+  /* Black & grey background, light foreground, gold accent */
+  --background: oklch(0.18 0.005 265);
+  --foreground: oklch(0.95 0.005 265);
+  --card: oklch(0.22 0.006 265);
+  --card-foreground: oklch(0.95 0.005 265);
+  --popover: oklch(0.22 0.006 265);
   --popover-foreground: oklch(0.18 0.04 265);
   --primary: oklch(0.20 0.05 265);
   --primary-foreground: oklch(0.97 0.012 85);
