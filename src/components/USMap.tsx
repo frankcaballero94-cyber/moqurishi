@@ -1,34 +1,34 @@
 import { useState } from "react";
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 
-import alabama from "@/assets/licenses/alabama.jpg";
-import arkansas from "@/assets/licenses/arkansas.jpg";
-import colorado from "@/assets/licenses/colorado.jpg";
-import florida from "@/assets/licenses/florida.jpg";
-import georgia from "@/assets/licenses/georgia.jpg";
-import illinois from "@/assets/licenses/illinois.jpg";
-import indiana from "@/assets/licenses/indiana.jpg";
-import iowa from "@/assets/licenses/iowa.jpg";
-import kansas from "@/assets/licenses/kansas.jpg";
-import kentucky from "@/assets/licenses/kentucky.jpg";
-import louisiana from "@/assets/licenses/louisiana.jpg";
-import maryland from "@/assets/licenses/maryland.jpg";
-import michigan from "@/assets/licenses/michigan.jpg";
-import mississippi from "@/assets/licenses/mississippi.jpg";
-import missouri from "@/assets/licenses/missouri.jpg";
-import montana from "@/assets/licenses/montana.jpg";
-import nebraska from "@/assets/licenses/nebraska.jpg";
-import nevada from "@/assets/licenses/nevada.jpg";
-import north_carolina from "@/assets/licenses/north_carolina.jpg";
-import ohio from "@/assets/licenses/ohio.jpg";
-import oklahoma from "@/assets/licenses/oklahoma.jpg";
-import south_carolina from "@/assets/licenses/south_carolina.jpg";
-import tennessee from "@/assets/licenses/tennessee.jpg";
-import texas from "@/assets/licenses/texas.jpg";
-import utah from "@/assets/licenses/utah.jpg";
-import virginia from "@/assets/licenses/virginia.jpg";
-import west_virginia from "@/assets/licenses/west_virginia.jpg";
-import wisconsin from "@/assets/licenses/wisconsin.jpg";
+import alabama from "@/assets/licenses/alabama.jpg.asset.json";
+import arkansas from "@/assets/licenses/arkansas.jpg.asset.json";
+import colorado from "@/assets/licenses/colorado.jpg.asset.json";
+import florida from "@/assets/licenses/florida.jpg.asset.json";
+import georgia from "@/assets/licenses/georgia.jpg.asset.json";
+import illinois from "@/assets/licenses/illinois.jpg.asset.json";
+import indiana from "@/assets/licenses/indiana.jpg.asset.json";
+import iowa from "@/assets/licenses/iowa.jpg.asset.json";
+import kansas from "@/assets/licenses/kansas.jpg.asset.json";
+import kentucky from "@/assets/licenses/kentucky.jpg.asset.json";
+import louisiana from "@/assets/licenses/louisiana.jpg.asset.json";
+import maryland from "@/assets/licenses/maryland.jpg.asset.json";
+import michigan from "@/assets/licenses/michigan.jpg.asset.json";
+import mississippi from "@/assets/licenses/mississippi.jpg.asset.json";
+import missouri from "@/assets/licenses/missouri.jpg.asset.json";
+import montana from "@/assets/licenses/montana.jpg.asset.json";
+import nebraska from "@/assets/licenses/nebraska.jpg.asset.json";
+import nevada from "@/assets/licenses/nevada.jpg.asset.json";
+import north_carolina from "@/assets/licenses/north_carolina.jpg.asset.json";
+import ohio from "@/assets/licenses/ohio.jpg.asset.json";
+import oklahoma from "@/assets/licenses/oklahoma.jpg.asset.json";
+import south_carolina from "@/assets/licenses/south_carolina.jpg.asset.json";
+import tennessee from "@/assets/licenses/tennessee.jpg.asset.json";
+import texas from "@/assets/licenses/texas.jpg.asset.json";
+import utah from "@/assets/licenses/utah.jpg.asset.json";
+import virginia from "@/assets/licenses/virginia.jpg.asset.json";
+import west_virginia from "@/assets/licenses/west_virginia.jpg.asset.json";
+import wisconsin from "@/assets/licenses/wisconsin.jpg.asset.json";
 
 const GEO_URL = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";
 
@@ -41,14 +41,14 @@ const POSTAL_TO_FIPS: Record<string, string> = {
 };
 
 const LICENSE_BY_NAME: Record<string, string> = {
-  Alabama: alabama, Arkansas: arkansas, Colorado: colorado, Florida: florida,
-  Georgia: georgia, Illinois: illinois, Indiana: indiana, Iowa: iowa,
-  Kansas: kansas, Kentucky: kentucky, Louisiana: louisiana, Maryland: maryland,
-  Michigan: michigan, Mississippi: mississippi, Missouri: missouri, Montana: montana,
-  Nebraska: nebraska, Nevada: nevada, "North Carolina": north_carolina, Ohio: ohio,
-  Oklahoma: oklahoma, "South Carolina": south_carolina, Tennessee: tennessee,
-  Texas: texas, Utah: utah, Virginia: virginia, "West Virginia": west_virginia,
-  Wisconsin: wisconsin,
+  Alabama: alabama.url, Arkansas: arkansas.url, Colorado: colorado.url, Florida: florida.url,
+  Georgia: georgia.url, Illinois: illinois.url, Indiana: indiana.url, Iowa: iowa.url,
+  Kansas: kansas.url, Kentucky: kentucky.url, Louisiana: louisiana.url, Maryland: maryland.url,
+  Michigan: michigan.url, Mississippi: mississippi.url, Missouri: missouri.url, Montana: montana.url,
+  Nebraska: nebraska.url, Nevada: nevada.url, "North Carolina": north_carolina.url, Ohio: ohio.url,
+  Oklahoma: oklahoma.url, "South Carolina": south_carolina.url, Tennessee: tennessee.url,
+  Texas: texas.url, Utah: utah.url, Virginia: virginia.url, "West Virginia": west_virginia.url,
+  Wisconsin: wisconsin.url,
 };
 
 export function USMap({ licensed }: { licensed: string[] }) {
