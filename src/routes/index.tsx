@@ -1307,7 +1307,7 @@ export function FAQ() {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <div className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Common Questions</div>
-          <h2 className="font-display text-4xl md:text-5xl">Honest <span className="italic text-gradient-gold">answers.</span></h2>
+          <h2 className="font-display text-4xl md:text-5xl">Honest <span className="italic text-gradient-gold">answers far.</span></h2>
         </div>
         <div className="space-y-3">
           {faqs.map((f, i) => (
