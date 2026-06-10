@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Phone, Mail, Calendar, MessageCircle, ShieldCheck, X, ArrowRight, Check, ChevronLeft, ChevronRight, MapPin, Clock, Award, Lock, BadgeCheck, Star, Users, Smartphone, Download } from "lucide-react";
 import { SocialLinks } from "@/components/SocialLinks";
+import moHeadshot from "@/assets/mo-headshot.png.asset.json";
 
 const LICENSED_STATES = [
   "Alabama","Arkansas","Colorado","Delaware","Florida","Georgia","Iowa","Illinois","Indiana","Kansas","Kentucky","Louisiana","Maryland","Michigan","Missouri","Mississippi","Montana","North Carolina","Nebraska","Nevada","Ohio","Oklahoma","South Carolina","South Dakota","Tennessee","Texas","Utah","Virginia","Wisconsin","West Virginia","Wyoming",
@@ -153,12 +154,42 @@ export function AppointmentCalendar() {
           <h2 className="font-display text-4xl md:text-5xl">Pick a time that <span className="text-gradient-gold italic">works for you</span></h2>
           <p className="text-muted-foreground mt-3 flex items-center justify-center gap-2"><Clock className="w-4 h-4" /> Your timezone: {tz}</p>
         </div>
-        <div className="card-glass rounded-2xl p-2 md:p-4 overflow-hidden">
-          <div
-            className="calendly-inline-widget"
-            data-url={`${CALENDLY_URL}?hide_gdpr_banner=1&background_color=0b0b0f&text_color=ffffff&primary_color=c9a84c`}
-            style={{ minWidth: "320px", height: "700px" }}
-          />
+        <div className="grid lg:grid-cols-[280px_1fr] gap-6 items-start">
+          <div className="hidden lg:flex flex-col items-center gap-4 card-glass rounded-2xl p-6 sticky top-24">
+            <div className="relative">
+              <div className="absolute -inset-2 rounded-full bg-gradient-gold opacity-40 blur-xl" />
+              <img
+                src={moHeadshot.url}
+                alt="Mo Qurishi, licensed health insurance advisor"
+                className="relative w-44 h-44 rounded-full object-cover ring-2 ring-[oklch(0.74_0.13_78/0.7)] shadow-elegant"
+              />
+            </div>
+            <div className="text-center">
+              <div className="font-display text-xl">Mo Qurishi</div>
+              <div className="text-xs uppercase tracking-[0.25em] text-primary mt-1">Licensed Advisor</div>
+            </div>
+            <p className="text-sm text-muted-foreground text-center leading-relaxed">
+              Pick any open slot — you'll be on the call with me directly. No call centers, no hand-offs.
+            </p>
+          </div>
+          <div className="card-glass rounded-2xl p-2 md:p-4 overflow-hidden">
+            <div className="lg:hidden flex items-center gap-3 px-3 pt-3 pb-4">
+              <img
+                src={moHeadshot.url}
+                alt="Mo Qurishi"
+                className="w-14 h-14 rounded-full object-cover ring-2 ring-[oklch(0.74_0.13_78/0.7)]"
+              />
+              <div>
+                <div className="font-display text-base">Mo Qurishi</div>
+                <div className="text-[10px] uppercase tracking-[0.25em] text-primary">Licensed Advisor</div>
+              </div>
+            </div>
+            <div
+              className="calendly-inline-widget"
+              data-url={`${CALENDLY_URL}?hide_gdpr_banner=1&background_color=0b0b0f&text_color=ffffff&primary_color=c9a84c`}
+              style={{ minWidth: "320px", height: "700px" }}
+            />
+          </div>
         </div>
         <div className="text-center mt-6 flex flex-col items-center gap-5">
           <a
