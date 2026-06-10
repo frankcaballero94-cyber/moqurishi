@@ -67,13 +67,13 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Mo Qurishi · Licensed Health Advisor" },
-      { name: "description", content: "Personal health insurance guidance from Mo Qurishi. Licensed in 35+ states. Free, no-pressure consultations." },
+      { name: "description", content: "Personal health insurance guidance from Mo Qurishi. Licensed in 28 states. Free, no-pressure consultations." },
       { property: "og:title", content: "Mo Qurishi · Licensed Health Advisor" },
-      { property: "og:description", content: "Licensed in 35+ states — call 656-266-3462" },
+      { property: "og:description", content: "Licensed in 28 states — call 656-266-3462" },
       { property: "og:site_name", content: "Mo Qurishi" },
       { property: "og:type", content: "website" },
       { name: "twitter:title", content: "Mo Qurishi · Licensed Health Advisor" },
-      { name: "twitter:description", content: "Licensed in 35+ states — call 656-266-3462" },
+      { name: "twitter:description", content: "Licensed in 28 states — call 656-266-3462" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -296,7 +296,7 @@ const HERO_PILLARS = [
     label: "Trust",
     icon: Handshake,
     title: "Earned trust, every day",
-    blurb: "Independent, licensed in 35+ states, and accountable to you — not a single carrier.",
+    blurb: "Independent, licensed in 28 states, and accountable to you — not a single carrier.",
     bullets: [
       "NPN credentialed & ACA certified",
       "Medicare AHIP certified",
@@ -342,7 +342,7 @@ function HeroShowcase() {
 
         {/* Subtle trust line */}
         <div className="mt-4 pt-4 border-t border-border/40 flex flex-wrap items-center justify-between gap-3 text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-          <span>Licensed in 35+ States</span>
+          <span>Licensed in 28 States</span>
           <a href={`tel:${PHONE}`} className="hover:text-primary transition normal-case tracking-normal text-sm text-foreground">{PHONE}</a>
         </div>
       </div>
@@ -392,7 +392,7 @@ function Hero() {
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
         <div className="space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-xs uppercase tracking-[0.2em] text-primary">
-            <Star className="w-3 h-3 fill-primary" /> Licensed in 35+ States
+            <Star className="w-3 h-3 fill-primary" /> Licensed in 28 States
           </div>
           <h1 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-medium">
             Your Health <br />
@@ -448,7 +448,7 @@ function Divider() {
 }
 
 export function Marquee() {
-  const items = ["Licensed in 35+ States", "Free Consultations", "Individuals & Families", "Small Business", "Medicare Guidance", "ACA Marketplace", "Real Human Advisor"];
+  const items = ["Licensed in 28 States", "Free Consultations", "Individuals & Families", "Small Business", "Medicare Guidance", "ACA Marketplace", "Real Human Advisor"];
   return (
     <div className="border-y border-border bg-card/40 py-5 overflow-hidden">
       <div className="flex gap-12 animate-[scroll_30s_linear_infinite] whitespace-nowrap">
@@ -470,7 +470,7 @@ export function WhyUs() {
     { icon: Clock, title: "Your Pace, Your Choice", body: "Conversations, not sales pitches. Ask questions, take your time, decide when you're ready." },
     { icon: HeartPulse, title: "Built on Trust", body: "Health coverage is personal. Treated with genuine care and a focus on what truly protects your family." },
     { icon: Users, title: "White-Glove Support", body: "No phone trees. A real advisor who knows your file and walks you through every option." },
-    { icon: MapPin, title: "Coverage Across America", body: "Licensed in 35+ states and growing. Lasting protection so you can focus on living, not worrying." },
+    { icon: MapPin, title: "Coverage Across America", body: "Licensed in 28 states and growing. Lasting protection so you can focus on living, not worrying." },
     { icon: Award, title: "Independent & Honest", body: "Not tied to one carrier. I shop the market so you only see plans that genuinely fit your life." },
   ];
   return (
@@ -1016,7 +1016,7 @@ export function Contact() {
         <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3">
           {[
             { k: "< 2 hrs", v: "Avg response" },
-            { k: "35+", v: "States licensed" },
+            { k: "28", v: "States licensed" },
             { k: "$0", v: "Consultation fee" },
             { k: "100%", v: "Confidential" },
           ].map((s) => (
@@ -1051,7 +1051,7 @@ function FloatField({ label, name, type = "text", focused, setFocused }: { label
 
 export function Stats() {
   const stats = [
-    { num: "35+", label: "States Licensed" },
+    { num: "28", label: "States Licensed" },
     { num: "2,000+", label: "Families Covered" },
     { num: "12+", label: "Years Experience" },
     { num: "4.9★", label: "Client Rating" },
@@ -1351,7 +1351,7 @@ export function Footer() {
             />
           </Link>
           <div className="text-xs uppercase tracking-[0.25em] text-muted-foreground mb-3">Mo Qurishi · Licensed Health Advisor</div>
-          <p className="text-sm text-muted-foreground max-w-xs leading-relaxed">Independent health insurance guidance — licensed in 35+ states. No pressure, ever.</p>
+          <p className="text-sm text-muted-foreground max-w-xs leading-relaxed">Independent health insurance guidance — licensed in 28 states. No pressure, ever.</p>
         </div>
 
         {cols.map((col) => (
@@ -1374,7 +1374,7 @@ export function Footer() {
       </div>
       <div className="max-w-7xl mx-auto mt-10 pt-6 border-t border-border text-xs text-muted-foreground flex flex-col md:flex-row justify-between gap-2">
         <div>© {new Date().getFullYear()} Qurishi Healthcare Advising. All rights reserved.</div>
-        <div>NPN · 21032307 · Licensed in 35+ states</div>
+        <div>NPN · 21032307 · Licensed in 28 states</div>
       </div>
     </footer>
   );
