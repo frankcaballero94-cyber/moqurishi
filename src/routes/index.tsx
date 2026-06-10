@@ -883,7 +883,7 @@ export function Contact() {
                   </div>
                   <div className="flex-1">
                     <div className="text-[10px] uppercase tracking-[0.25em] text-gold-soft">Phone</div>
-                    <div className="font-sans text-lg tracking-wide">{PHONE}</div>
+                    <div className="font-sans text-lg tracking-wide text-white">{PHONE}</div>
                   </div>
                   <ArrowRight className="w-4 h-4 text-gold-soft opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition" />
                 </a>
