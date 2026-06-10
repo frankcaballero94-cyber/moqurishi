@@ -87,7 +87,7 @@ export const Route = createFileRoute("/")({
 const STATES = ["AL","AR","CO","DE","FL","GA","IA","IL","IN","KS","KY","LA","MD","MI","MO","MS","MT","NC","NE","NV","OH","OK","SC","SD","TN","TX","UT","VA","WI","WV","WY"];
 
 const PHONE = "656-266-3462";
-const EMAIL = "alqurishihealthcareadvising@gmail.com";
+const EMAIL = "Qurishihealthcare@gmail.com";
 
 function Index() {
   useEffect(() => {
