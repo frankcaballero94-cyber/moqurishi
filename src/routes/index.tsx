@@ -883,7 +883,7 @@ export function Contact() {
                   </div>
                   <div className="flex-1">
                     <div className="text-[10px] uppercase tracking-[0.25em] text-gold-soft">Phone</div>
-                    <div className="font-sans text-lg tracking-wide">{PHONE}</div>
+                    <div className="font-sans text-lg tracking-wide text-white">{PHONE}</div>
                   </div>
                   <ArrowRight className="w-4 h-4 text-gold-soft opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition" />
                 </a>
@@ -894,7 +894,7 @@ export function Contact() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="text-[10px] uppercase tracking-[0.25em] text-gold-soft">Email</div>
-                    <div className="font-display text-base truncate">{EMAIL}</div>
+                    <div className="font-display text-base truncate text-white">{EMAIL}</div>
                   </div>
                   <ArrowRight className="w-4 h-4 text-gold-soft opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition" />
                 </a>
@@ -905,7 +905,7 @@ export function Contact() {
                   </div>
                   <div className="flex-1">
                     <div className="text-[10px] uppercase tracking-[0.25em] text-gold-soft">Hours</div>
-                    <div className="font-sans text-sm">Mon–Sat · 8a – 8p CT</div>
+                    <div className="font-sans text-sm text-white">Mon–Sat · 8a – 8p CT</div>
                   </div>
                 </div>
               </div>
