@@ -4,6 +4,7 @@ import { Phone, Mail, MapPin, ShieldCheck, HeartPulse, Users, Clock, Award, Arro
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { USMap } from "@/components/USMap";
 import { PremiumTicker, AdvisorCompareSlider, AppointmentCalendar, CostDonut, QuickActionFAB, LicenseVerifier, TypewriterText, Tilt3D, TrustBadgeBar, MobileShowcase } from "@/components/CoolFeatures";
+import { SocialLinks } from "@/components/SocialLinks";
 import qurishiHealthcareLogo from "@/assets/qurishi-healthcare-logo-transparent.png.asset.json";
 import heroLogoPortrait from "@/assets/hero-logo-portrait.png.asset.json";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
@@ -960,6 +961,11 @@ export function Contact() {
                 <span className="inline-flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
                 Accepting new clients · Avg. response under 2 hours
               </div>
+
+              <div className="mt-6">
+                <div className="text-[10px] uppercase tracking-[0.25em] text-gold-soft mb-3">Follow</div>
+                <SocialLinks variant="gold" />
+              </div>
             </div>
           </div>
 
@@ -1377,29 +1383,8 @@ export function Footer() {
       </div>
       <div className="max-w-7xl mx-auto mt-10 pt-6 border-t border-border text-xs text-muted-foreground flex flex-col md:flex-row justify-between gap-2">
         <div>© {new Date().getFullYear()} Qurishi Healthcare Advising. All rights reserved.</div>
-        <div className="flex items-center gap-3">
-          {[
-            { href: "https://www.linkedin.com/in/mo-qurishi-7312813a9", label: "LinkedIn", Icon: Linkedin },
-            { href: "https://www.instagram.com/qurishihealthcare/", label: "Instagram", Icon: Instagram },
-            { href: "https://www.facebook.com/people/Qurishi-HealthCare/pfbid02A1oiT4GBXAFNzW6kuizjC68ZtGURANSPumXgin8g9ANEXs6duzk2m8N9uuR6xgyil/", label: "Facebook", Icon: Facebook },
-          ].map(({ href, label, Icon }) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={label}
-              onClick={(e) => {
-                e.preventDefault();
-                const win = window.open(href, "_blank", "noopener,noreferrer");
-                if (!win) window.top!.location.href = href;
-              }}
-              className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-border text-muted-foreground hover:text-accent hover:border-accent transition"
-            >
-              <Icon className="w-4 h-4" />
-            </a>
-          ))}
-        </div>
+        <SocialLinks />
+
         <div>NPN · 19229315 · Licensed in 28 states</div>
       </div>
     </footer>
