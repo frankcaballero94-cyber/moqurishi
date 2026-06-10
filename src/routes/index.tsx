@@ -17,6 +17,16 @@ import indianaLic from "@/assets/licenses/indiana.pdf.asset.json";
 import iowaLic from "@/assets/licenses/iowa.pdf.asset.json";
 import kansasLic from "@/assets/licenses/kansas.pdf.asset.json";
 import kentuckyLic from "@/assets/licenses/kentucky.pdf.asset.json";
+import alabamaImg from "@/assets/licenses/alabama.jpg.asset.json";
+import arkansasImg from "@/assets/licenses/arkansas.jpg.asset.json";
+import coloradoImg from "@/assets/licenses/colorado.jpg.asset.json";
+import floridaImg from "@/assets/licenses/florida.jpg.asset.json";
+import georgiaImg from "@/assets/licenses/georgia.jpg.asset.json";
+import illinoisImg from "@/assets/licenses/illinois.jpg.asset.json";
+import indianaImg from "@/assets/licenses/indiana.jpg.asset.json";
+import iowaImg from "@/assets/licenses/iowa.jpg.asset.json";
+import kansasImg from "@/assets/licenses/kansas.jpg.asset.json";
+import kentuckyImg from "@/assets/licenses/kentucky.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -567,17 +577,17 @@ export function StatesSection() {
   );
 }
 
-const LICENSES: { state: string; code: string; pdf: string }[] = [
-  { state: "Alabama", code: "AL", pdf: alabamaLic.url },
-  { state: "Arkansas", code: "AR", pdf: arkansasLic.url },
-  { state: "Colorado", code: "CO", pdf: coloradoLic.url },
-  { state: "Florida", code: "FL", pdf: floridaLic.url },
-  { state: "Georgia", code: "GA", pdf: georgiaLic.url },
-  { state: "Illinois", code: "IL", pdf: illinoisLic.url },
-  { state: "Indiana", code: "IN", pdf: indianaLic.url },
-  { state: "Iowa", code: "IA", pdf: iowaLic.url },
-  { state: "Kansas", code: "KS", pdf: kansasLic.url },
-  { state: "Kentucky", code: "KY", pdf: kentuckyLic.url },
+const LICENSES: { state: string; code: string; pdf: string; img: string }[] = [
+  { state: "Alabama", code: "AL", pdf: alabamaLic.url, img: alabamaImg.url },
+  { state: "Arkansas", code: "AR", pdf: arkansasLic.url, img: arkansasImg.url },
+  { state: "Colorado", code: "CO", pdf: coloradoLic.url, img: coloradoImg.url },
+  { state: "Florida", code: "FL", pdf: floridaLic.url, img: floridaImg.url },
+  { state: "Georgia", code: "GA", pdf: georgiaLic.url, img: georgiaImg.url },
+  { state: "Illinois", code: "IL", pdf: illinoisLic.url, img: illinoisImg.url },
+  { state: "Indiana", code: "IN", pdf: indianaLic.url, img: indianaImg.url },
+  { state: "Iowa", code: "IA", pdf: iowaLic.url, img: iowaImg.url },
+  { state: "Kansas", code: "KS", pdf: kansasLic.url, img: kansasImg.url },
+  { state: "Kentucky", code: "KY", pdf: kentuckyLic.url, img: kentuckyImg.url },
 ];
 
 function LicenseCarousel() {
@@ -598,20 +608,14 @@ function LicenseCarousel() {
                 rel="noopener noreferrer"
                 className="block card-glass rounded-2xl p-5 h-full group transition"
               >
-                {/* PDF preview */}
+                {/* License preview image */}
                 <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-white border border-primary/20 mb-5">
-                  <object
-                    data={`${lic.pdf}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
-                    type="application/pdf"
-                    className="absolute inset-0 w-full h-full pointer-events-none"
-                    aria-label={`${lic.state} license preview`}
-                  >
-                    <div className="flex items-center justify-center w-full h-full text-xs text-muted-foreground">
-                      Preview unavailable
-                    </div>
-                  </object>
-                  {/* click-shield so the whole card is the link */}
-                  <div className="absolute inset-0" />
+                  <img
+                    src={lic.img}
+                    alt={`${lic.state} health insurance license`}
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-contain"
+                  />
                   <span className="absolute top-2 right-2 text-[10px] uppercase tracking-[0.2em] text-primary px-2 py-1 rounded-md border border-primary/40 bg-background/80 backdrop-blur">
                     {lic.code}
                   </span>
