@@ -6,6 +6,7 @@ import { USMap } from "@/components/USMap";
 import { PremiumTicker, AdvisorCompareSlider, AppointmentCalendar, CostDonut, QuickActionFAB, LicenseVerifier, TypewriterText, Tilt3D, TrustBadgeBar, MobileShowcase } from "@/components/CoolFeatures";
 import qurishiLogo from "@/assets/qurishi-logo.png";
 import qurishiHealthcareLogo from "@/assets/qurishi-healthcare-logo-transparent.png.asset.json";
+import moPortrait from "@/assets/mo-portrait.png.asset.json";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import alabamaLic from "@/assets/licenses/alabama.pdf.asset.json";
 import arkansasLic from "@/assets/licenses/arkansas.pdf.asset.json";
