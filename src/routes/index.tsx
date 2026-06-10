@@ -6,6 +6,17 @@ import { USMap } from "@/components/USMap";
 import { PremiumTicker, AdvisorCompareSlider, AppointmentCalendar, CostDonut, QuickActionFAB, LicenseVerifier, TypewriterText, Tilt3D, TrustBadgeBar, MobileShowcase } from "@/components/CoolFeatures";
 import qurishiLogo from "@/assets/qurishi-logo.png";
 import qurishiHealthcareLogo from "@/assets/qurishi-healthcare-logo-transparent.png.asset.json";
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
+import alabamaLic from "@/assets/licenses/alabama.pdf.asset.json";
+import arkansasLic from "@/assets/licenses/arkansas.pdf.asset.json";
+import coloradoLic from "@/assets/licenses/colorado.pdf.asset.json";
+import floridaLic from "@/assets/licenses/florida.pdf.asset.json";
+import georgiaLic from "@/assets/licenses/georgia.pdf.asset.json";
+import illinoisLic from "@/assets/licenses/illinois.pdf.asset.json";
+import indianaLic from "@/assets/licenses/indiana.pdf.asset.json";
+import iowaLic from "@/assets/licenses/iowa.pdf.asset.json";
+import kansasLic from "@/assets/licenses/kansas.pdf.asset.json";
+import kentuckyLic from "@/assets/licenses/kentucky.pdf.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -548,8 +559,67 @@ export function StatesSection() {
             ))}
           </div>
         </div>
+
+        {/* State-by-state license carousel */}
+        <LicenseCarousel />
       </div>
     </section>
+  );
+}
+
+const LICENSES: { state: string; code: string; pdf: string }[] = [
+  { state: "Alabama", code: "AL", pdf: alabamaLic.url },
+  { state: "Arkansas", code: "AR", pdf: arkansasLic.url },
+  { state: "Colorado", code: "CO", pdf: coloradoLic.url },
+  { state: "Florida", code: "FL", pdf: floridaLic.url },
+  { state: "Georgia", code: "GA", pdf: georgiaLic.url },
+  { state: "Illinois", code: "IL", pdf: illinoisLic.url },
+  { state: "Indiana", code: "IN", pdf: indianaLic.url },
+  { state: "Iowa", code: "IA", pdf: iowaLic.url },
+  { state: "Kansas", code: "KS", pdf: kansasLic.url },
+  { state: "Kentucky", code: "KY", pdf: kentuckyLic.url },
+];
+
+function LicenseCarousel() {
+  return (
+    <div className="mt-16">
+      <div className="text-center mb-8">
+        <div className="text-xs uppercase tracking-[0.3em] text-primary mb-3">Official Documentation</div>
+        <h3 className="font-display text-3xl md:text-4xl mb-3">State-by-state <span className="italic text-gradient-gold">licenses</span></h3>
+        <p className="text-muted-foreground text-sm max-w-xl mx-auto">Tap any card to view the official state-issued license PDF.</p>
+      </div>
+      <Carousel opts={{ align: "start", loop: true }} className="max-w-6xl mx-auto px-10">
+        <CarouselContent>
+          {LICENSES.map((lic) => (
+            <CarouselItem key={lic.code} className="md:basis-1/2 lg:basis-1/3">
+              <a
+                href={lic.pdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block card-glass rounded-2xl p-6 h-full group transition"
+              >
+                <div className="flex items-start justify-between mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center">
+                    <FileText className="w-5 h-5 text-primary" />
+                  </div>
+                  <span className="text-xs uppercase tracking-[0.2em] text-primary px-2 py-1 rounded-md border border-primary/30 bg-primary/5">
+                    {lic.code}
+                  </span>
+                </div>
+                <div className="font-display text-2xl text-foreground mb-1">{lic.state}</div>
+                <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-6">Health Insurance License</div>
+                <div className="flex items-center gap-2 text-sm text-primary group-hover:gap-3 transition-all">
+                  <span>View official PDF</span>
+                  <ArrowRight className="w-4 h-4" />
+                </div>
+              </a>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className="border-primary/40 bg-card/80 text-foreground hover:bg-primary/10" />
+        <CarouselNext className="border-primary/40 bg-card/80 text-foreground hover:bg-primary/10" />
+      </Carousel>
+    </div>
   );
 }
 
