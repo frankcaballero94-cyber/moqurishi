@@ -855,7 +855,7 @@ export function Contact() {
           <h2 className="font-display text-5xl md:text-6xl leading-[1.05]">
             Let's find the right <span className="italic text-gradient-gold">coverage.</span>
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
+          <p className="text-white mt-4 max-w-xl mx-auto">
             Free, no-pressure consultation. I personally respond to every inquiry — usually within a few hours.
           </p>
         </div>
