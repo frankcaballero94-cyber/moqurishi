@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { FileText, Video, BookOpen, Headphones, ArrowRight, Download } from "lucide-react";
-import { Nav, Footer } from "./index";
+import { Nav, Footer, CALENDLY } from "./index";
 
 export const Route = createFileRoute("/resources")({
   head: () => ({
@@ -60,9 +60,9 @@ function ResourcesPage() {
         <div className="max-w-3xl mx-auto mt-16 text-center card-glass rounded-2xl p-10">
           <h2 className="font-display text-3xl mb-3">Want a personal walk-through?</h2>
           <p className="text-muted-foreground mb-6">A 30-minute call covers more than any PDF can. Free, no pressure.</p>
-          <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl btn-glass-gold font-medium">
+          <a href={CALENDLY} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl btn-glass-gold font-medium">
             Book a free call <ArrowRight className="w-4 h-4" />
-          </Link>
+          </a>
         </div>
       </section>
       <Footer />
