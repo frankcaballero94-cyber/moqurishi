@@ -49,9 +49,9 @@ function ResourcesPage() {
                 </div>
                 <h3 className="font-display text-xl mb-2">{r.title}</h3>
                 <p className="text-sm text-muted-foreground mb-4">{r.desc}</p>
-                <a href={CALENDLY} target="_blank" rel="noreferrer" className="text-xs uppercase tracking-wider text-primary inline-flex items-center gap-1.5">
+                <Link to="/contact" className="text-xs uppercase tracking-wider text-primary inline-flex items-center gap-1.5">
                   Request copy <Download className="w-3 h-3" />
-                </a>
+                </Link>
               </div>
             </div>
           ))}
