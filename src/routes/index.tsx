@@ -199,7 +199,7 @@ export function Nav() {
             <Link key={l.to} to={l.to} className="hover:text-foreground transition" activeProps={{ className: "text-foreground" }}>{l.label}</Link>
           ))}
         </nav>
-        <Link to="/contact" className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl btn-glass-gold text-sm font-medium">
+        <a href={CALENDLY} target="_blank" rel="noreferrer" className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl btn-glass-gold text-sm font-medium">
           Free Quote <ArrowRight className="w-4 h-4" />
         </Link>
 
@@ -372,7 +372,7 @@ function HeroShowcase() {
                 ))}
               </ul>
               <div className="pt-4 border-t border-border flex gap-3">
-                <a href="#contact" onClick={() => setOpenIdx(null)} className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl btn-glass-gold text-sm font-medium">
+                <a href={CALENDLY} target="_blank" rel="noreferrer" onClick={() => setOpenIdx(null)} className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl btn-glass-gold text-sm font-medium">
                   Get a Free Quote <ArrowRight className="w-4 h-4" />
                 </a>
                 <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-primary/40 text-sm hover:bg-primary/5 transition">
@@ -405,7 +405,7 @@ function Hero() {
             I'm Mo Qurishi — a licensed health insurance advisor helping individuals, families, and small businesses cut through the noise and find coverage that actually fits.
           </p>
           <div className="flex flex-wrap gap-3">
-            <a href="#contact" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl btn-glass-gold font-medium text-sm">
+            <a href={CALENDLY} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl btn-glass-gold font-medium text-sm">
               Get a Free Quote <ArrowRight className="w-4 h-4" />
             </a>
             <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-primary/40 text-foreground hover:bg-primary/5 transition text-sm">
@@ -629,7 +629,7 @@ export function Services() {
                   <p className="text-sm text-muted-foreground leading-relaxed">{active.details.bestFor}</p>
                 </div>
                 <a
-                  href="#contact"
+                  href={CALENDLY} target="_blank" rel="noreferrer"
                   onClick={() => setOpenIdx(null)}
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl btn-glass-gold font-medium"
                 >
@@ -1161,7 +1161,7 @@ export function LicenseGrid() {
           {LICENSE_STATES.map((s) => (
             <a
               key={s.code}
-              href="#contact"
+              href={CALENDLY} target="_blank" rel="noreferrer"
               className="card-glass rounded-xl p-4 flex flex-col items-center text-center hover:border-primary/50 transition-colors group"
             >
               <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/15 to-primary/5 border border-primary/20 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
@@ -1185,7 +1185,7 @@ export function LicenseGrid() {
             </div>
           </div>
           <div className="flex gap-3">
-            <a href="#contact" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl btn-glass-gold font-medium text-sm">
+            <a href={CALENDLY} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl btn-glass-gold font-medium text-sm">
               Get instant estimate <ArrowRight className="w-4 h-4" />
             </a>
             <a href="https://nipr.com" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl badge-glass font-medium text-sm">
@@ -1275,7 +1275,7 @@ export function DeadlinesCallout() {
               <div><span className="text-foreground font-medium">SEP:</span> Triggered by life events year-round</div>
             </div>
           </div>
-          <a href="#contact" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl btn-glass-gold font-medium text-sm shrink-0">
+          <a href={CALENDLY} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl btn-glass-gold font-medium text-sm shrink-0">
             Check Eligibility <ArrowRight className="w-4 h-4" />
           </a>
         </div>
@@ -1565,9 +1565,9 @@ export function SavingsCalculator() {
 
             <div className="mt-6 pt-5 border-t border-border">
               <p className="text-xs text-muted-foreground mb-3">Want the real number? I'll run an exact quote against live carrier rates — no fee, no commitment.</p>
-              <Link to="/contact" className="btn-glass-gold inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium uppercase tracking-wider">
+              <a href={CALENDLY} target="_blank" rel="noreferrer" className="btn-glass-gold inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium uppercase tracking-wider">
                 Get exact quote <ArrowRight className="w-4 h-4" />
-              </Link>
+              </a>
             </div>
           </div>
         </div>
