@@ -905,7 +905,7 @@ export function Contact() {
                   </div>
                   <div className="flex-1">
                     <div className="text-[10px] uppercase tracking-[0.25em] text-gold-soft">Hours</div>
-                    <div className="font-sans text-sm">Mon–Sat · 8a – 8p CT</div>
+                    <div className="font-sans text-sm text-white">Mon–Sat · 8a – 8p CT</div>
                   </div>
                 </div>
               </div>
