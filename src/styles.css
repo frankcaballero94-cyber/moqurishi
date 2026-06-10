@@ -186,9 +186,9 @@
 }
 .btn-glass-gold:hover {
   transform: translateY(-2px);
-  background: linear-gradient(135deg, oklch(0.36 0.05 265), oklch(0.26 0.04 265));
-  border-color: oklch(0.74 0.13 78 / 0.9);
-  box-shadow: 0 14px 40px -10px oklch(0.62 0.14 70 / 0.5), inset 0 1px 0 oklch(0.74 0.13 78 / 0.35);
+  background: linear-gradient(135deg, oklch(0.74 0.13 78 / 0.30), oklch(0.62 0.14 70 / 0.20));
+  border-color: oklch(0.85 0.10 85 / 0.95);
+  box-shadow: 0 14px 40px -10px oklch(0.62 0.14 70 / 0.55), inset 0 1px 0 oklch(0.85 0.10 85 / 0.45);
 }
 .btn-glass-gold:hover::after {
   animation: gold-sheen 0.85s ease;
