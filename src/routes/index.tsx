@@ -46,6 +46,22 @@ import ncLic from "@/assets/licenses/north_carolina.pdf.asset.json";
 import ncImg from "@/assets/licenses/north_carolina.jpg.asset.json";
 import ohioLic from "@/assets/licenses/ohio.pdf.asset.json";
 import ohioImg from "@/assets/licenses/ohio.jpg.asset.json";
+import oklahomaLic from "@/assets/licenses/oklahoma.pdf.asset.json";
+import oklahomaImg from "@/assets/licenses/oklahoma.jpg.asset.json";
+import scLic from "@/assets/licenses/south_carolina.pdf.asset.json";
+import scImg from "@/assets/licenses/south_carolina.jpg.asset.json";
+import tennesseeLic from "@/assets/licenses/tennessee.pdf.asset.json";
+import tennesseeImg from "@/assets/licenses/tennessee.jpg.asset.json";
+import texasLic from "@/assets/licenses/texas.pdf.asset.json";
+import texasImg from "@/assets/licenses/texas.jpg.asset.json";
+import utahLic from "@/assets/licenses/utah.pdf.asset.json";
+import utahImg from "@/assets/licenses/utah.jpg.asset.json";
+import virginiaLic from "@/assets/licenses/virginia.pdf.asset.json";
+import virginiaImg from "@/assets/licenses/virginia.jpg.asset.json";
+import wvLic from "@/assets/licenses/west_virginia.pdf.asset.json";
+import wvImg from "@/assets/licenses/west_virginia.jpg.asset.json";
+import wisconsinLic from "@/assets/licenses/wisconsin.pdf.asset.json";
+import wisconsinImg from "@/assets/licenses/wisconsin.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -617,6 +633,14 @@ const LICENSES: { state: string; code: string; pdf: string; img: string }[] = [
   { state: "Nevada", code: "NV", pdf: nevadaLic.url, img: nevadaImg.url },
   { state: "North Carolina", code: "NC", pdf: ncLic.url, img: ncImg.url },
   { state: "Ohio", code: "OH", pdf: ohioLic.url, img: ohioImg.url },
+  { state: "Oklahoma", code: "OK", pdf: oklahomaLic.url, img: oklahomaImg.url },
+  { state: "South Carolina", code: "SC", pdf: scLic.url, img: scImg.url },
+  { state: "Tennessee", code: "TN", pdf: tennesseeLic.url, img: tennesseeImg.url },
+  { state: "Texas", code: "TX", pdf: texasLic.url, img: texasImg.url },
+  { state: "Utah", code: "UT", pdf: utahLic.url, img: utahImg.url },
+  { state: "Virginia", code: "VA", pdf: virginiaLic.url, img: virginiaImg.url },
+  { state: "West Virginia", code: "WV", pdf: wvLic.url, img: wvImg.url },
+  { state: "Wisconsin", code: "WI", pdf: wisconsinLic.url, img: wisconsinImg.url },
 ];
 
 function LicenseCarousel() {
