@@ -27,7 +27,7 @@ export function PremiumTicker() {
           <div className="text-xs uppercase tracking-[0.25em] text-primary mb-2">Live Marketplace</div>
           <h2 className="font-display text-2xl md:text-3xl">Avg. monthly premiums <span className="text-gradient-gold italic">right now</span></h2>
         </div>
-        <a href="#contact" className="text-sm text-primary hover:underline inline-flex items-center gap-2">See your rate <ArrowRight className="w-4 h-4" /></a>
+        <a href={CALENDLY_URL} target="_blank" rel="noreferrer" className="text-sm text-primary hover:underline inline-flex items-center gap-2">See your rate <ArrowRight className="w-4 h-4" /></a>
       </div>
       <div className="relative">
         <div className="flex gap-3 animate-[ticker_60s_linear_infinite] w-max">
