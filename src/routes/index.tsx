@@ -961,6 +961,11 @@ export function Contact() {
                 <span className="inline-flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
                 Accepting new clients · Avg. response under 2 hours
               </div>
+
+              <div className="mt-6">
+                <div className="text-[10px] uppercase tracking-[0.25em] text-gold-soft mb-3">Follow</div>
+                <SocialLinks variant="gold" />
+              </div>
             </div>
           </div>
 
