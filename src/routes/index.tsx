@@ -27,6 +27,25 @@ import indianaImg from "@/assets/licenses/indiana.jpg.asset.json";
 import iowaImg from "@/assets/licenses/iowa.jpg.asset.json";
 import kansasImg from "@/assets/licenses/kansas.jpg.asset.json";
 import kentuckyImg from "@/assets/licenses/kentucky.jpg.asset.json";
+import louisianaLic from "@/assets/licenses/louisiana.pdf.asset.json";
+import louisianaImg from "@/assets/licenses/louisiana.jpg.asset.json";
+import marylandLic from "@/assets/licenses/maryland.pdf.asset.json";
+import marylandImg from "@/assets/licenses/maryland.jpg.asset.json";
+import michiganImg from "@/assets/licenses/michigan.jpg.asset.json";
+import missouriLic from "@/assets/licenses/missouri.pdf.asset.json";
+import missouriImg from "@/assets/licenses/missouri.jpg.asset.json";
+import montanaLic from "@/assets/licenses/montana.pdf.asset.json";
+import montanaImg from "@/assets/licenses/montana.jpg.asset.json";
+import mississippiLic from "@/assets/licenses/mississippi.pdf.asset.json";
+import mississippiImg from "@/assets/licenses/mississippi.jpg.asset.json";
+import nebraskaLic from "@/assets/licenses/nebraska.pdf.asset.json";
+import nebraskaImg from "@/assets/licenses/nebraska.jpg.asset.json";
+import nevadaLic from "@/assets/licenses/nevada.pdf.asset.json";
+import nevadaImg from "@/assets/licenses/nevada.jpg.asset.json";
+import ncLic from "@/assets/licenses/north_carolina.pdf.asset.json";
+import ncImg from "@/assets/licenses/north_carolina.jpg.asset.json";
+import ohioLic from "@/assets/licenses/ohio.pdf.asset.json";
+import ohioImg from "@/assets/licenses/ohio.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -588,6 +607,16 @@ const LICENSES: { state: string; code: string; pdf: string; img: string }[] = [
   { state: "Iowa", code: "IA", pdf: iowaLic.url, img: iowaImg.url },
   { state: "Kansas", code: "KS", pdf: kansasLic.url, img: kansasImg.url },
   { state: "Kentucky", code: "KY", pdf: kentuckyLic.url, img: kentuckyImg.url },
+  { state: "Louisiana", code: "LA", pdf: louisianaLic.url, img: louisianaImg.url },
+  { state: "Maryland", code: "MD", pdf: marylandLic.url, img: marylandImg.url },
+  { state: "Michigan", code: "MI", pdf: michiganImg.url, img: michiganImg.url },
+  { state: "Mississippi", code: "MS", pdf: mississippiLic.url, img: mississippiImg.url },
+  { state: "Missouri", code: "MO", pdf: missouriLic.url, img: missouriImg.url },
+  { state: "Montana", code: "MT", pdf: montanaLic.url, img: montanaImg.url },
+  { state: "Nebraska", code: "NE", pdf: nebraskaLic.url, img: nebraskaImg.url },
+  { state: "Nevada", code: "NV", pdf: nevadaLic.url, img: nevadaImg.url },
+  { state: "North Carolina", code: "NC", pdf: ncLic.url, img: ncImg.url },
+  { state: "Ohio", code: "OH", pdf: ohioLic.url, img: ohioImg.url },
 ];
 
 function LicenseCarousel() {
