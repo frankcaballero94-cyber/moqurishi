@@ -910,7 +910,7 @@ export function Contact() {
                 </div>
               </div>
 
-              <div className="mt-10 pt-6 border-t border-white/10 flex items-center gap-3 text-xs text-primary-foreground/70">
+              <div className="mt-10 pt-6 border-t border-white/10 flex items-center gap-3 text-xs text-white">
                 <span className="inline-flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
                 Accepting new clients · Avg. response under 2 hours
               </div>
