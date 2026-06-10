@@ -201,6 +201,148 @@ export function Nav() {
   );
 }
 
+const HERO_PILLARS = [
+  {
+    key: "protect",
+    label: "Protect",
+    icon: ShieldCheck,
+    title: "Protect what matters most",
+    blurb: "Coverage that shields your family from unexpected medical bills, gaps, and surprises.",
+    bullets: [
+      "Comprehensive ACA & private plans",
+      "Stop-loss & critical illness add-ons",
+      "Clear network & out-of-pocket review",
+    ],
+  },
+  {
+    key: "guide",
+    label: "Guide",
+    icon: Compass,
+    title: "Honest, expert guidance",
+    blurb: "Plain-English help so you understand every plan, every dollar, every trade-off.",
+    bullets: [
+      "Side-by-side plan comparisons",
+      "Subsidy & tax-credit checks",
+      "Doctor & medication look-ups",
+    ],
+  },
+  {
+    key: "support",
+    label: "Support",
+    icon: Headphones,
+    title: "Real support, all year",
+    blurb: "I stay with you long after enrollment — for claims, ID cards, life changes, and renewals.",
+    bullets: [
+      "Direct line to a real advisor",
+      "Claim & billing help",
+      "Life-event plan adjustments",
+    ],
+  },
+  {
+    key: "care",
+    label: "Care",
+    icon: HeartPulse,
+    title: "Care that feels personal",
+    blurb: "I treat every client like family — no pressure, no fine-print games, just genuine advice.",
+    bullets: [
+      "No-pressure consultations",
+      "Bilingual service available",
+      "Plans matched to your real life",
+    ],
+  },
+  {
+    key: "trust",
+    label: "Trust",
+    icon: Handshake,
+    title: "Earned trust, every day",
+    blurb: "Independent, licensed in 35+ states, and accountable to you — not a single carrier.",
+    bullets: [
+      "NPN credentialed & ACA certified",
+      "Medicare AHIP certified",
+      "Independent, multi-carrier appointed",
+    ],
+  },
+] as const;
+
+function HeroShowcase() {
+  const [openIdx, setOpenIdx] = useState<number | null>(null);
+  const active = openIdx !== null ? HERO_PILLARS[openIdx] : null;
+  const ActiveIcon = active?.icon;
+
+  return (
+    <div className="relative w-full">
+      <div className="absolute -inset-10 bg-gradient-gold opacity-10 blur-3xl rounded-full pointer-events-none" />
+      <div className="relative card-glass rounded-3xl p-6 md:p-8 border border-border/40 shadow-elegant">
+        {/* Logo */}
+        <img
+          src={qurishiLogo}
+          alt="Qurishi Healthcare — Expert Guidance. Better Coverage. Peace of Mind."
+          className="w-full h-auto"
+        />
+
+        {/* Clickable pillar hotspots overlaid as a single seamless row beneath the logo's pillar graphics */}
+        <div className="mt-2 grid grid-cols-5 gap-1">
+          {HERO_PILLARS.map((p, i) => (
+            <button
+              key={p.key}
+              type="button"
+              onClick={() => setOpenIdx(i)}
+              aria-label={`Learn about ${p.label}`}
+              className="group flex flex-col items-center gap-1 py-2 rounded-2xl hover:bg-primary/5 transition cursor-pointer"
+            >
+              <span className="text-[10px] md:text-xs uppercase tracking-[0.25em] text-muted-foreground group-hover:text-primary transition">
+                {p.label}
+              </span>
+            </button>
+          ))}
+        </div>
+
+        {/* Subtle trust line */}
+        <div className="mt-4 pt-4 border-t border-border/40 flex flex-wrap items-center justify-between gap-3 text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
+          <span>Licensed in 35+ States</span>
+          <a href={`tel:${PHONE}`} className="hover:text-primary transition normal-case tracking-normal text-sm text-foreground">{PHONE}</a>
+        </div>
+      </div>
+
+      <Dialog open={openIdx !== null} onOpenChange={(o) => !o && setOpenIdx(null)}>
+        <DialogContent className="max-w-lg rounded-2xl bg-background border-border text-foreground">
+          {active && ActiveIcon && (
+            <>
+              <DialogHeader>
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="w-12 h-12 rounded-full border border-primary/40 bg-primary/10 flex items-center justify-center">
+                    <ActiveIcon className="w-6 h-6 text-primary" />
+                  </span>
+                  <span className="text-[10px] uppercase tracking-[0.3em] text-primary">{active.label}</span>
+                </div>
+                <DialogTitle className="font-display text-3xl text-left">{active.title}</DialogTitle>
+                <DialogDescription className="text-muted-foreground text-base leading-relaxed text-left pt-2">
+                  {active.blurb}
+                </DialogDescription>
+              </DialogHeader>
+              <ul className="space-y-2.5 pt-2">
+                {active.bullets.map((b) => (
+                  <li key={b} className="flex items-start gap-3 text-sm text-foreground/90">
+                    <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" /> {b}
+                  </li>
+                ))}
+              </ul>
+              <div className="pt-4 border-t border-border flex gap-3">
+                <a href="#contact" onClick={() => setOpenIdx(null)} className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl btn-glass-gold text-sm font-medium">
+                  Get a Free Quote <ArrowRight className="w-4 h-4" />
+                </a>
+                <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-primary/40 text-sm hover:bg-primary/5 transition">
+                  <Phone className="w-4 h-4 text-primary" /> Call
+                </a>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
+    </div>
+  );
+}
+
 function Hero() {
   return (
     <section id="top" className="relative pt-24 pb-16 overflow-hidden">
@@ -233,62 +375,8 @@ function Hero() {
           </div>
         </div>
 
-        <div className="relative w-full">
-          <div className="absolute -inset-10 bg-gradient-gold opacity-10 blur-3xl rounded-full pointer-events-none" />
-          <div className="relative space-y-8">
-            {/* Logo — integrated, no card chrome */}
-            <div className="relative">
-              <img
-                src={qurishiLogo}
-                alt="Qurishi Healthcare — Expert Guidance. Better Coverage. Peace of Mind."
-                className="w-full h-auto"
-              />
-            </div>
+        <HeroShowcase />
 
-            {/* Interactive pillars — these are the Protect / Guide / Support / Care / Trust badges, now clickable */}
-            <div className="grid grid-cols-5 gap-2 md:gap-3">
-              {[
-                { label: "Protect", icon: ShieldCheck, href: "#why" },
-                { label: "Guide", icon: Compass, href: "#services" },
-                { label: "Support", icon: Headphones, href: "#contact" },
-                { label: "Care", icon: HeartPulse, href: "#about" },
-                { label: "Trust", icon: Handshake, href: "#states" },
-              ].map(({ label, icon: Icon, href }) => (
-                <a
-                  key={label}
-                  href={href}
-                  className="group flex flex-col items-center gap-2 p-3 rounded-xl border border-primary/20 bg-card/40 hover:bg-primary/10 hover:border-primary/60 transition"
-                >
-                  <span className="w-10 h-10 rounded-full border border-primary/40 bg-background/60 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Icon className="w-5 h-5 text-primary" />
-                  </span>
-                  <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-muted-foreground group-hover:text-foreground transition">
-                    {label}
-                  </span>
-                </a>
-              ))}
-            </div>
-
-            {/* Trust info row */}
-            <div className="grid grid-cols-2 gap-6 pt-2 border-t border-border">
-              <div className="pt-4">
-                <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-2">Direct Line</div>
-                <a href={`tel:${PHONE}`} className="font-sans text-base tracking-wide text-foreground hover:text-primary transition">{PHONE}</a>
-              </div>
-              <div className="pt-4">
-                <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-2">Established</div>
-                <div className="font-display text-lg">2020</div>
-              </div>
-            </div>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> NPN credentialed advisor</li>
-              <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> ACA Marketplace certified</li>
-              <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> Medicare AHIP certified</li>
-              <li className="flex items-center gap-3"><Check className="w-4 h-4 text-primary"/> Independent &amp; multi-carrier appointed</li>
-            </ul>
-            <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground text-center">Licensed in 35+ States</div>
-          </div>
-        </div>
       </div>
     </section>
   );
