@@ -719,7 +719,7 @@ export function StatesSection() {
                 <ShieldCheck className="w-4 h-4 text-primary" />
               </div>
               <div>
-                <div className="font-display text-3xl text-gradient-gold leading-none">{STATES.length}+</div>
+                <div className="font-display text-3xl text-gradient-gold leading-none">{STATES.length}</div>
                 <div className="text-xs uppercase tracking-[0.2em] text-primary mt-1">States Licensed</div>
                 <div className="text-sm text-muted-foreground mt-1">Independent broker — multi-carrier appointments.</div>
               </div>
