@@ -86,7 +86,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const STATES = ["AL","AR","CO","DE","FL","GA","IA","IL","IN","KS","KY","LA","MD","MI","MO","MS","MT","NC","NE","NV","OH","OK","SC","SD","TN","TX","UT","VA","WI","WV","WY"];
+const STATES = ["AL","AR","CO","FL","GA","IA","IL","IN","KS","KY","LA","MD","MI","MO","MS","MT","NC","NE","NV","OH","OK","SC","TN","TX","UT","VA","WI","WV"];
 
 const PHONE = "656-266-3462";
 const EMAIL = "Qurishihealthcare@gmail.com";
@@ -1157,16 +1157,15 @@ export function WhyNow() {
 
 const LICENSE_STATES: { code: string; name: string }[] = [
   { code: "AL", name: "Alabama" }, { code: "AR", name: "Arkansas" }, { code: "CO", name: "Colorado" },
-  { code: "DE", name: "Delaware" }, { code: "FL", name: "Florida" }, { code: "GA", name: "Georgia" },
+  { code: "FL", name: "Florida" }, { code: "GA", name: "Georgia" },
   { code: "IA", name: "Iowa" }, { code: "IL", name: "Illinois" }, { code: "IN", name: "Indiana" },
   { code: "KS", name: "Kansas" }, { code: "KY", name: "Kentucky" }, { code: "LA", name: "Louisiana" },
   { code: "MD", name: "Maryland" }, { code: "MI", name: "Michigan" }, { code: "MO", name: "Missouri" },
   { code: "MS", name: "Mississippi" }, { code: "MT", name: "Montana" }, { code: "NC", name: "North Carolina" },
   { code: "NE", name: "Nebraska" }, { code: "NV", name: "Nevada" }, { code: "OH", name: "Ohio" },
-  { code: "OK", name: "Oklahoma" }, { code: "SC", name: "South Carolina" }, { code: "SD", name: "South Dakota" },
+  { code: "OK", name: "Oklahoma" }, { code: "SC", name: "South Carolina" },
   { code: "TN", name: "Tennessee" }, { code: "TX", name: "Texas" }, { code: "UT", name: "Utah" },
   { code: "VA", name: "Virginia" }, { code: "WI", name: "Wisconsin" }, { code: "WV", name: "West Virginia" },
-  { code: "WY", name: "Wyoming" },
 ];
 
 export function LicenseGrid() {
