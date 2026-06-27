@@ -86,7 +86,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const STATES = ["AL","AR","CO","DE","FL","GA","IA","IL","IN","KS","KY","LA","MD","MI","MO","MS","MT","NC","NE","NV","OH","OK","SC","SD","TN","TX","UT","VA","WI","WV","WY"];
+const STATES = ["AL","AR","CO","FL","GA","IA","IL","IN","KS","KY","LA","MD","MI","MO","MS","MT","NC","NE","NV","OH","OK","SC","TN","TX","UT","VA","WI","WV"];
 
 const PHONE = "656-266-3462";
 const EMAIL = "Qurishihealthcare@gmail.com";
