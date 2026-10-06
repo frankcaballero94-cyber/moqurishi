@@ -9,6 +9,7 @@ export const Route = createFileRoute("/coverage")({
       { property: "og:title", content: "Coverage Area — Qurishi Advising" },
       { property: "og:description", content: "Where we're licensed and the carriers we represent." },
     ],
+    links: [{ rel: "canonical", href: "https://qurishihc.com/coverage" }],
   }),
   component: () => (
     <div className="min-h-screen">

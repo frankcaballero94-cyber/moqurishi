@@ -10,6 +10,7 @@ export const Route = createFileRoute("/testimonials")({
       { property: "og:title", content: "Client Reviews — Qurishi Healthcare" },
       { property: "og:description", content: "Real stories from individuals, families, and small businesses Mo has helped." },
     ],
+    links: [{ rel: "canonical", href: "https://qurishihc.com/testimonials" }],
   }),
   component: TestimonialsPage,
 });

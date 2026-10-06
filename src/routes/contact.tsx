@@ -9,6 +9,7 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: "Contact Mo Qurishi" },
       { property: "og:description", content: "Free consultation — call, email, or send a message." },
     ],
+    links: [{ rel: "canonical", href: "https://qurishihc.com/contact" }],
   }),
   component: () => (
     <div className="min-h-screen">
