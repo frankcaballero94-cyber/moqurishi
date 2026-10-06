@@ -10,6 +10,7 @@ export const Route = createFileRoute("/resources")({
       { property: "og:title", content: "Resources & Guides — Qurishi Healthcare" },
       { property: "og:description", content: "Learn first, then enroll. Free guides on ACA, Medicare, and self-employed health coverage." },
     ],
+    links: [{ rel: "canonical", href: "https://qurishihc.com/resources" }],
   }),
   component: ResourcesPage,
 });

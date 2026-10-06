@@ -10,6 +10,7 @@ export const Route = createFileRoute("/join")({
       { property: "og:title", content: "Join the Team — Qurishi Healthcare" },
       { property: "og:description", content: "Mentorship, warm leads, and a real career path for licensed and aspiring advisors." },
     ],
+    links: [{ rel: "canonical", href: "https://qurishihc.com/join" }],
   }),
   component: JoinPage,
 });

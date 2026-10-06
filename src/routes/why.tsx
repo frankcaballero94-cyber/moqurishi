@@ -9,6 +9,7 @@ export const Route = createFileRoute("/why")({
       { property: "og:title", content: "Why Choose Mo Qurishi" },
       { property: "og:description", content: "Independent, licensed, no-pressure health insurance advice." },
     ],
+    links: [{ rel: "canonical", href: "https://qurishihc.com/why" }],
   }),
   component: () => (
     <div className="min-h-screen">
