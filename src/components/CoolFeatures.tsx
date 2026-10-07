@@ -144,7 +144,10 @@ export function AppointmentCalendar() {
     document.body.appendChild(s);
   }, []);
 
-  const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const [tz, setTz] = useState("your local time");
+  useEffect(() => {
+    setTz(Intl.DateTimeFormat().resolvedOptions().timeZone);
+  }, []);
 
   return (
     <section className="py-24 bg-card/20">
